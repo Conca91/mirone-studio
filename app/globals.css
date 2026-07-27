@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #e8dfd3;
+  --color-surface: #f4eee7;
+  --color-card: #faf7f3;
+  --color-taupe: #c7b8a6;
+  --color-taupe-dark: #9f8f7e;
+  --color-text: #262320;
+  --color-muted: #70665d;
+  --color-accent: #bca28b;
+  --color-button: #262320;
+
+  --container-width: 1280px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--color-text);
+  color: #ffffff;
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+/* Contenitore centrale del sito */
+.site-container {
+  width: min(calc(100% - 3rem), var(--container-width));
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .site-container {
+    width: min(calc(100% - 4rem), var(--container-width));
+  }
+}
+
+@media (min-width: 1280px) {
+  .site-container {
+    width: min(calc(100% - 7rem), var(--container-width));
+  }
+}
+
+/* Spaziatura delle sezioni */
+.section {
+  padding-block: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: 9rem;
+  }
+}
+
+/* Testi piccoli sopra i titoli */
+.eyebrow {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* Titoli principali */
+.display-title {
+  max-width: 900px;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(3rem, 5.5vw, 5.8rem);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+}
+
+/* Testi descrittivi */
+.body-large {
+  max-width: 720px;
+  font-size: clamp(1rem, 1.3vw, 1.16rem);
+  line-height: 1.75;
+  color: var(--color-muted);
+}
+
+/* Griglia editoriale */
+.editorial-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .editorial-grid {
+    grid-template-columns: 0.42fr 1.58fr;
+    gap: 5rem;
+  }
+}
+
+/* Migliore contrasto dei pulsanti */
+.button-dark,
+a.button-dark {
+  background: var(--color-button);
+  color: #ffffff !important;
+}
+
+.button-light,
+a.button-light {
+  background: #ffffff;
+  color: var(--color-text) !important;
+}
+
+.button-outline-light,
+a.button-outline-light {
+  border: 1px solid rgb(255 255 255 / 55%);
+  color: #ffffff !important;
+}
+
+/* Accessibilità */
+:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
