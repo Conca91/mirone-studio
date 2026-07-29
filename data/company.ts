@@ -7,12 +7,12 @@ export const company = {
 
   address: "Via XVI Traversa n. 53, 95032 Belpasso (CT)",
 
-  phoneLabel: "348 460 8077",
+  phoneLabel: "348 293 4197",
 
-  phoneHref: "tel:+393484608077",
+  phoneHref: "tel:+393482934197",
 
   whatsappHref:
-    "https://wa.me/393484608077?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sui%20vostri%20servizi.",
+    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sui%20vostri%20servizi.",
 
   mapHref:
     "https://www.google.com/maps/search/?api=1&query=Via%20XVI%20Traversa%2053%2C%2095032%20Belpasso%20CT",
@@ -23,14 +23,16 @@ export const company = {
     {
       name: "Miriana Mirone",
       role: "Dott.ssa Ing.",
-    },
-    {
-      name: "Salvatore Mirone",
-      role: "Geom.",
-    },
-    {
-      name: "Filippo Mirone",
-      role: "Geom.",
+      title: "Responsabile dello studio",
+      description:
+        "Segue la progettazione, le pratiche edilizie, la direzione lavori e il coordinamento tecnico degli incarichi.",
+      skills: [
+        "Progettazione architettonica",
+        "Pratiche edilizie",
+        "Direzione lavori",
+        "BIM e modellazione digitale",
+        "Attestati di Prestazione Energetica",
+      ],
     },
   ],
 

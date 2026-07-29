@@ -14,15 +14,15 @@ import { company } from "@/data/company";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const contactData = {
-  phoneLabel: "+39 348 460 8077",
-  phoneHref: "tel:+393484608077",
+  phoneLabel: `+39 ${company.phoneLabel}`,
+  phoneHref: company.phoneHref,
 
   emailLabel: company.email,
   emailHref: `mailto:${company.email}`,
 
   whatsappHref: company.whatsappHref,
 
-  addressLabel: "Belpasso, Catania",
+  addressLabel: company.address,
   mapHref: company.mapHref,
 
   openingHours: "Lunedì – Venerdì · 09:00–13:00 / 15:00–18:00",

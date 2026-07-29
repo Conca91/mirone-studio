@@ -22,14 +22,20 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/35" />
 
       <div className="site-container relative flex min-h-[92svh] flex-col justify-end pb-14 pt-32 sm:pb-20 lg:pb-24">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-[10px] font-semibold uppercase tracking-[0.34em] text-white/75 sm:text-[11px]"
+          className="inline-flex flex-col gap-2"
         >
-          Progettazione · Rilievi · Direzione lavori
-        </motion.p>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.38em] text-white/90 sm:text-[11px]">
+            Studio Tecnico Mirone
+          </span>
+
+          <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-white/55 sm:text-[11px]">
+            Architettura · Ingegneria · Interior Design
+          </span>
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 34 }}
@@ -42,7 +48,12 @@ export default function Hero() {
           dei tuoi spazi.
         </motion.h1>
 
-        <div className="mt-10 grid gap-8 border-t border-white/30 pt-8 lg:grid-cols-[1fr_0.75fr] lg:items-end">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.25 }}
+          className="mt-10 grid gap-8 border-t border-white/30 pt-8 lg:grid-cols-[1fr_0.75fr] lg:items-end"
+        >
           <p className="max-w-2xl text-base leading-8 text-white/90 sm:text-lg">
             Dalla progettazione architettonica alle autorizzazioni, dal
             rendering alla direzione lavori: seguiamo ogni fase con precisione,
@@ -64,7 +75,7 @@ export default function Hero() {
               Esplora i servizi
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
