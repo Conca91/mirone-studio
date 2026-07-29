@@ -3,13 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import Navbar from "@/components/layout/Navbar";
 
 export default function Hero() {
   return (
     <section className="relative min-h-[92svh] overflow-hidden bg-[#191816] text-white">
-      <Navbar />
-
       <Image
         src="/images/hero/render1.jpeg"
         alt="Progetto architettonico dello Studio Tecnico Mirone"

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -12,6 +13,8 @@ const navigation = [
   { label: "Metodo", href: "/metodo" },
   { label: "Contatti", href: "/contatti" },
 ];
+
+const logoPath = "/images/brand/logo-studio-mirone.jpeg";
 
 export default function Header() {
   const pathname = usePathname();
@@ -56,38 +59,36 @@ export default function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
           isScrolled || isMenuOpen
-            ? "border-b border-[#24221f]/10 bg-[#ebe7dc]/92 backdrop-blur-xl"
+            ? "border-b border-[#24221f]/10 bg-[#f7f4ef]/95 shadow-[0_8px_30px_rgba(36,34,31,0.04)] backdrop-blur-xl"
             : "border-b border-transparent bg-transparent"
         }`}
       >
         <div
-          className={`mx-auto flex max-w-[1500px] items-center justify-between px-6 transition-all duration-500 md:px-12 lg:px-20 ${
-            isScrolled ? "h-[74px]" : "h-[104px]"
+          className={`mx-auto flex max-w-[1500px] items-center justify-between px-5 transition-all duration-500 sm:px-6 md:px-12 lg:px-20 ${
+            isScrolled ? "h-[76px]" : "h-[108px]"
           }`}
         >
           <Link
             href="/"
             aria-label="Studio Tecnico Mirone — Home"
-            className="relative z-50 flex items-end gap-3 text-[#24221f]"
+            className="relative z-50 flex shrink-0 items-center"
           >
             <span
-              className={`font-serif leading-none tracking-[-0.04em] transition-all duration-500 ${
+              className={`flex items-center justify-center overflow-hidden bg-[#f7f4ef]/95 transition-all duration-500 ${
                 isScrolled
-                  ? "text-[28px]"
-                  : "text-[32px] md:text-[35px]"
+                  ? "h-[58px] w-[116px] px-2 py-1"
+                  : "h-[78px] w-[150px] px-2 py-1 sm:w-[160px]"
               }`}
             >
-              Mirone
-            </span>
-
-            <span
-              className={`mb-[3px] hidden uppercase text-[#625c53] transition-all duration-500 sm:block ${
-                isScrolled
-                  ? "text-[7px] tracking-[0.27em]"
-                  : "text-[8px] tracking-[0.32em]"
-              }`}
-            >
-              Studio tecnico
+              <Image
+                src={logoPath}
+                alt="Studio Tecnico Mirone"
+                width={594}
+                height={475}
+                priority
+                sizes="(max-width: 640px) 150px, 160px"
+                className="h-full w-full object-contain"
+              />
             </span>
           </Link>
 
@@ -106,13 +107,17 @@ export default function Header() {
                   className={`group relative py-3 text-[10px] uppercase tracking-[0.23em] transition-colors duration-300 ${
                     active
                       ? "text-[#24221f]"
-                      : "text-[#6c655b] hover:text-[#24221f]"
+                      : isScrolled
+                        ? "text-[#6c655b] hover:text-[#24221f]"
+                        : "text-white/75 hover:text-white"
                   }`}
                 >
                   {item.label}
 
                   <span
-                    className={`absolute inset-x-0 bottom-1 h-px origin-left bg-[#24221f] transition-transform duration-300 ${
+                    className={`absolute inset-x-0 bottom-1 h-px origin-left transition-transform duration-300 ${
+                      isScrolled ? "bg-[#b59a72]" : "bg-white"
+                    } ${
                       active
                         ? "scale-x-100"
                         : "scale-x-0 group-hover:scale-x-100"
@@ -126,7 +131,11 @@ export default function Header() {
           <div className="hidden xl:block">
             <Link
               href="/contatti"
-              className="group inline-flex items-center gap-3 border-b border-[#24221f] pb-2 text-[9px] uppercase tracking-[0.22em] text-[#24221f]"
+              className={`group inline-flex items-center gap-3 border-b pb-2 text-[9px] uppercase tracking-[0.22em] transition-colors duration-300 ${
+                isScrolled
+                  ? "border-[#b59a72] text-[#24221f]"
+                  : "border-white/65 text-white"
+              }`}
             >
               Richiedi una consulenza
 
@@ -145,7 +154,9 @@ export default function Header() {
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
             aria-label={isMenuOpen ? "Chiudi il menu" : "Apri il menu"}
-            className="relative z-50 flex h-12 items-center gap-3 text-[#24221f] xl:hidden"
+            className={`relative z-50 flex h-12 items-center gap-3 transition-colors xl:hidden ${
+              isScrolled || isMenuOpen ? "text-[#24221f]" : "text-white"
+            }`}
           >
             <span className="hidden text-[9px] uppercase tracking-[0.24em] sm:block">
               {isMenuOpen ? "Chiudi" : "Menu"}
@@ -162,13 +173,36 @@ export default function Header() {
 
       <div
         id="mobile-menu"
-        className={`fixed inset-0 z-40 overflow-y-auto bg-[#ebe7dc] transition-all duration-500 xl:hidden ${
+        className={`fixed inset-0 z-40 overflow-y-auto bg-[#f7f4ef] transition-all duration-500 xl:hidden ${
           isMenuOpen
             ? "visible translate-y-0 opacity-100"
             : "invisible pointer-events-none -translate-y-4 opacity-0"
         }`}
       >
-        <div className="mx-auto flex min-h-screen max-w-[1500px] flex-col px-6 pb-10 pt-32 md:px-12 md:pt-40">
+        <div className="mx-auto flex min-h-screen max-w-[1500px] flex-col px-6 pb-10 pt-28 md:px-12 md:pt-36">
+          <div
+            className={`mb-8 flex justify-center transition-all duration-500 ${
+              isMenuOpen
+                ? "translate-y-0 opacity-100"
+                : "-translate-y-3 opacity-0"
+            }`}
+          >
+            <Link
+              href="/"
+              aria-label="Studio Tecnico Mirone — Home"
+              className="inline-flex bg-[#f7f4ef]"
+            >
+              <Image
+                src={logoPath}
+                alt="Studio Tecnico Mirone"
+                width={594}
+                height={475}
+                sizes="190px"
+                className="h-auto max-h-[126px] w-auto max-w-[190px] object-contain"
+              />
+            </Link>
+          </div>
+
           <nav
             aria-label="Navigazione mobile"
             className="flex flex-1 flex-col justify-center"
@@ -206,7 +240,11 @@ export default function Header() {
                         {item.label}
                       </span>
 
-                      <span className="text-[9px] tracking-[0.3em] text-[#817a70]">
+                      <span
+                        className={`text-[9px] tracking-[0.3em] ${
+                          active ? "text-[#b59a72]" : "text-[#817a70]"
+                        }`}
+                      >
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </Link>
@@ -224,7 +262,7 @@ export default function Header() {
             }`}
           >
             <div>
-              <p className="mb-4 text-[9px] uppercase tracking-[0.3em]">
+              <p className="mb-4 text-[9px] uppercase tracking-[0.3em] text-[#9a815f]">
                 Telefono
               </p>
 
@@ -237,7 +275,7 @@ export default function Header() {
             </div>
 
             <div>
-              <p className="mb-4 text-[9px] uppercase tracking-[0.3em]">
+              <p className="mb-4 text-[9px] uppercase tracking-[0.3em] text-[#9a815f]">
                 E-mail
               </p>
 
@@ -250,7 +288,7 @@ export default function Header() {
             </div>
 
             <div>
-              <p className="mb-4 text-[9px] uppercase tracking-[0.3em]">
+              <p className="mb-4 text-[9px] uppercase tracking-[0.3em] text-[#9a815f]">
                 Studio
               </p>
 

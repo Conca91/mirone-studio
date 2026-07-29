@@ -6,6 +6,8 @@ import {
 
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
+import StructuredData from "@/components/seo/StructuredData";
+import { seo } from "@/data/seo";
 
 import "./globals.css";
 
@@ -23,23 +25,61 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://studiotecnicomirone.it"),
+  metadataBase: new URL(seo.siteUrl),
 
   title: {
-    default: "Studio Tecnico Mirone | Belpasso",
-    template: "%s | Studio Tecnico Mirone",
+    default: seo.defaultTitle,
+    template: seo.titleTemplate,
   },
 
-  description:
-    "Studio tecnico a Belpasso: progettazione, pratiche edilizie e catastali, rilievi, APE, direzione lavori, BIM e rendering.",
+  description: seo.defaultDescription,
+
+  keywords: [...seo.keywords],
+
+  applicationName: seo.siteName,
+
+  authors: [
+    {
+      name: seo.siteName,
+      url: seo.siteUrl,
+    },
+  ],
+
+  creator: seo.siteName,
+  publisher: seo.siteName,
+
+  alternates: {
+    canonical: "/",
+  },
 
   openGraph: {
-    title: "Studio Tecnico Mirone",
-    description:
-      "Progettazione, pratiche tecniche e direzione lavori a Belpasso.",
-    locale: "it_IT",
+    title: seo.defaultTitle,
+    description: seo.defaultDescription,
+    url: seo.siteUrl,
+    siteName: seo.siteName,
+    locale: seo.locale,
     type: "website",
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title: seo.defaultTitle,
+    description: seo.defaultDescription,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  category: "Studio tecnico",
 };
 
 export default function RootLayout({
@@ -48,15 +88,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it">
+    <html lang={seo.language}>
       <body
         className={`${inter.variable} ${cormorant.variable} bg-[#ebe7dc] font-sans text-[#24221f] antialiased`}
       >
+        <StructuredData />
+
         <Header />
 
-        <div className="min-h-screen">
+        <main className="min-h-screen">
           {children}
-        </div>
+        </main>
 
         <Footer />
       </body>
