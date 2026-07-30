@@ -3,22 +3,22 @@ import {
   ArrowUpRight,
   Mail,
   MapPin,
+  MessageCircle,
   Phone,
 } from "lucide-react";
 
 import Container from "@/components/layout/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { company } from "@/data/company";
 
-const studioAddress =
-  "Via XVI Traversa n. 53, 95032 Belpasso CT, Italia";
+const studioAddress = company.address;
 
 const googleMapsEmbedUrl =
   "https://www.google.com/maps?q=Via+XVI+Traversa+n.+53,+95032+Belpasso+CT,+Italia&output=embed";
 
-const googleMapsDirectionsUrl =
-  "https://www.google.com/maps/search/?api=1&query=Via+XVI+Traversa+n.+53,+95032+Belpasso+CT,+Italia";
-
 export default function ContattiPage() {
+  const emailHref = `mailto:${company.email}`;
+
   return (
     <main className="bg-[#ebe7dc] text-[#24221f]">
       <Container
@@ -42,7 +42,7 @@ export default function ContattiPage() {
         <div className="grid border-t border-[#24221f]/20 pt-8 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <p className="text-[10px] uppercase tracking-[0.32em] text-[#625c53]">
-              Studio Tecnico Mirone
+              {company.name}
             </p>
 
             <div className="mt-12 space-y-10">
@@ -86,10 +86,10 @@ export default function ContattiPage() {
                     </p>
 
                     <a
-                      href="tel:+393482934197"
+                      href={company.phoneHref}
                       className="mt-4 inline-block text-base text-[#45413b] transition-colors hover:text-[#24221f]"
                     >
-                      +39 348 293 4197
+                      +39 {company.phoneLabel}
                     </a>
                   </div>
                 </div>
@@ -110,32 +110,93 @@ export default function ContattiPage() {
                     </p>
 
                     <a
-                      href="mailto:info@mironestudio.it"
-                      className="mt-4 inline-block text-base text-[#45413b] transition-colors hover:text-[#24221f]"
+                      href={emailHref}
+                      className="mt-4 inline-block break-all text-base text-[#45413b] transition-colors hover:text-[#24221f]"
                     >
-                      info@mironestudio.it
+                      {company.email}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-b border-[#24221f]/15 pb-8">
+                <div className="flex items-start gap-4">
+                  <MessageCircle
+                    size={19}
+                    strokeWidth={1.4}
+                    aria-hidden="true"
+                    className="mt-1 shrink-0"
+                  />
+
+                  <div>
+                    <p className="text-[9px] uppercase tracking-[0.28em] text-[#625c53]">
+                      WhatsApp
+                    </p>
+
+                    <a
+                      href={company.whatsappHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-3 text-base text-[#45413b] transition-colors hover:text-[#24221f]"
+                    >
+                      Scrivici direttamente
+                      <ArrowUpRight
+                        size={16}
+                        strokeWidth={1.4}
+                        aria-hidden="true"
+                      />
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <Link
-              href={googleMapsDirectionsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-10 inline-flex items-center gap-4 border-b border-[#24221f] pb-3 text-[10px] uppercase tracking-[0.24em]"
-              aria-label={`Apri su Google Maps: ${studioAddress}`}
-            >
-              Apri su Google Maps
+            <div className="mt-10 flex flex-col items-start gap-5">
+              <Link
+                href={company.mapHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-4 border-b border-[#24221f] pb-3 text-[10px] uppercase tracking-[0.24em]"
+                aria-label={`Apri su Google Maps: ${studioAddress}`}
+              >
+                Apri su Google Maps
 
-              <ArrowUpRight
-                size={18}
-                strokeWidth={1.4}
-                aria-hidden="true"
-                className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-              />
-            </Link>
+                <ArrowUpRight
+                  size={18}
+                  strokeWidth={1.4}
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                />
+              </Link>
+
+              <a
+                href={company.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#24221f] px-7 text-sm font-semibold !text-[#ebe7dc] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#37332e]"
+              >
+                <MessageCircle
+                  size={18}
+                  strokeWidth={1.6}
+                  aria-hidden="true"
+                />
+                Scrivici su WhatsApp
+                <ArrowUpRight
+                  size={17}
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </a>
+
+              <a
+                href={emailHref}
+                className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-[#24221f] px-7 text-sm font-semibold !text-[#24221f] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#24221f] hover:!text-[#ebe7dc]"
+              >
+                <Mail size={18} strokeWidth={1.6} aria-hidden="true" />
+                Invia un’e-mail
+              </a>
+            </div>
           </div>
 
           <div className="mt-16 lg:col-span-7 lg:col-start-6 lg:mt-0">
@@ -158,9 +219,10 @@ export default function ContattiPage() {
               </p>
 
               <p className="max-w-md md:text-right">
-                Lo studio opera principalmente a Belpasso, Catania e nei comuni
-                della provincia, seguendo incarichi tecnici, progettazione,
-                pratiche edilizie, rilievi e direzione lavori.
+                Lo Studio Tecnico Mirone opera su tutto il territorio nazionale,
+                con particolare presenza in Sicilia, nella provincia di Catania
+                e a Belpasso, seguendo progettazione, pratiche edilizie e
+                catastali, rilievi, consulenza tecnica e direzione lavori.
               </p>
             </div>
           </div>
@@ -188,19 +250,41 @@ export default function ContattiPage() {
               consulenza o fissare un incontro presso lo studio.
             </p>
 
-            <a
-              href="mailto:info@mironestudio.it"
-              className="group mt-10 inline-flex items-center gap-4 border-b border-[#ebe7dc] pb-3 text-[10px] uppercase tracking-[0.24em]"
-            >
-              Scrivi allo studio
+            <div className="mt-10 flex flex-col items-start gap-5">
+              <a
+                href={company.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#ebe7dc] px-7 text-sm font-semibold !text-[#24221f] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white"
+              >
+                <MessageCircle
+                  size={18}
+                  strokeWidth={1.6}
+                  aria-hidden="true"
+                />
+                Scrivici su WhatsApp
+                <ArrowUpRight
+                  size={17}
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </a>
 
-              <ArrowUpRight
-                size={18}
-                strokeWidth={1.4}
-                aria-hidden="true"
-                className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-              />
-            </a>
+              <a
+                href={emailHref}
+                className="group inline-flex items-center gap-4 border-b border-[#ebe7dc] pb-3 text-[10px] uppercase tracking-[0.24em]"
+              >
+                Scrivi allo studio
+
+                <ArrowUpRight
+                  size={18}
+                  strokeWidth={1.4}
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                />
+              </a>
+            </div>
           </div>
         </Container>
       </section>

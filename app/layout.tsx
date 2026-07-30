@@ -47,10 +47,6 @@ export const metadata: Metadata = {
   creator: seo.siteName,
   publisher: seo.siteName,
 
-  alternates: {
-    canonical: "/",
-  },
-
   openGraph: {
     title: seo.defaultTitle,
     description: seo.defaultDescription,
@@ -58,12 +54,21 @@ export const metadata: Metadata = {
     siteName: seo.siteName,
     locale: seo.locale,
     type: "website",
+    images: [
+      {
+        url: seo.images.openGraph,
+        width: 1200,
+        height: 630,
+        alt: `${seo.siteName} – Progettazione, pratiche edilizie e servizi tecnici`,
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
     title: seo.defaultTitle,
     description: seo.defaultDescription,
+    images: [seo.images.openGraph],
   },
 
   robots: {
@@ -79,6 +84,11 @@ export const metadata: Metadata = {
   },
 
   category: "Studio tecnico",
+
+  other: {
+    "geo.region": "IT-CT",
+    "geo.placename": "Belpasso",
+  },
 };
 
 export default function RootLayout({
@@ -95,9 +105,7 @@ export default function RootLayout({
 
         <Header />
 
-        <main className="min-h-screen">
-          {children}
-        </main>
+        {children}
 
         <Footer />
 

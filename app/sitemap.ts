@@ -11,30 +11,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+
+    {
+      url: `${seo.siteUrl}/studio`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.95,
+    },
+
+    {
+      url: `${seo.siteUrl}/servizi`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+
     {
       url: `${seo.siteUrl}/progetti`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
+
     {
       url: `${seo.siteUrl}/contatti`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.9,
     },
+
     {
       url: `${seo.siteUrl}/privacy-policy`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.2,
     },
+
     {
       url: `${seo.siteUrl}/cookie-policy`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.2,
     },
+
     {
       url: `${seo.siteUrl}/note-legali`,
       lastModified: now,
