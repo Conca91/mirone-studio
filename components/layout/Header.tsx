@@ -16,11 +16,22 @@ const navigation = [
 
 const logoPath = "/images/brand/logo-studio-mirone.jpeg";
 
+const lightPages = [
+  "/studio",
+  "/servizi",
+  "/metodo",
+  "/contatti",
+];
+
 export default function Header() {
   const pathname = usePathname();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const isLightPage = lightPages.some(
+    (route) => pathname === route || pathname.startsWith(`${route}/`),
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,6 +64,8 @@ export default function Header() {
   function isActive(href: string) {
     return pathname === href || pathname.startsWith(`${href}/`);
   }
+
+  const hasLightHeader = isScrolled || isMenuOpen || isLightPage;
 
   return (
     <>
@@ -99,24 +112,26 @@ export default function Header() {
             {navigation.map((item) => {
               const active = isActive(item.href);
 
+              const linkColor = hasLightHeader
+                ? active
+                  ? "text-[#24221f]"
+                  : "text-[#6c655b] hover:text-[#24221f]"
+                : active
+                  ? "text-white"
+                  : "text-white/75 hover:text-white";
+
               return (
                 <Link
                   key={item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`group relative py-3 text-[10px] uppercase tracking-[0.23em] transition-colors duration-300 ${
-                    active
-                      ? "text-[#24221f]"
-                      : isScrolled
-                        ? "text-[#6c655b] hover:text-[#24221f]"
-                        : "text-white/75 hover:text-white"
-                  }`}
+                  className={`group relative py-3 text-[10px] uppercase tracking-[0.23em] transition-colors duration-300 ${linkColor}`}
                 >
                   {item.label}
 
                   <span
                     className={`absolute inset-x-0 bottom-1 h-px origin-left transition-transform duration-300 ${
-                      isScrolled ? "bg-[#b59a72]" : "bg-white"
+                      hasLightHeader ? "bg-[#b59a72]" : "bg-white"
                     } ${
                       active
                         ? "scale-x-100"
@@ -132,7 +147,7 @@ export default function Header() {
             <Link
               href="/contatti"
               className={`group inline-flex items-center gap-3 border-b pb-2 text-[9px] uppercase tracking-[0.22em] transition-colors duration-300 ${
-                isScrolled
+                hasLightHeader
                   ? "border-[#b59a72] text-[#24221f]"
                   : "border-white/65 text-white"
               }`}
@@ -155,7 +170,7 @@ export default function Header() {
             aria-controls="mobile-menu"
             aria-label={isMenuOpen ? "Chiudi il menu" : "Apri il menu"}
             className={`relative z-50 flex h-12 items-center gap-3 transition-colors xl:hidden ${
-              isScrolled || isMenuOpen ? "text-[#24221f]" : "text-white"
+              hasLightHeader ? "text-[#24221f]" : "text-white"
             }`}
           >
             <span className="hidden text-[9px] uppercase tracking-[0.24em] sm:block">

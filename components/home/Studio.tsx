@@ -21,7 +21,7 @@ const values = [
   },
 ];
 
-export default function WhyChooseUs() {
+export default function Studio() {
   return (
     <section
       id="studio"
@@ -29,16 +29,16 @@ export default function WhyChooseUs() {
     >
       <div className="site-container">
         <div className="editorial-grid">
-          <p className="eyebrow text-white/45">Lo studio</p>
+          <p className="eyebrow !text-white/45">Lo studio</p>
 
           <div>
-            <h2 className="display-title max-w-5xl text-white">
+            <h2 className="display-title max-w-5xl !text-white">
               Competenza tecnica.
               <br />
               Visione progettuale.
             </h2>
 
-            <p className="body-large mt-8 max-w-2xl text-white/60">
+            <p className="body-large mt-8 max-w-2xl !text-white/60">
               Dalla progettazione architettonica alle autorizzazioni,
               coordiniamo ogni fase dell&apos;intervento con metodo, precisione
               e continuità.
@@ -48,9 +48,9 @@ export default function WhyChooseUs() {
 
         <div className="mt-20 grid gap-12 border-t border-white/15 pt-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24 lg:pt-20">
           <div>
-            <p className="eyebrow text-white/40">La nostra storia</p>
+            <p className="eyebrow !text-white/40">La nostra storia</p>
 
-            <h3 className="mt-7 max-w-xl font-serif text-4xl leading-[1.05] tracking-[-0.035em] text-white sm:text-5xl">
+            <h3 className="mt-7 max-w-xl font-serif text-4xl leading-[1.05] tracking-[-0.035em] !text-white sm:text-5xl">
               Oltre trent&apos;anni di esperienza.
               <br />
               Una nuova visione.
@@ -79,7 +79,7 @@ export default function WhyChooseUs() {
               alla conclusione dell&apos;opera.
             </p>
 
-            <p className="font-serif text-2xl leading-snug tracking-[-0.02em] text-white sm:text-3xl">
+            <p className="font-serif text-2xl leading-snug tracking-[-0.02em] !text-white sm:text-3xl">
               Un unico punto di riferimento, con l&apos;obiettivo di garantire
               qualità, precisione e affidabilità in ogni progetto.
             </p>
@@ -92,9 +92,9 @@ export default function WhyChooseUs() {
               key={value.number}
               className="bg-[#23211f] p-8 sm:p-10"
             >
-              <p className="eyebrow text-white/35">{value.number}</p>
+              <p className="eyebrow !text-white/35">{value.number}</p>
 
-              <h3 className="mt-14 font-serif text-3xl tracking-[-0.025em] text-white sm:text-4xl">
+              <h3 className="mt-14 font-serif text-3xl tracking-[-0.025em] !text-white sm:text-4xl">
                 {value.title}
               </h3>
 
@@ -112,11 +112,11 @@ export default function WhyChooseUs() {
               className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24"
             >
               <div>
-                <p className="eyebrow text-white/40">
+                <p className="eyebrow !text-white/40">
                   Responsabile dello studio
                 </p>
 
-                <h3 className="mt-7 font-serif text-4xl tracking-[-0.035em] text-white sm:text-5xl">
+                <h3 className="mt-7 font-serif text-4xl tracking-[-0.035em] !text-white sm:text-5xl">
                   {person.name}
                 </h3>
 

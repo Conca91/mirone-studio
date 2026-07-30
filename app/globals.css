@@ -1,18 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --color-background: #e8dfd3;
-  --color-surface: #f4eee7;
-  --color-card: #faf7f3;
-  --color-taupe: #c7b8a6;
-  --color-taupe-dark: #9f8f7e;
-  --color-text: #262320;
-  --color-muted: #70665d;
-  --color-accent: #bca28b;
-  --color-button: #262320;
+  /* Colori principali */
+  --color-background: #ded6ca;
+  --color-surface: #ded6ca;
+  --color-card: #ded6ca;
 
-  --container-width: 1280px;
+  --color-text: #25211e;
+  --color-muted: #6f665e;
+  --color-soft: #8b8178;
+
+  --color-accent: #9b8066;
+
+  --color-border: rgb(37 33 30 / 15%);
+  --color-border-light: rgb(37 33 30 / 9%);
+  --color-border-dark: rgb(255 255 255 / 15%);
+
+  --color-dark: #25211e;
+  --color-dark-hover: #433c36;
+
+  --container-width: 1500px;
 }
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 *,
 *::before,
@@ -21,15 +33,27 @@
 }
 
 html {
+  min-height: 100%;
   scroll-behavior: smooth;
+  background-color: var(--color-background);
 }
 
 body {
+  min-height: 100%;
   margin: 0;
   overflow-x: hidden;
-  background: var(--color-background);
+
+  background-color: var(--color-background);
   color: var(--color-text);
-  font-family: var(--font-sans), Arial, sans-serif;
+
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -38,29 +62,301 @@ a {
 }
 
 button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
 
 button {
-  font: inherit;
+  border: 0;
 }
 
-img {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 ::selection {
-  background: var(--color-text);
-  color: #ffffff;
+  background-color: var(--color-text);
+  color: var(--color-background);
 }
 
-.font-serif {
-  font-family: var(--font-serif), Georgia, serif;
+/* =========================================================
+   SFONDO GLOBALE
+   ========================================================= */
+
+main {
+  background-color: var(--color-background);
 }
 
-/* Contenitore centrale del sito */
+/*
+ * Uniforma i vecchi colori chiari ancora presenti
+ * nei componenti e nelle pagine.
+ */
+
+.bg-\[\#e8dfd3\],
+.bg-\[\#e8e1d5\],
+.bg-\[\#e9e4d8\],
+.bg-\[\#ded6ca\],
+.bg-\[\#eee9df\],
+.bg-\[\#eee8de\],
+.bg-\[\#f3efe7\],
+.bg-\[\#f4eee7\],
+.bg-\[\#f4efe7\],
+.bg-\[\#f7f4ef\],
+.bg-\[\#f8f4ed\],
+.bg-\[\#faf7f3\],
+.bg-neutral-50,
+.bg-neutral-100 {
+  background-color: var(--color-background) !important;
+}
+
+/*
+ * Mantiene scure le sezioni di contrasto.
+ */
+
+.bg-neutral-950,
+.bg-\[\#23211f\],
+.bg-\[\#24221f\],
+.bg-\[\#24211e\],
+.bg-\[\#25211e\] {
+  background-color: var(--color-dark) !important;
+}
+
+/* =========================================================
+   TIPOGRAFIA GENERALE
+   ========================================================= */
+
+body,
+p,
+a,
+button,
+input,
+textarea,
+select,
+label,
+nav,
+header,
+footer {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-serif,
+.display-title,
+.section-title {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif !important;
+  font-style: normal;
+  font-weight: 400 !important;
+}
+
+/*
+ * Gli elementi interni ai titoli ereditano lo stesso font.
+ */
+
+h1 *,
+h2 *,
+h3 * {
+  font-family: inherit !important;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: wrap;
+}
+
+p {
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+/* =========================================================
+   HERO CONDIVISA DELLE PAGINE
+   ========================================================= */
+
+.page-hero {
+  padding-top: 10rem;
+  padding-bottom: 7rem;
+
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-hero-content {
+  width: 100%;
+  max-width: 980px;
+}
+
+.page-hero-title {
+  max-width: 980px;
+  margin-top: 2rem;
+  margin-bottom: 0;
+
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif !important;
+  font-size: clamp(4rem, 6vw, 6.25rem);
+  font-weight: 400 !important;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+
+  color: var(--color-text);
+  text-align: left;
+  text-wrap: balance;
+}
+
+.page-hero-description {
+  max-width: 760px;
+  margin-top: 3.75rem;
+  margin-bottom: 0;
+
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.8;
+
+  color: var(--color-muted);
+  text-align: left;
+}
+
+/* =========================================================
+   TITOLI DELLE SEZIONI
+   ========================================================= */
+
+.display-title {
+  max-width: 950px;
+  margin-bottom: 0;
+
+  font-size: clamp(3rem, 4.8vw, 5rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+
+  color: var(--color-text);
+  text-align: left;
+  text-wrap: wrap;
+  overflow-wrap: normal;
+}
+
+.section-title {
+  max-width: 900px;
+  margin-bottom: 0;
+
+  font-size: clamp(2.7rem, 4.2vw, 4.6rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+
+  color: var(--color-text);
+  text-align: left;
+  text-wrap: wrap;
+  overflow-wrap: normal;
+}
+
+/*
+ * Titoli normali interni alle pagine.
+ * Non usiamo !important sulle dimensioni,
+ * così PageHero e le classi dedicate funzionano correttamente.
+ */
+
+main h2:not(.display-title):not(.section-title) {
+  font-size: clamp(2.7rem, 4.2vw, 4.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  text-align: left;
+  text-wrap: wrap;
+}
+
+main h3 {
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  text-align: left;
+  text-wrap: wrap;
+}
+
+/*
+ * Elimina differenze di peso introdotte dalle classi Tailwind.
+ */
+
+main h1.font-medium,
+main h1.font-semibold,
+main h1.font-bold,
+main h2.font-medium,
+main h2.font-semibold,
+main h2.font-bold,
+main h3.font-medium,
+main h3.font-semibold,
+main h3.font-bold {
+  font-weight: 400 !important;
+}
+
+/* =========================================================
+   TESTI
+   ========================================================= */
+
+.body-large {
+  max-width: 760px;
+
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(1rem, 1.2vw, 1.16rem);
+  font-weight: 400;
+  line-height: 1.8;
+
+  color: var(--color-muted);
+}
+
+/* =========================================================
+   TESTI PICCOLI SOPRA I TITOLI
+   ========================================================= */
+
+.eyebrow {
+  margin-bottom: 0;
+
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+  text-align: left;
+}
+
+main [class*="uppercase"][class*="tracking-"] {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif !important;
+}
+
+/* =========================================================
+   CONTENITORE CENTRALE
+   ========================================================= */
+
 .site-container {
   width: min(calc(100% - 3rem), var(--container-width));
   margin-inline: auto;
@@ -78,51 +374,30 @@ img {
   }
 }
 
-/* Spaziatura delle sezioni */
+/* =========================================================
+   SPAZIATURA DELLE SEZIONI
+   ========================================================= */
+
 .section {
   padding-block: 6rem;
 }
 
 @media (min-width: 768px) {
   .section {
-    padding-block: 8rem;
+    padding-block: 7rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section {
-    padding-block: 9rem;
+    padding-block: 8rem;
   }
 }
 
-/* Testi piccoli sopra i titoli */
-.eyebrow {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
+/* =========================================================
+   GRIGLIA EDITORIALE
+   ========================================================= */
 
-/* Titoli principali */
-.display-title {
-  max-width: 900px;
-  font-family: var(--font-serif), Georgia, serif;
-  font-size: clamp(3rem, 5.5vw, 5.8rem);
-  font-weight: 500;
-  line-height: 0.94;
-  letter-spacing: -0.05em;
-}
-
-/* Testi descrittivi */
-.body-large {
-  max-width: 720px;
-  font-size: clamp(1rem, 1.3vw, 1.16rem);
-  line-height: 1.75;
-  color: var(--color-muted);
-}
-
-/* Griglia editoriale */
 .editorial-grid {
   display: grid;
   gap: 2.5rem;
@@ -130,22 +405,66 @@ img {
 
 @media (min-width: 1024px) {
   .editorial-grid {
-    grid-template-columns: 0.42fr 1.58fr;
-    gap: 5rem;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 3.5rem;
   }
 }
 
-/* Migliore contrasto dei pulsanti */
+/* =========================================================
+   SUPERFICI
+   ========================================================= */
+
+.page-background,
+.surface,
+.surface-light,
+.card-background {
+  background-color: var(--color-background);
+}
+
+.dark-surface {
+  background-color: var(--color-dark);
+  color: #ffffff;
+}
+
+/* =========================================================
+   BORDI
+   ========================================================= */
+
+.editorial-border {
+  border-color: var(--color-border);
+}
+
+/* =========================================================
+   PULSANTI
+   ========================================================= */
+
 .button-dark,
 a.button-dark {
-  background: var(--color-button);
+  background-color: var(--color-dark);
   color: #ffffff !important;
+}
+
+.button-dark:hover,
+a.button-dark:hover {
+  background-color: var(--color-dark-hover);
 }
 
 .button-light,
 a.button-light {
-  background: #ffffff;
+  background-color: var(--color-background);
   color: var(--color-text) !important;
+}
+
+.button-outline,
+a.button-outline {
+  border: 1px solid var(--color-border);
+  color: var(--color-text) !important;
+}
+
+.button-outline:hover,
+a.button-outline:hover {
+  background-color: var(--color-text);
+  color: #ffffff !important;
 }
 
 .button-outline-light,
@@ -154,11 +473,170 @@ a.button-outline-light {
   color: #ffffff !important;
 }
 
-/* Accessibilità */
+button,
+a[class*="inline-flex"],
+.button-dark,
+.button-light,
+.button-outline,
+.button-outline-light {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif !important;
+}
+
+/* =========================================================
+   LINK EDITORIALI
+   ========================================================= */
+
+.editorial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid currentColor;
+
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* =========================================================
+   HEADER E NAVIGAZIONE
+   ========================================================= */
+
+header,
+header a,
+header button,
+header span,
+nav,
+nav a {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif !important;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+input,
+textarea,
+select {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-soft);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1023px) {
+  .page-hero {
+    padding-top: 9rem;
+    padding-bottom: 6rem;
+  }
+
+  .page-hero-content {
+    max-width: 850px;
+  }
+
+  .page-hero-title {
+    max-width: 850px;
+    font-size: clamp(3.6rem, 9vw, 5.4rem);
+    line-height: 1.05;
+  }
+
+  .page-hero-description {
+    margin-top: 3rem;
+  }
+
+  .display-title {
+    font-size: clamp(2.85rem, 7vw, 4.35rem);
+    line-height: 1.12;
+  }
+
+  .section-title,
+  main h2:not(.display-title):not(.section-title) {
+    font-size: clamp(2.55rem, 6.5vw, 4rem);
+    line-height: 1.13;
+  }
+
+  main h3 {
+    font-size: clamp(1.75rem, 4.5vw, 2.7rem);
+    line-height: 1.16;
+  }
+}
+
+/* =========================================================
+   SMARTPHONE
+   ========================================================= */
+
+@media (max-width: 639px) {
+  body {
+    font-size: 15px;
+  }
+
+  .site-container {
+    width: min(calc(100% - 2rem), var(--container-width));
+  }
+
+  .page-hero {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+  }
+
+  .page-hero-title {
+    margin-top: 1.5rem;
+
+    font-size: clamp(3rem, 14vw, 4.2rem);
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+  }
+
+  .page-hero-description {
+    margin-top: 2.75rem;
+
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .display-title {
+    font-size: clamp(2.55rem, 11vw, 3.6rem);
+    line-height: 1.14;
+    letter-spacing: -0.035em;
+  }
+
+  .section-title,
+  main h2:not(.display-title):not(.section-title) {
+    font-size: clamp(2.3rem, 9.5vw, 3.35rem);
+    line-height: 1.14;
+    letter-spacing: -0.032em;
+  }
+
+  main h3 {
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
+    line-height: 1.16;
+  }
+
+  .section {
+    padding-block: 5rem;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITÀ
+   ========================================================= */
+
 :focus-visible {
-  outline: 2px solid var(--color-text);
+  outline: 2px solid var(--color-accent);
   outline-offset: 4px;
 }
+
+/* =========================================================
+   RIDUZIONE DELLE ANIMAZIONI
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -168,6 +646,7 @@ a.button-outline-light {
   *,
   *::before,
   *::after {
+    scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

@@ -1,24 +1,24 @@
+type PageHeroProps = {
+  eyebrow: string;
+  title: string;
+  description: string;
+};
+
 export default function PageHero({
   eyebrow,
   title,
   description,
-}: {
-  eyebrow: string;
-  title: string;
-  description: string;
-}) {
+}: PageHeroProps) {
   return (
-    <section className="bg-[var(--color-background)] pt-36 sm:pt-44">
-      <div className="site-container pb-20 sm:pb-28">
-        <p className="eyebrow">{eyebrow}</p>
+    <section className="page-hero">
+      <div className="site-container">
+        <div className="page-hero-content">
+          <p className="eyebrow">{eyebrow}</p>
 
-        <h1 className="mt-8 max-w-6xl font-serif text-[clamp(4rem,9vw,9rem)] leading-[.82] tracking-[-.065em]">
-          {title}
-        </h1>
+          <h1 className="page-hero-title">{title}</h1>
 
-        <p className="body-large mt-10 max-w-2xl">
-          {description}
-        </p>
+          <p className="page-hero-description">{description}</p>
+        </div>
       </div>
     </section>
   );

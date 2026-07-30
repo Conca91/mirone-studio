@@ -1,26 +1,29 @@
 "use client";
 
 import { motion } from "motion/react";
+
 import { company } from "@/data/company";
 
 export default function Method() {
   return (
     <section
       id="metodo"
-      className="section overflow-hidden bg-[var(--color-background)]"
+      className="overflow-hidden bg-[var(--color-background)] py-16 sm:py-20 lg:py-24"
     >
       <div className="site-container">
-        <div className="editorial-grid">
-          <p className="eyebrow">Il nostro metodo</p>
+        <div className="grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-14">
+          <div className="pt-2">
+            <p className="eyebrow">Il nostro metodo</p>
+          </div>
 
           <div>
-            <h2 className="display-title max-w-5xl">
+            <h2 className="max-w-4xl font-serif text-[clamp(3.25rem,5.4vw,5.8rem)] font-normal leading-[0.94] tracking-[-0.05em] text-[var(--color-foreground)]">
               Prima il metodo.
               <br />
               Poi il progetto.
             </h2>
 
-            <p className="body-large mt-8 max-w-2xl">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--color-muted)] sm:text-lg sm:leading-8">
               Ogni intervento viene affrontato attraverso un percorso chiaro e
               strutturato, dall&apos;analisi iniziale fino alla conclusione
               delle attività.
@@ -28,33 +31,33 @@ export default function Method() {
           </div>
         </div>
 
-        <div className="mt-20 border-t border-black/15">
+        <div className="mt-14 border-t border-black/15 lg:mt-16">
           {company.process.map((item, index) => (
             <motion.article
               key={item.number}
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{
-                duration: 0.65,
+                duration: 0.6,
                 delay: index * 0.05,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group grid gap-8 border-b border-black/15 py-10 sm:grid-cols-[0.22fr_0.78fr_1fr] sm:gap-10 lg:py-14"
+              className="group grid gap-6 border-b border-black/15 py-9 sm:grid-cols-[5rem_0.75fr_1fr] sm:items-start sm:gap-10 lg:py-12"
             >
               <div>
-                <span className="font-serif text-5xl leading-none tracking-[-0.05em] text-black/20 transition-colors duration-300 group-hover:text-black/45 sm:text-6xl">
+                <span className="font-serif text-4xl leading-none tracking-[-0.05em] text-black/20 transition-colors duration-300 group-hover:text-black/45 sm:text-5xl">
                   {item.number}
                 </span>
               </div>
 
               <div>
-                <h3 className="font-serif text-3xl tracking-[-0.03em] text-[var(--color-foreground)] sm:text-4xl">
+                <h3 className="font-serif text-3xl leading-tight tracking-[-0.03em] text-[var(--color-foreground)] sm:text-4xl">
                   {item.title}
                 </h3>
               </div>
 
-              <div className="flex items-start">
+              <div>
                 <p className="max-w-xl text-base leading-8 text-[var(--color-muted)]">
                   {item.description}
                 </p>
@@ -64,18 +67,18 @@ export default function Method() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.35 }}
           transition={{
-            duration: 0.75,
+            duration: 0.7,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="mt-16 grid gap-8 border-l border-black/20 pl-6 sm:pl-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16"
+          className="mt-14 grid gap-8 border-l border-black/20 pl-6 sm:pl-8 lg:mt-16 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-14"
         >
-          <p className="eyebrow">La nostra filosofia</p>
+          <p className="eyebrow pt-2">La nostra filosofia</p>
 
-          <p className="max-w-3xl font-serif text-3xl leading-[1.15] tracking-[-0.03em] text-[var(--color-foreground)] sm:text-4xl lg:text-5xl">
+          <p className="max-w-3xl font-serif text-3xl leading-[1.12] tracking-[-0.03em] text-[var(--color-foreground)] sm:text-4xl lg:text-5xl">
             Dietro ogni progetto ben riuscito c&apos;è un metodo prima ancora
             che un disegno.
           </p>
