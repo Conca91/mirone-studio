@@ -172,12 +172,44 @@ export default function Studio() {
                 </p>
 
                 <h3 className="mt-7 font-serif text-4xl leading-[1.1] tracking-[-0.035em] !text-white sm:text-5xl">
-                  {person.name}
+                  <Link
+                    href="/miriana-mirone"
+                    className="group inline-flex items-center gap-4 !text-white"
+                    aria-label="Miriana Mirone, ingegnere e responsabile dello Studio Tecnico Mirone"
+                  >
+                    {person.name}
+
+                    <ArrowUpRight
+                      size={22}
+                      strokeWidth={1.3}
+                      aria-hidden="true"
+                      className="opacity-45 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100"
+                    />
+                  </Link>
                 </h3>
 
                 <p className="mt-4 text-sm font-medium uppercase tracking-[0.18em] text-white/45">
                   {person.role}
                 </p>
+
+                <p className="mt-5 max-w-md text-sm leading-7 text-white/55">
+                  Miriana Mirone è ingegnere e responsabile dello Studio
+                  Tecnico Mirone a Belpasso, in provincia di Catania.
+                </p>
+
+                <Link
+                  href="/miriana-mirone"
+                  className="group mt-7 inline-flex items-center gap-3 border-b border-white/50 pb-2 text-[10px] uppercase tracking-[0.24em] text-white/75 transition-colors hover:border-white hover:text-white"
+                >
+                  Profilo di Miriana Mirone
+
+                  <ArrowUpRight
+                    size={16}
+                    strokeWidth={1.4}
+                    aria-hidden="true"
+                    className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                </Link>
               </div>
 
               <div>

@@ -8,6 +8,7 @@ import {
 
 const navigation = [
   { label: "Studio", href: "/studio" },
+  { label: "Miriana Mirone", href: "/miriana-mirone" },
   { label: "Servizi", href: "/servizi" },
   { label: "Progetti", href: "/progetti" },
   { label: "Metodo", href: "/metodo" },
@@ -77,6 +78,31 @@ export default function Footer() {
               progettazione architettonica, pratiche edilizie e catastali,
               rilievi topografici, direzione lavori e consulenza tecnica.
             </p>
+
+            <div className="mt-9 max-w-xl border-l border-white/20 pl-5">
+              <p className="text-[10px] uppercase tracking-[0.28em] text-[#938c82]">
+                Responsabile dello Studio
+              </p>
+
+              <Link
+                href="/miriana-mirone"
+                className="group mt-3 inline-flex items-center gap-3 font-serif text-2xl text-[#d8d1c6] transition-colors duration-300 hover:text-white"
+                aria-label="Ingegnere Miriana Mirone, responsabile dello Studio Tecnico Mirone"
+              >
+                Ingegnere Miriana Mirone
+
+                <ArrowUpRight
+                  size={16}
+                  strokeWidth={1.4}
+                  aria-hidden="true"
+                  className="opacity-50 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
+                />
+              </Link>
+
+              <p className="mt-2 text-sm leading-6 text-[#8f887e]">
+                Studio Tecnico Mirone · Belpasso, Catania
+              </p>
+            </div>
 
             <Link
               href="/contatti"
