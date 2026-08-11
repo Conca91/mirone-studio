@@ -8,32 +8,19 @@ import {
 
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
 import type { ServiceDetailConfig } from "@/components/services/service-types";
+import { seo } from "@/data/seo";
 
-const SITE_URL = "https://mironestudio.it";
-
-const CONTACTS = {
-  businessName: "Studio Tecnico Mirone",
-  address: "Via XVI Traversa n. 53",
-  postalCode: "95032",
-  city: "Belpasso",
-  province: "CT",
-  region: "Sicilia",
-  country: "IT",
-  phone: "+39 348 293 4197",
-  email: "info@mironestudio.it",
-  emailHref: "mailto:info@mironestudio.it",
-  whatsappHref:
-    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sui%20rendering%20architettonici.",
-};
+const PAGE_PATH = "/servizi/rendering-architettonici";
+const PAGE_URL = `${seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Rendering architettonici a Belpasso e Catania",
+  title: "Rendering architettonici e 3D a Belpasso e Catania",
 
   description:
-    "Rendering architettonici a Belpasso e Catania per interni, esterni, ville e ristrutturazioni. Studio Tecnico Mirone realizza immagini 3D fotorealistiche per valutare spazi, materiali, illuminazione e progetto prima della realizzazione.",
+    "Rendering architettonici e modellazione 3D a Belpasso e Catania per interni, esterni, ville e ristrutturazioni. Studio Tecnico Mirone realizza visualizzazioni fotorealistiche per valutare il progetto prima della realizzazione.",
 
   alternates: {
-    canonical: "/servizi/rendering-architettonici",
+    canonical: PAGE_PATH,
   },
 
   keywords: [
@@ -41,41 +28,74 @@ export const metadata: Metadata = {
     "rendering architettonici Catania",
     "rendering 3D Belpasso",
     "rendering 3D Catania",
+    "rendering interni Belpasso",
     "rendering interni Catania",
+    "rendering esterni Belpasso",
     "rendering esterni Catania",
     "rendering ville Catania",
+    "visualizzazione architettonica Belpasso",
     "visualizzazione architettonica Catania",
+    "visualizzazione 3D Catania",
     "modellazione 3D Belpasso",
     "modellazione 3D Catania",
+    "progettazione 3D Belpasso",
+    "progettazione 3D Catania",
+    "render fotorealistici Catania",
+    "render architettura Catania",
+    "progettazione architettonica Belpasso",
+    "progettazione architettonica Catania",
+    "ingegnere Belpasso",
+    "ingegnere Catania",
+    "Ingegnere Miriana Mirone",
+    "Miriana Mirone",
     "Studio Tecnico Mirone",
   ],
 
   openGraph: {
     title:
-      "Rendering architettonici a Belpasso e Catania | Studio Tecnico Mirone",
+      "Rendering architettonici e 3D a Belpasso e Catania | Studio Tecnico Mirone",
 
     description:
-      "Rendering 3D e immagini fotorealistiche per interni, esterni, ville e ristrutturazioni a Belpasso, Catania e provincia.",
+      "Rendering 3D e immagini fotorealistiche per interni, esterni, ville, nuove costruzioni e ristrutturazioni a Belpasso, Catania e provincia.",
 
-    url: `${SITE_URL}/servizi/rendering-architettonici`,
-    siteName: CONTACTS.businessName,
-    locale: "it_IT",
+    url: PAGE_URL,
+    siteName: seo.siteName,
+    locale: seo.locale,
     type: "website",
+
+    images: [
+      {
+        url: seo.images.openGraph,
+        width: 1200,
+        height: 630,
+        alt: "Rendering architettonici e modellazione 3D - Studio Tecnico Mirone",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
 
     title:
-      "Rendering architettonici a Belpasso e Catania | Studio Tecnico Mirone",
+      "Rendering architettonici e 3D a Belpasso e Catania | Studio Tecnico Mirone",
 
     description:
       "Rendering 3D fotorealistici per interni, esterni, ville e ristrutturazioni a Belpasso e Catania.",
+
+    images: [seo.images.openGraph],
   },
 
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -83,16 +103,18 @@ const config: ServiceDetailConfig = {
   breadcrumbLabel: "Rendering architettonici",
 
   locationLabel:
-    "Rendering architettonici · Belpasso · Catania",
+    "Rendering architettonici · Modellazione 3D · Belpasso · Catania",
 
   titleFirstLine: "Rendering",
   titleSecondLine: "architettonici",
 
   heroDescription:
-    "Lo Studio Tecnico Mirone realizza rendering architettonici a Belpasso, Catania e provincia per interni, esterni, ville, nuove costruzioni e ristrutturazioni. Le immagini tridimensionali aiutano a comprendere il progetto, confrontare soluzioni e valutare materiali, luce e proporzioni prima della realizzazione.",
+    "Lo Studio Tecnico Mirone realizza rendering architettonici e modellazione 3D a Belpasso, Catania e provincia per interni, esterni, ville, nuove costruzioni e ristrutturazioni. Le visualizzazioni tridimensionali permettono di comprendere il progetto, confrontare soluzioni e valutare materiali, luce e proporzioni prima della realizzazione.",
 
-  whatsappHref: CONTACTS.whatsappHref,
-  emailHref: CONTACTS.emailHref,
+  whatsappHref:
+    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sui%20rendering%20architettonici.",
+
+  emailHref: seo.contact.emailHref,
 
   heroChecklist: [
     "Modellazione 3D",
@@ -111,9 +133,9 @@ const config: ServiceDetailConfig = {
     paragraphs: [
       "Il rendering architettonico permette di rappresentare in modo chiaro e realistico un progetto prima che venga costruito. Attraverso immagini tridimensionali è possibile comprendere meglio volumi, spazi, materiali, colori e rapporti tra gli elementi architettonici.",
 
-      "Lo Studio Tecnico Mirone realizza rendering architettonici a Belpasso, Catania e provincia per abitazioni, ville, interni, esterni, nuove costruzioni e interventi di ristrutturazione.",
+      "Lo Studio Tecnico Mirone realizza rendering architettonici e visualizzazioni 3D a Belpasso, Catania e provincia per abitazioni, ville, interni, esterni, nuove costruzioni e interventi di ristrutturazione.",
 
-      "La visualizzazione 3D diventa uno strumento utile sia nella fase progettuale, per confrontare diverse soluzioni, sia nella comunicazione con il cliente, che può valutare con maggiore consapevolezza le scelte prima dell’avvio dei lavori.",
+      "La visualizzazione 3D diventa uno strumento utile sia durante la progettazione, per confrontare diverse soluzioni, sia nella comunicazione con il cliente, che può valutare con maggiore consapevolezza le principali scelte architettoniche prima dell’avvio dei lavori.",
     ],
   },
 
@@ -124,7 +146,7 @@ const config: ServiceDetailConfig = {
       "Immagini tridimensionali per spazi, materiali e progetto.",
 
     description:
-      "Il livello di dettaglio e la tipologia delle immagini vengono definiti in funzione della fase progettuale e delle esigenze dell’incarico.",
+      "Il livello di dettaglio e la tipologia delle immagini vengono definiti in funzione della fase progettuale, delle caratteristiche dell’intervento e delle esigenze dell’incarico.",
 
     cards: [
       {
@@ -133,7 +155,7 @@ const config: ServiceDetailConfig = {
         title: "Rendering esterni",
 
         description:
-          "Visualizzazione di facciate, volumi, aperture, materiali e rapporto dell’edificio con gli spazi esterni.",
+          "Visualizzazione di facciate, volumi, aperture, materiali e rapporto dell’edificio con gli spazi esterni e il contesto.",
       },
 
       {
@@ -142,7 +164,7 @@ const config: ServiceDetailConfig = {
         title: "Rendering interni",
 
         description:
-          "Rappresentazione degli ambienti interni per valutare distribuzione, materiali, arredi, colori e atmosfera complessiva dello spazio.",
+          "Rappresentazione degli ambienti interni per valutare distribuzione, materiali, arredi, colori, illuminazione e atmosfera complessiva dello spazio.",
       },
 
       {
@@ -151,7 +173,7 @@ const config: ServiceDetailConfig = {
         title: "Modellazione 3D",
 
         description:
-          "Costruzione del modello tridimensionale dell’edificio o degli ambienti a partire dagli elaborati progettuali disponibili.",
+          "Costruzione del modello tridimensionale dell’edificio o degli ambienti a partire dagli elaborati progettuali e dalle informazioni disponibili.",
       },
 
       {
@@ -160,7 +182,7 @@ const config: ServiceDetailConfig = {
         title: "Materiali e illuminazione",
 
         description:
-          "Studio dell’effetto di finiture, superfici e fonti luminose per confrontare diverse soluzioni progettuali.",
+          "Studio dell’effetto di finiture, superfici, colori e fonti luminose per confrontare diverse soluzioni progettuali prima della realizzazione.",
       },
     ],
   },
@@ -181,7 +203,7 @@ const config: ServiceDetailConfig = {
         title: "Raccolta del materiale",
 
         description:
-          "Raccogliamo planimetrie, prospetti, sezioni, riferimenti, materiali e indicazioni utili alla costruzione della scena.",
+          "Raccogliamo planimetrie, prospetti, sezioni, riferimenti, materiali e indicazioni utili alla costruzione del modello e della scena.",
       },
 
       {
@@ -190,7 +212,7 @@ const config: ServiceDetailConfig = {
         title: "Modellazione 3D",
 
         description:
-          "Costruiamo il modello tridimensionale degli spazi e degli elementi principali da rappresentare.",
+          "Costruiamo il modello tridimensionale degli spazi, dell’edificio e degli elementi principali da rappresentare.",
       },
 
       {
@@ -199,7 +221,7 @@ const config: ServiceDetailConfig = {
         title: "Definizione delle viste",
 
         description:
-          "Individuiamo le inquadrature più adatte per comunicare gli aspetti principali del progetto.",
+          "Individuiamo le inquadrature più adatte per comunicare gli aspetti principali del progetto e valorizzare gli spazi.",
       },
 
       {
@@ -208,7 +230,7 @@ const config: ServiceDetailConfig = {
         title: "Materiali",
 
         description:
-          "Applichiamo materiali, texture e finiture coerenti con le scelte progettuali o con le alternative da confrontare.",
+          "Applichiamo materiali, texture, colori e finiture coerenti con le scelte progettuali o con le alternative da confrontare.",
       },
 
       {
@@ -217,7 +239,7 @@ const config: ServiceDetailConfig = {
         title: "Illuminazione",
 
         description:
-          "Impostiamo luce naturale e artificiale per rappresentare correttamente l’atmosfera e le caratteristiche degli spazi.",
+          "Impostiamo luce naturale e artificiale per rappresentare l’atmosfera e le caratteristiche architettoniche degli spazi.",
       },
 
       {
@@ -226,7 +248,7 @@ const config: ServiceDetailConfig = {
         title: "Rendering finale",
 
         description:
-          "Produciamo le immagini finali e, quando previsto, sviluppiamo revisioni sulla base delle scelte definite con il cliente.",
+          "Produciamo le immagini finali e, quando previsto dall’incarico, sviluppiamo revisioni sulla base delle scelte definite con il cliente.",
       },
     ],
   },
@@ -238,12 +260,13 @@ const config: ServiceDetailConfig = {
       "Decisioni più consapevoli prima del cantiere.",
 
     description:
-      "Vedere il progetto in anticipo permette di confrontare alternative e comprendere meglio l’effetto delle principali scelte architettoniche.",
+      "Vedere il progetto in anticipo permette di confrontare alternative, comprendere gli spazi e valutare l’effetto delle principali scelte architettoniche prima della loro realizzazione.",
 
     items: [
       "Comprensione immediata degli spazi",
       "Confronto tra diverse soluzioni progettuali",
       "Valutazione preventiva di materiali e finiture",
+      "Studio di colori e superfici",
       "Studio dell’illuminazione",
       "Supporto alle decisioni del cliente",
       "Comunicazione più chiara del progetto",
@@ -264,7 +287,8 @@ const config: ServiceDetailConfig = {
       "Rendering di interni",
       "Rendering di esterni",
       "Studio delle inquadrature",
-      "Applicazione materiali e texture",
+      "Applicazione di materiali e texture",
+      "Studio di colori e finiture",
       "Studio dell’illuminazione",
       "Immagini fotorealistiche",
       "Varianti di materiali e finiture",
@@ -277,10 +301,10 @@ const config: ServiceDetailConfig = {
     eyebrow: "Dove operiamo",
 
     title:
-      "Rendering architettonici a Belpasso, Catania e provincia.",
+      "Rendering architettonici a Belpasso, Catania e in tutta Italia.",
 
     description:
-      "Lo Studio Tecnico Mirone ha sede a Belpasso e realizza rendering architettonici per progetti a Catania, nei comuni della provincia, in Sicilia e, grazie alla natura digitale del servizio, anche per incarichi sul territorio nazionale.",
+      "Lo Studio Tecnico Mirone ha sede a Belpasso e realizza rendering architettonici per progetti a Catania, nei comuni della provincia e in Sicilia. Grazie alla natura digitale del servizio, la modellazione 3D e la produzione delle immagini possono essere sviluppate anche per progetti situati nel resto d’Italia.",
 
     items: [
       "Belpasso",
@@ -290,9 +314,9 @@ const config: ServiceDetailConfig = {
       "Pedara",
       "Paternò",
       "Misterbianco",
-      "Camporotondo Etneo",
-      "San Pietro Clarenza",
-      "Tremestieri Etneo",
+      "Provincia di Catania",
+      "Sicilia",
+      "Italia",
     ],
   },
 
@@ -308,7 +332,7 @@ const config: ServiceDetailConfig = {
           "A cosa serve un rendering architettonico?",
 
         answer:
-          "Il rendering permette di visualizzare il progetto prima della realizzazione e di comprendere più facilmente volumi, spazi, materiali, colori e illuminazione.",
+          "Il rendering permette di visualizzare un progetto prima della realizzazione e di comprendere più facilmente volumi, spazi, materiali, colori, finiture e illuminazione.",
       },
 
       {
@@ -324,7 +348,7 @@ const config: ServiceDetailConfig = {
           "Realizzate anche rendering esterni?",
 
         answer:
-          "Sì. È possibile rappresentare facciate, volumi, spazi esterni e rapporto dell’edificio con il contesto.",
+          "Sì. I rendering esterni permettono di rappresentare facciate, volumi, materiali, spazi esterni e rapporto dell’edificio con il contesto.",
       },
 
       {
@@ -340,7 +364,23 @@ const config: ServiceDetailConfig = {
           "Serve già un progetto completo per richiedere un rendering?",
 
         answer:
-          "Dipende dal livello di definizione richiesto. Il rendering può essere sviluppato sia durante la progettazione sia su un progetto già definito. Il materiale necessario viene valutato in base all’incarico.",
+          "Dipende dal livello di definizione richiesto. Il rendering può essere sviluppato durante la progettazione oppure a partire da un progetto già definito. Il materiale necessario viene valutato in funzione dell’incarico.",
+      },
+
+      {
+        question:
+          "Il rendering può essere integrato con la progettazione architettonica?",
+
+        answer:
+          "Sì. Lo Studio Tecnico Mirone utilizza la modellazione e la visualizzazione tridimensionale anche come supporto alla progettazione architettonica, per verificare e confrontare le soluzioni prima della realizzazione.",
+      },
+
+      {
+        question:
+          "Posso richiedere rendering 3D a Catania o Belpasso?",
+
+        answer:
+          "Sì. Lo Studio Tecnico Mirone ha sede a Belpasso e realizza rendering architettonici e modellazioni 3D per progetti a Belpasso, Catania, in provincia e nel resto della Sicilia.",
       },
 
       {
@@ -348,7 +388,7 @@ const config: ServiceDetailConfig = {
           "Potete realizzare rendering anche per clienti fuori dalla Sicilia?",
 
         answer:
-          "Sì. Essendo un servizio prevalentemente digitale, la modellazione e la produzione delle immagini possono essere sviluppate anche per progetti situati fuori dalla Sicilia, sulla base della documentazione disponibile.",
+          "Sì. Essendo un servizio prevalentemente digitale, la modellazione 3D e la produzione delle immagini possono essere sviluppate anche per progetti situati fuori dalla Sicilia e nel resto d’Italia, sulla base della documentazione disponibile.",
       },
     ],
   },
@@ -369,68 +409,30 @@ const jsonLd = {
 
   "@graph": [
     {
-      "@type": "ProfessionalService",
-
-      "@id": `${SITE_URL}/#organization`,
-
-      name: CONTACTS.businessName,
-      url: SITE_URL,
-      telephone: CONTACTS.phone,
-      email: CONTACTS.email,
-
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: CONTACTS.address,
-        postalCode: CONTACTS.postalCode,
-        addressLocality: CONTACTS.city,
-        addressRegion: CONTACTS.region,
-        addressCountry: CONTACTS.country,
-      },
-
-      areaServed: [
-        {
-          "@type": "City",
-          name: "Belpasso",
-        },
-        {
-          "@type": "City",
-          name: "Catania",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Provincia di Catania",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Sicilia",
-        },
-        {
-          "@type": "Country",
-          name: "Italia",
-        },
-      ],
-    },
-
-    {
       "@type": "Service",
 
-      "@id":
-        `${SITE_URL}/servizi/rendering-architettonici/#service`,
+      "@id": `${PAGE_URL}/#service`,
 
       name:
-        "Rendering architettonici a Belpasso e Catania",
+        "Rendering architettonici e modellazione 3D a Belpasso e Catania",
+
+      alternateName: [
+        "Rendering architettonico",
+        "Rendering 3D",
+        "Visualizzazione architettonica",
+        "Modellazione 3D",
+      ],
 
       serviceType:
         "Rendering architettonico e modellazione 3D",
 
-      url:
-        `${SITE_URL}/servizi/rendering-architettonici`,
+      url: PAGE_URL,
 
       description:
-        "Servizio di rendering architettonici e modellazione 3D per interni, esterni, ville, nuove costruzioni e ristrutturazioni a Belpasso, Catania e provincia.",
+        "Servizio di rendering architettonici, modellazione 3D e visualizzazione fotorealistica per interni, esterni, ville, nuove costruzioni e ristrutturazioni.",
 
       provider: {
-        "@id": `${SITE_URL}/#organization`,
+        "@id": `${seo.siteUrl}/#organization`,
       },
 
       areaServed: [
@@ -438,51 +440,114 @@ const jsonLd = {
           "@type": "City",
           name: "Belpasso",
         },
+
         {
           "@type": "City",
           name: "Catania",
         },
+
         {
           "@type": "AdministrativeArea",
           name: "Provincia di Catania",
         },
+
         {
           "@type": "AdministrativeArea",
           name: "Sicilia",
         },
+
         {
           "@type": "Country",
           name: "Italia",
         },
       ],
+
+      category:
+        "Rendering architettonico, visualizzazione 3D e modellazione tridimensionale",
+
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Privati, imprese, progettisti e professionisti",
+      },
+    },
+
+    {
+      "@type": "WebPage",
+
+      "@id": `${PAGE_URL}/#webpage`,
+
+      url: PAGE_URL,
+
+      name:
+        "Rendering architettonici e 3D a Belpasso e Catania",
+
+      description:
+        "Rendering architettonici, modellazione 3D e immagini fotorealistiche per interni, esterni, ville e ristrutturazioni.",
+
+      isPartOf: {
+        "@id": `${seo.siteUrl}/#website`,
+      },
+
+      about: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      mainEntity: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      breadcrumb: {
+        "@id": `${PAGE_URL}/#breadcrumb`,
+      },
+
+      inLanguage: "it-IT",
     },
 
     {
       "@type": "BreadcrumbList",
 
-      "@id":
-        `${SITE_URL}/servizi/rendering-architettonici/#breadcrumb`,
+      "@id": `${PAGE_URL}/#breadcrumb`,
 
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: SITE_URL,
+          item: seo.siteUrl,
         },
+
         {
           "@type": "ListItem",
           position: 2,
           name: "Servizi",
-          item: `${SITE_URL}/servizi`,
+          item: `${seo.siteUrl}/servizi`,
         },
+
         {
           "@type": "ListItem",
           position: 3,
           name: "Rendering architettonici",
-          item: `${SITE_URL}/servizi/rendering-architettonici`,
+          item: PAGE_URL,
         },
       ],
+    },
+
+    {
+      "@type": "FAQPage",
+
+      "@id": `${PAGE_URL}/#faq`,
+
+      mainEntity: config.faqs.items.map((faq) => ({
+        "@type": "Question",
+
+        name: faq.question,
+
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
     },
   ],
 };

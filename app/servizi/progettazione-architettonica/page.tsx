@@ -8,26 +8,10 @@ import {
 
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
 import type { ServiceDetailConfig } from "@/components/services/service-types";
+import { seo } from "@/data/seo";
 
-const SITE_URL = "https://mironestudio.it";
-
-const CONTACTS = {
-  businessName: "Studio Tecnico Mirone",
-  address: "Via XVI Traversa n. 53",
-  postalCode: "95032",
-  city: "Belpasso",
-  province: "CT",
-  region: "Sicilia",
-  country: "IT",
-
-  phone: "+39 348 293 4197",
-
-  email: "info@mironestudio.it",
-  emailHref: "mailto:info@mironestudio.it",
-
-  whatsappHref:
-    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sul%20servizio%20di%20progettazione%20architettonica.",
-};
+const PAGE_PATH = "/servizi/progettazione-architettonica";
+const PAGE_URL = `${seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
   title: "Progettazione architettonica a Belpasso e Catania",
@@ -36,20 +20,26 @@ export const metadata: Metadata = {
     "Progettazione architettonica a Belpasso e Catania per ville, abitazioni, nuove costruzioni e ristrutturazioni. Studio Tecnico Mirone segue il progetto dalla fattibilità alla realizzazione.",
 
   alternates: {
-    canonical: "/servizi/progettazione-architettonica",
+    canonical: PAGE_PATH,
   },
 
   keywords: [
     "progettazione architettonica Belpasso",
     "progettazione architettonica Catania",
     "progettazione case Belpasso",
-    "progettazione ville Catania",
+    "progettazione case Catania",
     "progettazione ville Belpasso",
+    "progettazione ville Catania",
+    "progettazione nuove costruzioni Belpasso",
+    "progettazione nuove costruzioni Catania",
+    "progettazione ristrutturazioni Belpasso",
+    "progettazione ristrutturazioni Catania",
+    "studio progettazione Belpasso",
     "studio progettazione Catania",
-    "studio tecnico progettazione Belpasso",
-    "progettazione nuova costruzione Catania",
-    "progettazione ristrutturazione Belpasso",
-    "progetto architettonico Sicilia",
+    "studio tecnico Belpasso",
+    "studio tecnico Catania",
+    "ingegnere Belpasso",
+    "ingegnere Catania",
     "Studio Tecnico Mirone",
   ],
 
@@ -60,10 +50,19 @@ export const metadata: Metadata = {
     description:
       "Progettazione di ville, abitazioni, nuove costruzioni e ristrutturazioni a Belpasso, Catania e provincia.",
 
-    url: `${SITE_URL}/servizi/progettazione-architettonica`,
-    siteName: CONTACTS.businessName,
-    locale: "it_IT",
+    url: PAGE_URL,
+    siteName: seo.siteName,
+    locale: seo.locale,
     type: "website",
+
+    images: [
+      {
+        url: seo.images.openGraph,
+        width: 1200,
+        height: 630,
+        alt: "Progettazione architettonica - Studio Tecnico Mirone",
+      },
+    ],
   },
 
   twitter: {
@@ -74,11 +73,21 @@ export const metadata: Metadata = {
 
     description:
       "Progettazione di abitazioni, ville, ristrutturazioni e nuove costruzioni a Belpasso, Catania e provincia.",
+
+    images: [seo.images.openGraph],
   },
 
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -94,8 +103,10 @@ const config: ServiceDetailConfig = {
   heroDescription:
     "Lo Studio Tecnico Mirone sviluppa progetti architettonici a Belpasso, Catania e provincia per nuove costruzioni, ville, abitazioni e ristrutturazioni. Trasformiamo esigenze, vincoli e possibilità concrete in spazi funzionali, riconoscibili e realizzabili.",
 
-  whatsappHref: CONTACTS.whatsappHref,
-  emailHref: CONTACTS.emailHref,
+  whatsappHref:
+    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sul%20servizio%20di%20progettazione%20architettonica.",
+
+  emailHref: seo.contact.emailHref,
 
   heroChecklist: [
     "Studio di fattibilità",
@@ -370,60 +381,9 @@ const jsonLd = {
 
   "@graph": [
     {
-      "@type": "ProfessionalService",
-
-      "@id": `${SITE_URL}/#organization`,
-
-      name: CONTACTS.businessName,
-
-      url: SITE_URL,
-
-      telephone: CONTACTS.phone,
-      email: CONTACTS.email,
-
-      address: {
-        "@type": "PostalAddress",
-
-        streetAddress: CONTACTS.address,
-        postalCode: CONTACTS.postalCode,
-        addressLocality: CONTACTS.city,
-        addressRegion: CONTACTS.region,
-        addressCountry: CONTACTS.country,
-      },
-
-      areaServed: [
-        {
-          "@type": "City",
-          name: "Belpasso",
-        },
-
-        {
-          "@type": "City",
-          name: "Catania",
-        },
-
-        {
-          "@type": "AdministrativeArea",
-          name: "Provincia di Catania",
-        },
-
-        {
-          "@type": "AdministrativeArea",
-          name: "Sicilia",
-        },
-
-        {
-          "@type": "Country",
-          name: "Italia",
-        },
-      ],
-    },
-
-    {
       "@type": "Service",
 
-      "@id":
-        `${SITE_URL}/servizi/progettazione-architettonica/#service`,
+      "@id": `${PAGE_URL}/#service`,
 
       name:
         "Progettazione architettonica a Belpasso e Catania",
@@ -431,14 +391,13 @@ const jsonLd = {
       serviceType:
         "Progettazione architettonica",
 
-      url:
-        `${SITE_URL}/servizi/progettazione-architettonica`,
+      url: PAGE_URL,
 
       description:
         "Servizio di progettazione architettonica per nuove costruzioni, abitazioni, ville e ristrutturazioni a Belpasso, Catania e provincia.",
 
       provider: {
-        "@id": `${SITE_URL}/#organization`,
+        "@id": `${seo.siteUrl}/#organization`,
       },
 
       areaServed: [
@@ -461,46 +420,94 @@ const jsonLd = {
           "@type": "AdministrativeArea",
           name: "Sicilia",
         },
-
-        {
-          "@type": "Country",
-          name: "Italia",
-        },
       ],
+
+      category:
+        "Progettazione architettonica",
+
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Privati, imprese e professionisti",
+      },
+    },
+
+    {
+      "@type": "WebPage",
+
+      "@id": `${PAGE_URL}/#webpage`,
+
+      url: PAGE_URL,
+
+      name:
+        "Progettazione architettonica a Belpasso e Catania",
+
+      description:
+        "Progettazione architettonica per ville, abitazioni, nuove costruzioni e ristrutturazioni a Belpasso, Catania e provincia.",
+
+      isPartOf: {
+        "@id": `${seo.siteUrl}/#website`,
+      },
+
+      about: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      mainEntity: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      breadcrumb: {
+        "@id": `${PAGE_URL}/#breadcrumb`,
+      },
+
+      inLanguage: "it-IT",
     },
 
     {
       "@type": "BreadcrumbList",
 
-      "@id":
-        `${SITE_URL}/servizi/progettazione-architettonica/#breadcrumb`,
+      "@id": `${PAGE_URL}/#breadcrumb`,
 
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: SITE_URL,
+          item: seo.siteUrl,
         },
 
         {
           "@type": "ListItem",
           position: 2,
           name: "Servizi",
-          item: `${SITE_URL}/servizi`,
+          item: `${seo.siteUrl}/servizi`,
         },
 
         {
           "@type": "ListItem",
           position: 3,
-
-          name:
-            "Progettazione architettonica",
-
-          item:
-            `${SITE_URL}/servizi/progettazione-architettonica`,
+          name: "Progettazione architettonica",
+          item: PAGE_URL,
         },
       ],
+    },
+
+    {
+      "@type": "FAQPage",
+
+      "@id": `${PAGE_URL}/#faq`,
+
+      mainEntity: config.faqs.items.map((faq) => ({
+        "@type": "Question",
+
+        name: faq.question,
+
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
     },
   ],
 };

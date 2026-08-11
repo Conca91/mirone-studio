@@ -8,32 +8,19 @@ import {
 
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
 import type { ServiceDetailConfig } from "@/components/services/service-types";
+import { seo } from "@/data/seo";
 
-const SITE_URL = "https://mironestudio.it";
-
-const CONTACTS = {
-  businessName: "Studio Tecnico Mirone",
-  address: "Via XVI Traversa n. 53",
-  postalCode: "95032",
-  city: "Belpasso",
-  province: "CT",
-  region: "Sicilia",
-  country: "IT",
-  phone: "+39 348 293 4197",
-  email: "info@mironestudio.it",
-  emailHref: "mailto:info@mironestudio.it",
-  whatsappHref:
-    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sul%20servizio%20di%20direzione%20lavori.",
-};
+const PAGE_PATH = "/servizi/direzione-lavori";
+const PAGE_URL = `${seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
   title: "Direzione lavori a Belpasso e Catania",
 
   description:
-    "Direzione lavori a Belpasso e Catania per ristrutturazioni, nuove costruzioni e interventi edilizi. Studio Tecnico Mirone segue il cantiere, coordina le lavorazioni e verifica la corretta esecuzione delle opere.",
+    "Direzione lavori a Belpasso e Catania per ristrutturazioni, nuove costruzioni e interventi edilizi. Studio Tecnico Mirone segue il cantiere, le lavorazioni e la corretta esecuzione delle opere.",
 
   alternates: {
-    canonical: "/servizi/direzione-lavori",
+    canonical: PAGE_PATH,
   },
 
   keywords: [
@@ -41,11 +28,23 @@ export const metadata: Metadata = {
     "direzione lavori Catania",
     "direttore lavori Belpasso",
     "direttore lavori Catania",
+    "direttore dei lavori Belpasso",
+    "direttore dei lavori Catania",
     "assistenza cantiere Belpasso",
     "assistenza cantiere Catania",
     "controllo lavori edilizi Belpasso",
+    "controllo lavori edilizi Catania",
+    "coordinamento cantiere Belpasso",
     "coordinamento cantiere Catania",
+    "direzione lavori ristrutturazione Belpasso",
+    "direzione lavori ristrutturazione Catania",
+    "direzione lavori nuova costruzione Catania",
+    "ingegnere Belpasso",
+    "ingegnere Catania",
+    "Ingegnere Miriana Mirone",
+    "Miriana Mirone",
     "studio tecnico Belpasso",
+    "studio tecnico Catania",
     "Studio Tecnico Mirone",
   ],
 
@@ -54,12 +53,21 @@ export const metadata: Metadata = {
       "Direzione lavori a Belpasso e Catania | Studio Tecnico Mirone",
 
     description:
-      "Assistenza tecnica di cantiere, controllo delle lavorazioni e coordinamento operativo a Belpasso, Catania e provincia.",
+      "Direzione lavori, assistenza tecnica di cantiere, controllo delle lavorazioni e coordinamento operativo a Belpasso, Catania e provincia.",
 
-    url: `${SITE_URL}/servizi/direzione-lavori`,
-    siteName: CONTACTS.businessName,
-    locale: "it_IT",
+    url: PAGE_URL,
+    siteName: seo.siteName,
+    locale: seo.locale,
     type: "website",
+
+    images: [
+      {
+        url: seo.images.openGraph,
+        width: 1200,
+        height: 630,
+        alt: "Direzione lavori - Studio Tecnico Mirone",
+      },
+    ],
   },
 
   twitter: {
@@ -70,11 +78,21 @@ export const metadata: Metadata = {
 
     description:
       "Direzione lavori, assistenza tecnica di cantiere e controllo delle lavorazioni a Belpasso e Catania.",
+
+    images: [seo.images.openGraph],
   },
 
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -88,10 +106,12 @@ const config: ServiceDetailConfig = {
   titleSecondLine: "lavori",
 
   heroDescription:
-    "Lo Studio Tecnico Mirone svolge attività di direzione lavori a Belpasso, Catania e provincia, seguendo il cantiere dalla fase esecutiva fino alla conclusione delle opere. Coordiniamo le lavorazioni, verifichiamo la conformità al progetto e supportiamo il cliente durante l’intero intervento.",
+    "Lo Studio Tecnico Mirone svolge attività di direzione lavori a Belpasso, Catania e provincia per ristrutturazioni, nuove costruzioni e altri interventi edilizi. L'Ingegnere Miriana Mirone segue il coordinamento tecnico dell'incarico, verificando la coerenza tra progetto, autorizzazioni e opere realizzate.",
 
-  whatsappHref: CONTACTS.whatsappHref,
-  emailHref: CONTACTS.emailHref,
+  whatsappHref:
+    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sul%20servizio%20di%20direzione%20lavori.",
+
+  emailHref: seo.contact.emailHref,
 
   heroChecklist: [
     "Assistenza in cantiere",
@@ -108,11 +128,11 @@ const config: ServiceDetailConfig = {
       "Dal progetto alla corretta esecuzione delle opere.",
 
     paragraphs: [
-      "La direzione lavori è il collegamento tra il progetto approvato e ciò che viene realmente realizzato in cantiere. Durante l’esecuzione è fondamentale verificare che le opere siano coerenti con gli elaborati progettuali, le autorizzazioni e le scelte tecniche definite.",
+      "La direzione lavori rappresenta il collegamento tra il progetto approvato e ciò che viene effettivamente realizzato in cantiere. Durante l’esecuzione è fondamentale verificare che le opere siano coerenti con gli elaborati progettuali, le autorizzazioni e le scelte tecniche definite.",
 
-      "Lo Studio Tecnico Mirone segue cantieri a Belpasso, Catania e provincia, coordinando le attività tecniche e verificando lo sviluppo delle lavorazioni durante le diverse fasi dell’intervento.",
+      "Lo Studio Tecnico Mirone segue attività di direzione lavori a Belpasso, Catania e provincia, affiancando il cliente durante le diverse fasi del cantiere e coordinando gli aspetti tecnici con imprese, artigiani e professionisti coinvolti.",
 
-      "Il cliente mantiene un riferimento tecnico costante durante l’esecuzione, utile per affrontare dubbi, variazioni, criticità e decisioni che possono emergere durante il cantiere.",
+      "La presenza di un riferimento tecnico durante l’esecuzione permette di affrontare con maggiore chiarezza dubbi, variazioni e criticità che possono emergere durante i lavori, mantenendo continuità tra progettazione e realizzazione.",
     ],
   },
 
@@ -120,10 +140,10 @@ const config: ServiceDetailConfig = {
     eyebrow: "Attività di cantiere",
 
     title:
-      "Presenza tecnica durante tutte le fasi dei lavori.",
+      "Presenza tecnica durante le diverse fasi dei lavori.",
 
     description:
-      "L’attività viene definita in base alla tipologia dell’intervento, alla complessità del cantiere e alle prestazioni previste nell’incarico.",
+      "L’attività di direzione lavori viene definita in funzione della tipologia dell’intervento, della complessità del cantiere e delle prestazioni previste nell’incarico professionale.",
 
     cards: [
       {
@@ -132,7 +152,7 @@ const config: ServiceDetailConfig = {
         title: "Assistenza al cantiere",
 
         description:
-          "Sopralluoghi e verifiche durante l’esecuzione per controllare l’avanzamento delle opere e affrontare le questioni tecniche che emergono.",
+          "Sopralluoghi e verifiche durante l’esecuzione per controllare l’avanzamento delle opere e affrontare le questioni tecniche che emergono durante i lavori.",
       },
 
       {
@@ -141,7 +161,7 @@ const config: ServiceDetailConfig = {
         title: "Controllo delle lavorazioni",
 
         description:
-          "Verifica della corretta esecuzione delle opere rispetto al progetto, agli elaborati tecnici e alle indicazioni previste.",
+          "Verifica dell’esecuzione delle opere rispetto al progetto, agli elaborati tecnici, alle autorizzazioni e alle indicazioni definite durante l’incarico.",
       },
 
       {
@@ -150,7 +170,7 @@ const config: ServiceDetailConfig = {
         title: "Coordinamento tecnico",
 
         description:
-          "Confronto con imprese, artigiani e professionisti coinvolti per mantenere coerenza tra progetto e realizzazione.",
+          "Confronto con imprese, artigiani e professionisti coinvolti per mantenere continuità e coerenza tra le scelte progettuali e la realizzazione in cantiere.",
       },
 
       {
@@ -159,7 +179,7 @@ const config: ServiceDetailConfig = {
         title: "Varianti e verifiche",
 
         description:
-          "Valutazione tecnica delle modifiche che possono rendersi necessarie durante i lavori e verifica della loro compatibilità con il progetto e le autorizzazioni.",
+          "Valutazione tecnica delle modifiche che possono rendersi necessarie durante i lavori e verifica degli eventuali adempimenti progettuali e autorizzativi.",
       },
     ],
   },
@@ -168,10 +188,10 @@ const config: ServiceDetailConfig = {
     eyebrow: "Il nostro metodo",
 
     title:
-      "Un controllo costante, fase dopo fase.",
+      "Un controllo tecnico, fase dopo fase.",
 
     description:
-      "La direzione lavori viene organizzata attraverso verifiche periodiche e un confronto continuo con i soggetti coinvolti nel cantiere.",
+      "La direzione lavori viene organizzata attraverso verifiche in cantiere e un confronto con i soggetti coinvolti nelle diverse fasi dell’intervento.",
 
     steps: [
       {
@@ -180,7 +200,7 @@ const config: ServiceDetailConfig = {
         title: "Avvio del cantiere",
 
         description:
-          "Verifichiamo documentazione, progetto esecutivo, autorizzazioni e condizioni necessarie per l’avvio delle lavorazioni.",
+          "Verifichiamo progetto, documentazione, autorizzazioni e condizioni necessarie per procedere con l’avvio delle lavorazioni.",
       },
 
       {
@@ -189,7 +209,7 @@ const config: ServiceDetailConfig = {
         title: "Coordinamento iniziale",
 
         description:
-          "Condividiamo con impresa e soggetti coinvolti le principali indicazioni progettuali e tecniche dell’intervento.",
+          "Condividiamo con l’impresa e con i soggetti coinvolti le principali indicazioni progettuali e tecniche dell’intervento.",
       },
 
       {
@@ -198,7 +218,7 @@ const config: ServiceDetailConfig = {
         title: "Sopralluoghi",
 
         description:
-          "Effettuiamo verifiche in cantiere in relazione alle fasi di lavorazione e alle esigenze dell’intervento.",
+          "Effettuiamo verifiche in cantiere in relazione alle fasi di lavorazione, alle caratteristiche dell’intervento e alle esigenze che emergono durante l’esecuzione.",
       },
 
       {
@@ -207,7 +227,7 @@ const config: ServiceDetailConfig = {
         title: "Controllo delle opere",
 
         description:
-          "Verifichiamo la coerenza delle lavorazioni con progetto, autorizzazioni ed eventuali indicazioni tecniche concordate.",
+          "Verifichiamo la coerenza delle lavorazioni con il progetto, le autorizzazioni e le indicazioni tecniche definite durante l’incarico.",
       },
 
       {
@@ -216,7 +236,7 @@ const config: ServiceDetailConfig = {
         title: "Gestione delle variazioni",
 
         description:
-          "Valutiamo eventuali modifiche emerse durante l’esecuzione e individuiamo il percorso tecnico più corretto per gestirle.",
+          "Valutiamo eventuali modifiche emerse durante l’esecuzione e individuiamo il percorso tecnico e amministrativo necessario per gestirle.",
       },
 
       {
@@ -225,7 +245,7 @@ const config: ServiceDetailConfig = {
         title: "Conclusione dei lavori",
 
         description:
-          "Seguiamo le verifiche finali e gli eventuali adempimenti tecnici necessari alla conclusione dell’intervento.",
+          "Seguiamo le verifiche finali e gli eventuali adempimenti tecnici previsti per la conclusione dell’intervento.",
       },
     ],
   },
@@ -234,18 +254,19 @@ const config: ServiceDetailConfig = {
     eyebrow: "Perché affidarsi allo Studio",
 
     title:
-      "Più controllo durante la realizzazione.",
+      "Continuità tra progetto e realizzazione.",
 
     description:
-      "Una direzione lavori attenta consente di mantenere un collegamento continuo tra progetto e cantiere, riducendo incomprensioni e decisioni improvvisate.",
+      "Una direzione lavori attenta permette di mantenere un collegamento costante tra ciò che è stato progettato e ciò che viene realizzato, offrendo al cliente un riferimento tecnico durante l’intero cantiere.",
 
     items: [
-      "Un riferimento tecnico durante tutto il cantiere",
-      "Controllo della corretta esecuzione delle opere",
-      "Coordinamento tra progetto e lavorazioni",
+      "Un riferimento tecnico durante il cantiere",
+      "Controllo dell’esecuzione delle opere",
+      "Continuità tra progetto e realizzazione",
       "Supporto nella gestione delle varianti",
-      "Confronto con imprese e professionisti coinvolti",
-      "Maggiore chiarezza per il cliente",
+      "Confronto con imprese e professionisti",
+      "Verifica degli aspetti tecnici dell’intervento",
+      "Supporto al cliente nelle decisioni di cantiere",
     ],
   },
 
@@ -256,14 +277,15 @@ const config: ServiceDetailConfig = {
       "Cosa può comprendere l’incarico.",
 
     description:
-      "Le prestazioni vengono definite in funzione della tipologia di intervento e delle esigenze del cantiere.",
+      "Le prestazioni vengono definite in funzione della tipologia di intervento, dell’incarico professionale e delle esigenze del cantiere.",
 
     items: [
       "Verifica preliminare della documentazione",
       "Assistenza all’avvio dei lavori",
-      "Sopralluoghi periodici",
+      "Sopralluoghi in cantiere",
       "Verifica delle lavorazioni",
       "Coordinamento tecnico con l’impresa",
+      "Confronto con i professionisti coinvolti",
       "Valutazione delle varianti",
       "Aggiornamento degli elaborati quando necessario",
       "Supporto tecnico al cliente",
@@ -279,7 +301,7 @@ const config: ServiceDetailConfig = {
       "Direzione lavori a Belpasso, Catania e provincia.",
 
     description:
-      "Lo Studio Tecnico Mirone ha sede a Belpasso e segue cantieri a Catania, nei comuni della provincia e nell’area etnea, valutando incarichi anche nel resto della Sicilia.",
+      "Lo Studio Tecnico Mirone ha sede a Belpasso e segue incarichi di direzione lavori a Catania, nei comuni della provincia e nell’area etnea. In funzione della tipologia dell’intervento vengono valutati incarichi anche nel resto della Sicilia.",
 
     items: [
       "Belpasso",
@@ -315,7 +337,7 @@ const config: ServiceDetailConfig = {
           "La direzione lavori comprende i sopralluoghi in cantiere?",
 
         answer:
-          "Sì. I sopralluoghi rappresentano una parte essenziale dell’attività e vengono organizzati in funzione delle fasi di lavorazione, delle esigenze del cantiere e delle prestazioni previste nell’incarico.",
+          "Sì. I sopralluoghi costituiscono una parte dell’attività di direzione lavori e vengono organizzati in funzione delle fasi di lavorazione, delle esigenze del cantiere e delle prestazioni previste nell’incarico.",
       },
 
       {
@@ -323,15 +345,15 @@ const config: ServiceDetailConfig = {
           "Chi gestisce eventuali modifiche durante i lavori?",
 
         answer:
-          "Le modifiche vengono valutate dal punto di vista tecnico e, quando necessario, devono essere coordinate con progettazione, autorizzazioni e altri professionisti coinvolti.",
+          "Le modifiche emerse durante il cantiere vengono valutate dal punto di vista tecnico. Quando necessario devono essere coordinate con il progetto, le autorizzazioni e gli altri professionisti coinvolti.",
       },
 
       {
         question:
-          "Lo Studio può seguire sia il progetto sia la direzione lavori?",
+          "Lo Studio Tecnico Mirone può seguire sia il progetto sia la direzione lavori?",
 
         answer:
-          "Sì. Quando l’incarico comprende entrambe le attività, il progetto e la fase esecutiva possono essere gestiti in modo coordinato, mantenendo continuità tra le scelte progettuali e la realizzazione.",
+          "Sì. Quando l’incarico comprende entrambe le attività, progettazione e direzione lavori possono essere coordinate dallo Studio, mantenendo continuità tra le scelte progettuali e la successiva realizzazione.",
       },
 
       {
@@ -344,10 +366,18 @@ const config: ServiceDetailConfig = {
 
       {
         question:
+          "Posso rivolgermi all'Ingegnere Miriana Mirone per la direzione lavori a Belpasso o Catania?",
+
+        answer:
+          "Sì. Lo Studio Tecnico Mirone ha sede a Belpasso e segue incarichi di progettazione e direzione lavori a Belpasso, Catania, nei comuni della provincia e nell’area etnea, valutando ogni incarico in funzione delle caratteristiche dell’intervento.",
+      },
+
+      {
+        question:
           "In quali zone seguite i cantieri?",
 
         answer:
-          "Lo Studio ha sede a Belpasso e segue principalmente cantieri a Catania e provincia, nei comuni dell’area etnea e, in funzione dell’incarico, anche nel resto della Sicilia.",
+          "Lo Studio ha sede a Belpasso e segue principalmente cantieri a Catania e provincia e nei comuni dell’area etnea, valutando in funzione dell’incarico attività anche nel resto della Sicilia.",
       },
     ],
   },
@@ -359,7 +389,7 @@ const config: ServiceDetailConfig = {
       "Seguiamo insieme la realizzazione.",
 
     description:
-      "Raccontaci il tuo intervento. Valuteremo progetto, stato delle autorizzazioni, caratteristiche del cantiere e attività necessarie per seguire correttamente i lavori.",
+      "Raccontaci il tuo intervento. Valuteremo il progetto, lo stato delle autorizzazioni, le caratteristiche del cantiere e le attività necessarie per seguire correttamente i lavori.",
   },
 };
 
@@ -368,52 +398,9 @@ const jsonLd = {
 
   "@graph": [
     {
-      "@type": "ProfessionalService",
-
-      "@id": `${SITE_URL}/#organization`,
-
-      name: CONTACTS.businessName,
-      url: SITE_URL,
-      telephone: CONTACTS.phone,
-      email: CONTACTS.email,
-
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: CONTACTS.address,
-        postalCode: CONTACTS.postalCode,
-        addressLocality: CONTACTS.city,
-        addressRegion: CONTACTS.region,
-        addressCountry: CONTACTS.country,
-      },
-
-      areaServed: [
-        {
-          "@type": "City",
-          name: "Belpasso",
-        },
-        {
-          "@type": "City",
-          name: "Catania",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Provincia di Catania",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Sicilia",
-        },
-        {
-          "@type": "Country",
-          name: "Italia",
-        },
-      ],
-    },
-
-    {
       "@type": "Service",
 
-      "@id": `${SITE_URL}/servizi/direzione-lavori/#service`,
+      "@id": `${PAGE_URL}/#service`,
 
       name:
         "Direzione lavori a Belpasso e Catania",
@@ -421,14 +408,13 @@ const jsonLd = {
       serviceType:
         "Direzione lavori",
 
-      url:
-        `${SITE_URL}/servizi/direzione-lavori`,
+      url: PAGE_URL,
 
       description:
-        "Servizio di direzione lavori, assistenza tecnica di cantiere, coordinamento delle lavorazioni e verifica della corretta esecuzione delle opere a Belpasso, Catania e provincia.",
+        "Servizio di direzione lavori, assistenza tecnica di cantiere, coordinamento delle lavorazioni e verifica dell'esecuzione delle opere a Belpasso, Catania e provincia.",
 
       provider: {
-        "@id": `${SITE_URL}/#organization`,
+        "@id": `${seo.siteUrl}/#organization`,
       },
 
       areaServed: [
@@ -436,46 +422,109 @@ const jsonLd = {
           "@type": "City",
           name: "Belpasso",
         },
+
         {
           "@type": "City",
           name: "Catania",
         },
+
         {
           "@type": "AdministrativeArea",
           name: "Provincia di Catania",
         },
+
         {
           "@type": "AdministrativeArea",
           name: "Sicilia",
         },
       ],
+
+      category:
+        "Direzione lavori e assistenza tecnica di cantiere",
+
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Privati, imprese e professionisti",
+      },
+    },
+
+    {
+      "@type": "WebPage",
+
+      "@id": `${PAGE_URL}/#webpage`,
+
+      url: PAGE_URL,
+
+      name:
+        "Direzione lavori a Belpasso e Catania",
+
+      description:
+        "Direzione lavori, assistenza tecnica di cantiere e controllo delle lavorazioni a Belpasso, Catania e provincia.",
+
+      isPartOf: {
+        "@id": `${seo.siteUrl}/#website`,
+      },
+
+      about: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      mainEntity: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      breadcrumb: {
+        "@id": `${PAGE_URL}/#breadcrumb`,
+      },
+
+      inLanguage: "it-IT",
     },
 
     {
       "@type": "BreadcrumbList",
 
-      "@id": `${SITE_URL}/servizi/direzione-lavori/#breadcrumb`,
+      "@id": `${PAGE_URL}/#breadcrumb`,
 
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: SITE_URL,
+          item: seo.siteUrl,
         },
+
         {
           "@type": "ListItem",
           position: 2,
           name: "Servizi",
-          item: `${SITE_URL}/servizi`,
+          item: `${seo.siteUrl}/servizi`,
         },
+
         {
           "@type": "ListItem",
           position: 3,
           name: "Direzione lavori",
-          item: `${SITE_URL}/servizi/direzione-lavori`,
+          item: PAGE_URL,
         },
       ],
+    },
+
+    {
+      "@type": "FAQPage",
+
+      "@id": `${PAGE_URL}/#faq`,
+
+      mainEntity: config.faqs.items.map((faq) => ({
+        "@type": "Question",
+
+        name: faq.question,
+
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
     },
   ],
 };

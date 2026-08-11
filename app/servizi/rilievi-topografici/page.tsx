@@ -8,32 +8,19 @@ import {
 
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
 import type { ServiceDetailConfig } from "@/components/services/service-types";
+import { seo } from "@/data/seo";
 
-const SITE_URL = "https://mironestudio.it";
-
-const CONTACTS = {
-  businessName: "Studio Tecnico Mirone",
-  address: "Via XVI Traversa n. 53",
-  postalCode: "95032",
-  city: "Belpasso",
-  province: "CT",
-  region: "Sicilia",
-  country: "IT",
-  phone: "+39 348 293 4197",
-  email: "info@mironestudio.it",
-  emailHref: "mailto:info@mironestudio.it",
-  whatsappHref:
-    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sui%20rilievi%20topografici.",
-};
+const PAGE_PATH = "/servizi/rilievi-topografici";
+const PAGE_URL = `${seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
   title: "Rilievi topografici a Belpasso e Catania",
 
   description:
-    "Rilievi topografici a Belpasso, Catania e provincia per terreni, fabbricati e interventi edilizi. Studio Tecnico Mirone esegue rilievi, misurazioni e restituzioni grafiche per progettazione e pratiche tecniche.",
+    "Rilievi topografici a Belpasso, Catania e provincia per terreni, fabbricati e interventi edilizi. Studio Tecnico Mirone esegue misurazioni e restituzioni grafiche per progettazione e pratiche tecniche.",
 
   alternates: {
-    canonical: "/servizi/rilievi-topografici",
+    canonical: PAGE_PATH,
   },
 
   keywords: [
@@ -48,8 +35,16 @@ export const metadata: Metadata = {
     "rilievo terreno Belpasso",
     "rilievo terreno Catania",
     "rilievo fabbricato Belpasso",
+    "rilievo fabbricato Catania",
+    "misurazioni topografiche Belpasso",
     "misurazioni topografiche Catania",
+    "rilievo terreno Catania",
+    "rilievo planimetrico Belpasso",
+    "rilievo planimetrico Catania",
     "studio tecnico Belpasso",
+    "studio tecnico Catania",
+    "ingegnere Belpasso",
+    "ingegnere Catania",
     "Studio Tecnico Mirone",
   ],
 
@@ -60,10 +55,19 @@ export const metadata: Metadata = {
     description:
       "Rilievi topografici di terreni e fabbricati, misurazioni e restituzioni grafiche a Belpasso, Catania e provincia.",
 
-    url: `${SITE_URL}/servizi/rilievi-topografici`,
-    siteName: CONTACTS.businessName,
-    locale: "it_IT",
+    url: PAGE_URL,
+    siteName: seo.siteName,
+    locale: seo.locale,
     type: "website",
+
+    images: [
+      {
+        url: seo.images.openGraph,
+        width: 1200,
+        height: 630,
+        alt: "Rilievi topografici - Studio Tecnico Mirone",
+      },
+    ],
   },
 
   twitter: {
@@ -74,11 +78,21 @@ export const metadata: Metadata = {
 
     description:
       "Rilievi di terreni e fabbricati, misurazioni topografiche e restituzioni grafiche a Belpasso e Catania.",
+
+    images: [seo.images.openGraph],
   },
 
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -94,8 +108,10 @@ const config: ServiceDetailConfig = {
   heroDescription:
     "Lo Studio Tecnico Mirone esegue rilievi topografici a Belpasso, Catania e provincia per terreni, fabbricati e interventi edilizi. Le misurazioni vengono organizzate e restituite attraverso elaborati tecnici utili alla progettazione, alle verifiche e alle successive attività professionali.",
 
-  whatsappHref: CONTACTS.whatsappHref,
-  emailHref: CONTACTS.emailHref,
+  whatsappHref:
+    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sui%20rilievi%20topografici.",
+
+  emailHref: seo.contact.emailHref,
 
   heroChecklist: [
     "Rilievi di terreni",
@@ -116,7 +132,7 @@ const config: ServiceDetailConfig = {
 
       "Lo Studio Tecnico Mirone esegue rilievi topografici a Belpasso, Catania e provincia per terreni, fabbricati e aree interessate da interventi edilizi, scegliendo strumenti e modalità operative in funzione delle caratteristiche dell’incarico.",
 
-      "I dati raccolti sul posto vengono successivamente elaborati e trasformati in una restituzione tecnica utilizzabile per progettazione, pratiche, verifiche e altre attività professionali.",
+      "I dati raccolti sul posto vengono successivamente elaborati e trasformati in una restituzione tecnica utilizzabile per progettazione, pratiche edilizie e catastali, verifiche e altre attività professionali.",
     ],
   },
 
@@ -136,7 +152,7 @@ const config: ServiceDetailConfig = {
         title: "Rilievi di terreni",
 
         description:
-          "Misurazione di terreni e aree esterne per acquisire geometrie, punti significativi, quote e informazioni utili alle successive attività tecniche.",
+          "Misurazione di terreni e aree esterne per acquisire geometrie, punti significativi, quote e informazioni utili alla progettazione e alle successive attività tecniche.",
       },
 
       {
@@ -163,7 +179,7 @@ const config: ServiceDetailConfig = {
         title: "Restituzione tecnica",
 
         description:
-          "Elaborazione dei dati rilevati e produzione di planimetrie ed elaborati grafici utilizzabili per progettazione e verifiche tecniche.",
+          "Elaborazione dei dati rilevati e produzione di planimetrie ed elaborati grafici utilizzabili per progettazione, verifiche e pratiche tecniche.",
       },
     ],
   },
@@ -229,7 +245,7 @@ const config: ServiceDetailConfig = {
         title: "Restituzione",
 
         description:
-          "Predisponiamo gli elaborati tecnici concordati e li rendiamo disponibili per progettazione, verifiche o altre attività previste dall’incarico.",
+          "Predisponiamo gli elaborati tecnici concordati e li rendiamo disponibili per progettazione, verifiche, pratiche o altre attività previste dall’incarico.",
       },
     ],
   },
@@ -247,6 +263,7 @@ const config: ServiceDetailConfig = {
       "Analisi preliminare delle finalità del rilievo",
       "Misurazioni organizzate in funzione dell’incarico",
       "Rilievo di terreni e fabbricati",
+      "Acquisizione di punti e quote",
       "Elaborazione tecnica dei dati acquisiti",
       "Restituzioni grafiche chiare",
       "Collegamento diretto con progettazione e pratiche tecniche",
@@ -311,7 +328,7 @@ const config: ServiceDetailConfig = {
           "A cosa serve un rilievo topografico?",
 
         answer:
-          "Il rilievo topografico permette di acquisire informazioni geometriche e altimetriche sullo stato dei luoghi. I dati possono essere utilizzati per progettazione, verifiche tecniche e altre attività professionali.",
+          "Il rilievo topografico permette di acquisire informazioni geometriche e altimetriche sullo stato dei luoghi. I dati possono essere utilizzati per progettazione, verifiche tecniche, pratiche e altre attività professionali.",
       },
 
       {
@@ -319,7 +336,7 @@ const config: ServiceDetailConfig = {
           "Eseguite rilievi di terreni?",
 
         answer:
-          "Sì. Lo Studio può eseguire rilievi di terreni e aree esterne acquisendo punti, geometrie, quote e altre informazioni necessarie in relazione alla finalità dell’incarico.",
+          "Sì. Lo Studio esegue rilievi di terreni e aree esterne acquisendo punti, geometrie, quote e altre informazioni necessarie in relazione alla finalità dell’incarico.",
       },
 
       {
@@ -343,7 +360,15 @@ const config: ServiceDetailConfig = {
           "Il rilievo può essere utilizzato per un progetto architettonico?",
 
         answer:
-          "Sì. Una corretta rappresentazione dello stato dei luoghi costituisce spesso il punto di partenza per sviluppare un progetto architettonico o un intervento di ristrutturazione.",
+          "Sì. Una corretta rappresentazione dello stato dei luoghi costituisce spesso il punto di partenza per sviluppare un progetto architettonico, una ristrutturazione o altre attività tecniche.",
+      },
+
+      {
+        question:
+          "Il rilievo può essere utilizzato per pratiche catastali?",
+
+        answer:
+          "In molti casi il rilievo dello stato dei luoghi fornisce le informazioni geometriche necessarie alle successive verifiche e attività catastali. La procedura da svolgere viene comunque valutata in funzione del caso specifico.",
       },
 
       {
@@ -372,52 +397,9 @@ const jsonLd = {
 
   "@graph": [
     {
-      "@type": "ProfessionalService",
-
-      "@id": `${SITE_URL}/#organization`,
-
-      name: CONTACTS.businessName,
-      url: SITE_URL,
-      telephone: CONTACTS.phone,
-      email: CONTACTS.email,
-
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: CONTACTS.address,
-        postalCode: CONTACTS.postalCode,
-        addressLocality: CONTACTS.city,
-        addressRegion: CONTACTS.region,
-        addressCountry: CONTACTS.country,
-      },
-
-      areaServed: [
-        {
-          "@type": "City",
-          name: "Belpasso",
-        },
-        {
-          "@type": "City",
-          name: "Catania",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Provincia di Catania",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Sicilia",
-        },
-        {
-          "@type": "Country",
-          name: "Italia",
-        },
-      ],
-    },
-
-    {
       "@type": "Service",
 
-      "@id": `${SITE_URL}/servizi/rilievi-topografici/#service`,
+      "@id": `${PAGE_URL}/#service`,
 
       name:
         "Rilievi topografici a Belpasso e Catania",
@@ -425,14 +407,13 @@ const jsonLd = {
       serviceType:
         "Rilievi topografici",
 
-      url:
-        `${SITE_URL}/servizi/rilievi-topografici`,
+      url: PAGE_URL,
 
       description:
         "Servizio di rilievi topografici di terreni e fabbricati, misurazioni e restituzioni grafiche a Belpasso, Catania e provincia.",
 
       provider: {
-        "@id": `${SITE_URL}/#organization`,
+        "@id": `${seo.siteUrl}/#organization`,
       },
 
       areaServed: [
@@ -440,47 +421,109 @@ const jsonLd = {
           "@type": "City",
           name: "Belpasso",
         },
+
         {
           "@type": "City",
           name: "Catania",
         },
+
         {
           "@type": "AdministrativeArea",
           name: "Provincia di Catania",
         },
+
         {
           "@type": "AdministrativeArea",
           name: "Sicilia",
         },
       ],
+
+      category:
+        "Rilievi topografici e misurazioni tecniche",
+
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Privati, imprese e professionisti",
+      },
+    },
+
+    {
+      "@type": "WebPage",
+
+      "@id": `${PAGE_URL}/#webpage`,
+
+      url: PAGE_URL,
+
+      name:
+        "Rilievi topografici a Belpasso e Catania",
+
+      description:
+        "Rilievi topografici di terreni e fabbricati, misurazioni e restituzioni grafiche a Belpasso, Catania e provincia.",
+
+      isPartOf: {
+        "@id": `${seo.siteUrl}/#website`,
+      },
+
+      about: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      mainEntity: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      breadcrumb: {
+        "@id": `${PAGE_URL}/#breadcrumb`,
+      },
+
+      inLanguage: "it-IT",
     },
 
     {
       "@type": "BreadcrumbList",
 
-      "@id":
-        `${SITE_URL}/servizi/rilievi-topografici/#breadcrumb`,
+      "@id": `${PAGE_URL}/#breadcrumb`,
 
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: SITE_URL,
+          item: seo.siteUrl,
         },
+
         {
           "@type": "ListItem",
           position: 2,
           name: "Servizi",
-          item: `${SITE_URL}/servizi`,
+          item: `${seo.siteUrl}/servizi`,
         },
+
         {
           "@type": "ListItem",
           position: 3,
           name: "Rilievi topografici",
-          item: `${SITE_URL}/servizi/rilievi-topografici`,
+          item: PAGE_URL,
         },
       ],
+    },
+
+    {
+      "@type": "FAQPage",
+
+      "@id": `${PAGE_URL}/#faq`,
+
+      mainEntity: config.faqs.items.map((faq) => ({
+        "@type": "Question",
+
+        name: faq.question,
+
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
     },
   ],
 };

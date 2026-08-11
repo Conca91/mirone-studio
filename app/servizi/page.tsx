@@ -19,97 +19,86 @@ import {
 } from "lucide-react";
 
 import PageHero from "@/components/shared/PageHero";
-
-const SITE_URL = "https://mironestudio.it";
-
-const CONTACTS = {
-  businessName: "Studio Tecnico Mirone",
-  address: "Via XVI Traversa n. 53",
-  postalCode: "95032",
-  city: "Belpasso",
-  province: "CT",
-  region: "Sicilia",
-  country: "IT",
-  phone: "+39 348 293 4197",
-  email: "info@mironestudio.it",
-  emailHref: "mailto:info@mironestudio.it",
-  whatsappHref:
-    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sui%20servizi%20dello%20Studio%20Tecnico%20Mirone.",
-};
+import { seo } from "@/data/seo";
 
 export const metadata: Metadata = {
-  title: "Servizi tecnici a Belpasso e Catania",
+  title: "Servizi Tecnici a Belpasso e Catania",
 
   description:
-    "Servizi tecnici a Belpasso, Catania e provincia: progettazione architettonica, pratiche edilizie e catastali, direzione lavori, rilievi topografici, APE, rendering e consulenza tecnica.",
+    "Servizi tecnici dello Studio Tecnico Mirone a Belpasso e Catania: progettazione architettonica, pratiche edilizie e catastali, direzione lavori, rilievi topografici, APE e rendering.",
 
   alternates: {
     canonical: "/servizi",
   },
 
   keywords: [
-    "studio tecnico Belpasso",
-    "studio tecnico Catania",
-    "geometra Belpasso",
-    "geometra Catania",
     "servizi tecnici Belpasso",
     "servizi tecnici Catania",
-
+    "studio tecnico Belpasso",
+    "studio tecnico Catania",
+    "ingegnere Belpasso",
+    "ingegnere Catania",
+    "geometra Belpasso",
+    "geometra Catania",
     "progettazione architettonica Belpasso",
     "progettazione architettonica Catania",
-
-    "rendering architettonici Catania",
-
-    "direzione lavori Belpasso",
-    "direzione lavori Catania",
-
     "pratiche edilizie Belpasso",
     "pratiche edilizie Catania",
-
     "pratiche catastali Belpasso",
     "pratiche catastali Catania",
-    "DOCFA Belpasso",
-    "DOCFA Catania",
-    "volture catastali Belpasso",
-
-    "APE Belpasso",
-    "APE Catania",
-    "certificazione energetica Belpasso",
-
+    "direzione lavori Belpasso",
+    "direzione lavori Catania",
     "rilievi topografici Belpasso",
     "rilievi topografici Catania",
-    "rilievo GPS Catania",
-    "topografo Belpasso",
-
-    "Studio Tecnico Mirone",
+    "APE Belpasso",
+    "APE Catania",
   ],
 
   openGraph: {
     title:
-      "Servizi tecnici a Belpasso e Catania | Studio Tecnico Mirone",
+      "Servizi Tecnici a Belpasso e Catania | Studio Tecnico Mirone",
 
     description:
-      "Progettazione architettonica, pratiche edilizie e catastali, direzione lavori, rilievi topografici, APE e servizi tecnici a Belpasso, Catania e provincia.",
+      "Progettazione, pratiche edilizie e catastali, direzione lavori, rilievi topografici, APE e rendering dello Studio Tecnico Mirone.",
 
-    url: `${SITE_URL}/servizi`,
-    siteName: CONTACTS.businessName,
-    locale: "it_IT",
+    url: `${seo.siteUrl}/servizi`,
+    siteName: seo.siteName,
+    locale: seo.locale,
     type: "website",
+
+    images: [
+      {
+        url: seo.images.openGraph,
+        width: 1200,
+        height: 630,
+        alt: "Servizi tecnici dello Studio Tecnico Mirone a Belpasso e Catania",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
 
     title:
-      "Servizi tecnici a Belpasso e Catania | Studio Tecnico Mirone",
+      "Servizi Tecnici a Belpasso e Catania | Studio Tecnico Mirone",
 
     description:
-      "Progettazione, pratiche edilizie e catastali, direzione lavori, rilievi topografici e certificazioni energetiche a Belpasso e Catania.",
+      "Progettazione, pratiche edilizie e catastali, direzione lavori, rilievi topografici, APE e rendering a Belpasso e Catania.",
+
+    images: [seo.images.openGraph],
   },
 
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -120,7 +109,7 @@ const services = [
     title: "Progettazione architettonica",
 
     description:
-      "Progetti personalizzati per nuove costruzioni, ville, ristrutturazioni e riorganizzazione degli spazi.",
+      "Progettazione architettonica per nuove costruzioni, ville, ristrutturazioni e riorganizzazione degli spazi a Belpasso, Catania e provincia.",
 
     features: [
       "Studi di fattibilità",
@@ -130,7 +119,6 @@ const services = [
     ],
 
     href: "/servizi/progettazione-architettonica",
-    active: true,
   },
 
   {
@@ -139,7 +127,7 @@ const services = [
     title: "Rendering architettonici",
 
     description:
-      "Visualizzazioni tridimensionali e immagini fotorealistiche per valutare il progetto prima della realizzazione.",
+      "Modellazione tridimensionale e rendering fotorealistici per valutare spazi, materiali, illuminazione e soluzioni progettuali prima della realizzazione.",
 
     features: [
       "Modellazione tridimensionale",
@@ -149,16 +137,15 @@ const services = [
     ],
 
     href: "/servizi/rendering-architettonici",
-    active: true,
   },
 
   {
     number: "03",
     icon: ClipboardCheck,
-    title: "Direzione dei lavori",
+    title: "Direzione lavori",
 
     description:
-      "Controllo tecnico del cantiere e verifica della corretta esecuzione delle opere previste dal progetto.",
+      "Direzione lavori e assistenza tecnica in cantiere per verificare la corretta esecuzione delle opere e coordinare le diverse fasi dell'intervento.",
 
     features: [
       "Assistenza in cantiere",
@@ -168,7 +155,6 @@ const services = [
     ],
 
     href: "/servizi/direzione-lavori",
-    active: true,
   },
 
   {
@@ -177,7 +163,7 @@ const services = [
     title: "Pratiche edilizie",
 
     description:
-      "Gestione delle procedure amministrative necessarie per costruire, ristrutturare o regolarizzare un immobile.",
+      "Gestione delle pratiche edilizie e delle procedure amministrative necessarie per costruire, ristrutturare o regolarizzare un immobile.",
 
     features: [
       "CILA e SCIA",
@@ -187,7 +173,6 @@ const services = [
     ],
 
     href: "/servizi/pratiche-edilizie",
-    active: true,
   },
 
   {
@@ -196,17 +181,16 @@ const services = [
     title: "APE e certificazioni energetiche",
 
     description:
-      "Attestati di Prestazione Energetica per compravendite, locazioni, nuove costruzioni e ristrutturazioni.",
+      "Redazione dell'Attestato di Prestazione Energetica per compravendite, locazioni, nuove costruzioni e interventi di ristrutturazione.",
 
     features: [
       "Sopralluogo",
       "Raccolta dei dati",
       "Calcolo energetico",
-      "Redazione dell’APE",
+      "Redazione dell'APE",
     ],
 
     href: "/servizi/ape",
-    active: true,
   },
 
   {
@@ -215,7 +199,7 @@ const services = [
     title: "Rilievi topografici",
 
     description:
-      "Rilievi di terreni, fabbricati e aree esterne per progettazione, verifiche tecniche e restituzioni grafiche.",
+      "Rilievi topografici di terreni, fabbricati e aree esterne per progettazione, verifiche tecniche, pratiche e restituzioni grafiche.",
 
     features: [
       "Rilievi di terreni",
@@ -225,7 +209,6 @@ const services = [
     ],
 
     href: "/servizi/rilievi-topografici",
-    active: true,
   },
 
   {
@@ -244,7 +227,6 @@ const services = [
     ],
 
     href: "/servizi/pratiche-catastali",
-    active: true,
   },
 ];
 
@@ -254,7 +236,7 @@ const reasons = [
     title: "Analisi preliminare",
 
     description:
-      "Verifichiamo fattibilità, vincoli e condizioni dell’immobile prima di sviluppare l’intervento.",
+      "Verifichiamo fattibilità, documentazione, vincoli e condizioni dell'immobile prima di sviluppare l'intervento.",
   },
 
   {
@@ -262,7 +244,7 @@ const reasons = [
     title: "Servizio coordinato",
 
     description:
-      "Colleghiamo progettazione, pratiche e fase esecutiva attraverso un percorso coerente.",
+      "Colleghiamo progettazione, pratiche tecniche e fase esecutiva attraverso un percorso coerente.",
   },
 
   {
@@ -270,7 +252,7 @@ const reasons = [
     title: "Chiarezza professionale",
 
     description:
-      "Definiamo attività, fasi e documentazione necessaria in maniera comprensibile.",
+      "Definiamo attività, fasi e documentazione necessaria in maniera chiara e comprensibile.",
   },
 
   {
@@ -278,7 +260,7 @@ const reasons = [
     title: "Attenzione al risultato",
 
     description:
-      "Valutiamo ogni soluzione considerando qualità, funzionalità e sostenibilità economica.",
+      "Valutiamo ogni soluzione considerando qualità progettuale, funzionalità, fattibilità e sostenibilità economica.",
   },
 ];
 
@@ -287,106 +269,75 @@ const jsonLd = {
 
   "@graph": [
     {
-      "@type": "ProfessionalService",
+      "@type": "WebPage",
 
-      "@id": `${SITE_URL}/#organization`,
+      "@id": `${seo.siteUrl}/servizi/#webpage`,
 
-      name: CONTACTS.businessName,
-      url: SITE_URL,
+      url: `${seo.siteUrl}/servizi`,
 
-      telephone: CONTACTS.phone,
-      email: CONTACTS.email,
+      name:
+        "Servizi Tecnici a Belpasso e Catania | Studio Tecnico Mirone",
 
-      address: {
-        "@type": "PostalAddress",
+      description:
+        "Servizi di progettazione architettonica, pratiche edilizie e catastali, direzione lavori, rilievi topografici, APE e rendering dello Studio Tecnico Mirone.",
 
-        streetAddress: CONTACTS.address,
-        postalCode: CONTACTS.postalCode,
-        addressLocality: CONTACTS.city,
-        addressRegion: CONTACTS.region,
-        addressCountry: CONTACTS.country,
+      isPartOf: {
+        "@id": `${seo.siteUrl}/#website`,
       },
 
-      areaServed: [
-        {
-          "@type": "City",
-          name: "Belpasso",
-        },
+      about: {
+        "@id": `${seo.siteUrl}/#organization`,
+      },
 
-        {
-          "@type": "City",
-          name: "Catania",
-        },
+      inLanguage: "it-IT",
 
-        {
-          "@type": "AdministrativeArea",
-          name: "Provincia di Catania",
-        },
+      breadcrumb: {
+        "@id": `${seo.siteUrl}/servizi/#breadcrumb`,
+      },
 
-        {
-          "@type": "AdministrativeArea",
-          name: "Sicilia",
-        },
-
-        {
-          "@type": "Country",
-          name: "Italia",
-        },
-      ],
-
-      knowsAbout: [
-        "Progettazione architettonica",
-        "Rendering architettonico",
-        "Direzione lavori",
-        "Pratiche edilizie",
-        "Pratiche catastali",
-        "CILA",
-        "SCIA",
-        "DOCFA",
-        "Volture catastali",
-        "Certificazione energetica",
-        "Attestato di Prestazione Energetica",
-        "Rilievi topografici",
-        "Rilievi GPS",
-      ],
+      mainEntity: {
+        "@id": `${seo.siteUrl}/servizi/#services`,
+      },
     },
 
     {
       "@type": "ItemList",
 
-      "@id": `${SITE_URL}/servizi/#services`,
+      "@id": `${seo.siteUrl}/servizi/#services`,
 
-      name:
-        "Servizi dello Studio Tecnico Mirone",
+      name: "Servizi dello Studio Tecnico Mirone",
 
-      itemListElement: services
-        .filter((service) => service.active)
-        .map((service, index) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          name: service.title,
-          url: `${SITE_URL}${service.href}`,
-        })),
+      numberOfItems: services.length,
+
+      itemListElement: services.map((service, index) => ({
+        "@type": "ListItem",
+
+        position: index + 1,
+
+        name: service.title,
+
+        url: `${seo.siteUrl}${service.href}`,
+      })),
     },
 
     {
       "@type": "BreadcrumbList",
 
-      "@id": `${SITE_URL}/servizi/#breadcrumb`,
+      "@id": `${seo.siteUrl}/servizi/#breadcrumb`,
 
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: SITE_URL,
+          item: seo.siteUrl,
         },
 
         {
           "@type": "ListItem",
           position: 2,
           name: "Servizi",
-          item: `${SITE_URL}/servizi`,
+          item: `${seo.siteUrl}/servizi`,
         },
       ],
     },
@@ -394,6 +345,9 @@ const jsonLd = {
 };
 
 export default function ServiziPage() {
+  const whatsappHref =
+    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sui%20servizi%20dello%20Studio%20Tecnico%20Mirone.";
+
   return (
     <main className="overflow-hidden bg-[var(--color-background)] text-[var(--color-text)]">
       <script
@@ -404,11 +358,12 @@ export default function ServiziPage() {
       />
 
       <PageHero
-        eyebrow="I nostri servizi"
+        eyebrow="Studio Tecnico Mirone · Belpasso · Catania"
         title="Progettazione, tecnica e gestione degli interventi."
-        description="Lo Studio Tecnico Mirone opera a Belpasso, Catania e provincia, affiancando privati, imprese e professionisti nella progettazione e nella gestione degli interventi edilizi, dalla verifica preliminare fino alla conclusione delle attività."
+        description="Servizi di ingegneria e progettazione per privati, imprese e professionisti a Belpasso, Catania e provincia: dalla verifica preliminare alla progettazione, dalle pratiche tecniche alla fase esecutiva."
       />
 
+      {/* INTRODUZIONE */}
       <section className="section border-t border-[var(--color-border)]">
         <div className="site-container editorial-grid">
           <div>
@@ -419,27 +374,39 @@ export default function ServiziPage() {
 
           <div>
             <h2 className="display-title">
-              Un unico riferimento per ogni fase.
+              Un unico riferimento
+              <br />
+              per ogni fase.
             </h2>
 
             <div className="mt-8 max-w-3xl space-y-6 text-lg leading-8 text-[var(--color-muted)]">
               <p>
-                Ogni intervento edilizio coinvolge aspetti architettonici,
-                tecnici, amministrativi ed economici. Per questo affrontiamo
-                ogni incarico attraverso un metodo coordinato.
+                Lo Studio Tecnico Mirone ha sede a Belpasso, in provincia di
+                Catania, e offre servizi tecnici per la progettazione, la
+                gestione amministrativa e la realizzazione degli interventi
+                edilizi.
+              </p>
+
+              <p>
+                Ogni incarico può coinvolgere aspetti architettonici,
+                urbanistici, catastali, energetici e di cantiere. Per questo
+                organizziamo le attività attraverso un metodo coordinato,
+                individuando fin dall&apos;inizio verifiche, documentazione e
+                procedure necessarie.
               </p>
 
               <p>
                 Dalla valutazione preliminare alla progettazione, dalla
-                presentazione delle pratiche alla fase di cantiere, il cliente
-                viene accompagnato con indicazioni chiare e documentazione
-                comprensibile.
+                presentazione delle pratiche alla direzione lavori, il cliente
+                viene accompagnato attraverso un percorso tecnico chiaro e
+                organizzato.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* SERVIZI */}
       <section className="section border-t border-[var(--color-border)]">
         <div className="site-container">
           <div className="editorial-grid">
@@ -449,12 +416,15 @@ export default function ServiziPage() {
 
             <div>
               <h2 className="display-title">
-                I principali servizi dello Studio.
+                I principali servizi
+                <br />
+                dello Studio.
               </h2>
 
-              <p className="body-large mt-8">
-                Un insieme di competenze coordinate per seguire il progetto,
-                gli adempimenti e la realizzazione dell’intervento.
+              <p className="body-large mt-8 max-w-3xl">
+                Progettazione architettonica, pratiche edilizie e catastali,
+                direzione lavori, rilievi topografici, certificazione
+                energetica e visualizzazione architettonica.
               </p>
             </div>
           </div>
@@ -492,33 +462,17 @@ export default function ServiziPage() {
                         {service.description}
                       </p>
 
-                      {service.active ? (
-                        <Link
-                          href={service.href}
-                          className="editorial-link mt-8"
-                        >
-                          Scopri il servizio
+                      <Link
+                        href={service.href}
+                        className="editorial-link mt-8"
+                      >
+                        Scopri il servizio
 
-                          <ArrowRight
-                            aria-hidden="true"
-                            className="h-4 w-4"
-                          />
-                        </Link>
-                      ) : (
-                        <a
-                          href={CONTACTS.whatsappHref}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="editorial-link mt-8"
-                        >
-                          Richiedi informazioni
-
-                          <ArrowRight
-                            aria-hidden="true"
-                            className="h-4 w-4"
-                          />
-                        </a>
-                      )}
+                        <ArrowRight
+                          aria-hidden="true"
+                          className="h-4 w-4"
+                        />
+                      </Link>
                     </div>
 
                     <div className="grid content-start gap-3 sm:grid-cols-2 lg:col-span-6">
@@ -546,6 +500,45 @@ export default function ServiziPage() {
         </div>
       </section>
 
+      {/* MIRiana */}
+      <section className="section border-t border-[var(--color-border)] bg-[var(--color-surface)]">
+        <div className="site-container">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-4">
+              <p className="eyebrow">
+                Responsabile dello Studio
+              </p>
+            </div>
+
+            <div className="lg:col-span-7 lg:col-start-6">
+              <h2 className="font-serif text-[clamp(3rem,5vw,5.5rem)] leading-[1.02] tracking-[-0.04em]">
+                Ing. Miriana Mirone
+              </h2>
+
+              <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">
+                Miriana Mirone è ingegnere e responsabile dello Studio Tecnico
+                Mirone di Belpasso. Coordina le attività dello Studio e i
+                professionisti coinvolti nei diversi incarichi, dalla
+                progettazione alle pratiche tecniche fino alla fase esecutiva.
+              </p>
+
+              <Link
+                href="/miriana-mirone"
+                className="editorial-link mt-8"
+              >
+                Profilo professionale
+
+                <ArrowRight
+                  aria-hidden="true"
+                  className="h-4 w-4"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PERCHÉ SCEGLIERCI */}
       <section className="section bg-[var(--color-dark)] text-white">
         <div className="site-container">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -555,12 +548,15 @@ export default function ServiziPage() {
               </p>
 
               <h2 className="mt-8 font-serif text-[clamp(3rem,5vw,5.5rem)] leading-[1.08] tracking-[-0.04em] !text-white">
-                Metodo, competenza e presenza costante.
+                Metodo, competenza
+                <br />
+                e presenza costante.
               </h2>
 
               <p className="mt-8 max-w-xl text-lg leading-8 text-white/65">
-                Un percorso tecnico ordinato riduce le incertezze e rende più
-                semplici le decisioni.
+                Un percorso tecnico ordinato consente di individuare prima le
+                criticità, coordinare le diverse attività e affrontare le
+                decisioni con maggiore consapevolezza.
               </p>
             </div>
 
@@ -594,6 +590,52 @@ export default function ServiziPage() {
         </div>
       </section>
 
+      {/* TERRITORIO */}
+      <section className="section border-t border-[var(--color-border)]">
+        <div className="site-container">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-4">
+              <p className="eyebrow">
+                Dove operiamo
+              </p>
+            </div>
+
+            <div className="lg:col-span-7 lg:col-start-6">
+              <h2 className="display-title">
+                Belpasso, Catania
+                <br />
+                e provincia.
+              </h2>
+
+              <p className="body-large mt-8 max-w-2xl">
+                Lo Studio Tecnico Mirone ha sede in{" "}
+                {seo.address.street}, {seo.address.postalCode}{" "}
+                {seo.address.city} ({seo.address.provinceCode}).
+              </p>
+
+              <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--color-muted)]">
+                Seguiamo incarichi a Belpasso, Catania e nei comuni della
+                provincia, valutando in funzione del progetto anche attività
+                nel resto della Sicilia e sul territorio nazionale.
+              </p>
+
+              <Link
+                href="/contatti"
+                className="editorial-link mt-8"
+              >
+                Sede e contatti
+
+                <ArrowRight
+                  aria-hidden="true"
+                  className="h-4 w-4"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="section border-t border-[var(--color-border)]">
         <div className="site-container">
           <div className="grid items-end gap-12 border border-[var(--color-border)] p-8 sm:p-12 lg:grid-cols-12 lg:p-16">
@@ -603,20 +645,23 @@ export default function ServiziPage() {
               </p>
 
               <h2 className="mt-8 font-serif text-[clamp(3rem,5vw,5.5rem)] leading-[1.08] tracking-[-0.04em]">
-                Hai bisogno di un servizio tecnico?
+                Hai bisogno di un
+                <br />
+                servizio tecnico?
               </h2>
 
               <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">
-                Descrivi il progetto o la pratica di cui hai bisogno.
-                Valuteremo insieme il percorso tecnico più adatto.
+                Descrivi il progetto, l&apos;immobile o la pratica di cui hai
+                bisogno. Valuteremo la documentazione disponibile e il percorso
+                tecnico più adatto.
               </p>
             </div>
 
             <div className="flex flex-col gap-3 lg:col-span-4">
               <a
-                href={CONTACTS.whatsappHref}
+                href={whatsappHref}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="button-dark inline-flex min-h-14 items-center justify-center gap-3 px-7 text-sm font-semibold"
               >
                 <MessageCircle
@@ -628,7 +673,7 @@ export default function ServiziPage() {
               </a>
 
               <a
-                href={CONTACTS.emailHref}
+                href={seo.contact.emailHref}
                 className="button-outline inline-flex min-h-14 items-center justify-center gap-3 px-7 text-sm font-semibold"
               >
                 <Mail
@@ -636,7 +681,7 @@ export default function ServiziPage() {
                   className="h-5 w-5"
                 />
 
-                Invia un’e-mail
+                Invia un&apos;e-mail
               </a>
             </div>
           </div>

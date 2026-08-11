@@ -11,6 +11,11 @@ import PageHero from "@/components/shared/PageHero";
 import { company } from "@/data/company";
 import { seo } from "@/data/seo";
 
+const PERSON_URL = `${seo.siteUrl}/miriana-mirone`;
+const PERSON_ID = `${PERSON_URL}/#person`;
+const PAGE_ID = `${PERSON_URL}/#webpage`;
+const BREADCRUMB_ID = `${PERSON_URL}/#breadcrumb`;
+
 export const metadata: Metadata = {
   title: "Miriana Mirone | Ingegnere - Studio Tecnico Mirone",
 
@@ -50,10 +55,19 @@ export const metadata: Metadata = {
     description:
       "Miriana Mirone, ingegnere e responsabile dello Studio Tecnico Mirone a Belpasso, Catania.",
 
-    url: `${seo.siteUrl}/miriana-mirone`,
+    url: PERSON_URL,
     siteName: seo.siteName,
     locale: seo.locale,
     type: "profile",
+
+    images: [
+      {
+        url: seo.images.openGraph,
+        width: 1200,
+        height: 630,
+        alt: "Miriana Mirone - Ingegnere e responsabile dello Studio Tecnico Mirone",
+      },
+    ],
   },
 
   twitter: {
@@ -64,11 +78,14 @@ export const metadata: Metadata = {
 
     description:
       "Ingegnere Miriana Mirone a Belpasso, Catania. Progettazione e servizi tecnici.",
+
+    images: [seo.images.openGraph],
   },
 
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -110,84 +127,62 @@ const services = [
   },
 ];
 
+const locations = [
+  "Belpasso",
+  "Catania",
+  "Nicolosi",
+  "Mascalucia",
+  "Pedara",
+  "Paternò",
+  "Misterbianco",
+  "Camporotondo Etneo",
+  "San Pietro Clarenza",
+  "Tremestieri Etneo",
+];
+
 const jsonLd = {
   "@context": "https://schema.org",
 
   "@graph": [
     {
-      "@type": "Person",
-
-      "@id": `${seo.siteUrl}/miriana-mirone/#person`,
-
-      name: "Miriana Mirone",
-
-      alternateName: [
-        "Ingegnere Miriana Mirone",
-        "Ing. Miriana Mirone",
-      ],
-
-      jobTitle: "Ingegnere",
-
-      description:
-        "Miriana Mirone è ingegnere e responsabile dello Studio Tecnico Mirone, con sede a Belpasso, in provincia di Catania.",
-
-      url: `${seo.siteUrl}/miriana-mirone`,
-
-      worksFor: {
-        "@id": `${seo.siteUrl}/#organization`,
-      },
-
-      workLocation: {
-        "@type": "Place",
-
-        name: "Studio Tecnico Mirone",
-
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: seo.address.street,
-          postalCode: seo.address.postalCode,
-          addressLocality: seo.address.city,
-          addressRegion: seo.address.province,
-          addressCountry: seo.address.countryCode,
-        },
-      },
-
-      knowsAbout: [
-        "Progettazione architettonica",
-        "Pratiche edilizie",
-        "Pratiche catastali",
-        "Direzione lavori",
-        "Rilievi topografici",
-        "Attestato di Prestazione Energetica",
-        "BIM",
-        "Rendering architettonico",
-        "Consulenza tecnica",
-      ],
-    },
-
-    {
       "@type": "ProfilePage",
 
-      "@id": `${seo.siteUrl}/miriana-mirone/#webpage`,
+      "@id": PAGE_ID,
 
-      url: `${seo.siteUrl}/miriana-mirone`,
+      url: PERSON_URL,
 
       name:
         "Miriana Mirone | Ingegnere - Studio Tecnico Mirone",
 
+      headline:
+        "Ingegnere Miriana Mirone",
+
       description:
-        "Pagina professionale di Miriana Mirone, ingegnere e responsabile dello Studio Tecnico Mirone a Belpasso, Catania.",
+        "Pagina professionale di Miriana Mirone, ingegnere e responsabile dello Studio Tecnico Mirone a Belpasso, in provincia di Catania.",
+
+      isPartOf: {
+        "@id": `${seo.siteUrl}/#website`,
+      },
 
       mainEntity: {
-        "@id": `${seo.siteUrl}/miriana-mirone/#person`,
+        "@id": PERSON_ID,
       },
+
+      about: {
+        "@id": PERSON_ID,
+      },
+
+      breadcrumb: {
+        "@id": BREADCRUMB_ID,
+      },
+
+      inLanguage: "it-IT",
     },
 
     {
       "@type": "BreadcrumbList",
 
-      "@id":
-        `${seo.siteUrl}/miriana-mirone/#breadcrumb`,
+      "@id": BREADCRUMB_ID,
 
       itemListElement: [
         {
@@ -196,17 +191,19 @@ const jsonLd = {
           name: "Home",
           item: seo.siteUrl,
         },
+
         {
           "@type": "ListItem",
           position: 2,
           name: "Studio",
           item: `${seo.siteUrl}/studio`,
         },
+
         {
           "@type": "ListItem",
           position: 3,
           name: "Miriana Mirone",
-          item: `${seo.siteUrl}/miriana-mirone`,
+          item: PERSON_URL,
         },
       ],
     },
@@ -256,9 +253,9 @@ export default function MirianaMironePage() {
 
               <p className="leading-8 text-[var(--color-muted)]">
                 L&apos;attività professionale comprende progettazione
-                architettonica, pratiche edilizie e catastali, direzione lavori,
-                rilievi topografici, certificazioni energetiche, modellazione
-                BIM, rendering e consulenza tecnica.
+                architettonica, pratiche edilizie e catastali, direzione
+                lavori, rilievi topografici, certificazioni energetiche,
+                modellazione BIM, rendering e consulenza tecnica.
               </p>
 
               <p className="leading-8 text-[var(--color-muted)]">
@@ -412,18 +409,7 @@ export default function MirianaMironePage() {
               </p>
 
               <div className="mt-10 flex flex-wrap gap-3">
-                {[
-                  "Belpasso",
-                  "Catania",
-                  "Nicolosi",
-                  "Mascalucia",
-                  "Pedara",
-                  "Paternò",
-                  "Misterbianco",
-                  "Camporotondo Etneo",
-                  "San Pietro Clarenza",
-                  "Tremestieri Etneo",
-                ].map((location) => (
+                {locations.map((location) => (
                   <span
                     key={location}
                     className="border border-[var(--color-border)] px-4 py-2 text-xs text-[var(--color-muted)]"

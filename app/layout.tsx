@@ -33,6 +33,8 @@ export const metadata: Metadata = {
 
   description: seo.defaultDescription,
 
+  keywords: [...seo.keywords],
+
   applicationName: seo.siteName,
 
   authors: [
@@ -45,6 +47,10 @@ export const metadata: Metadata = {
   creator: seo.siteName,
   publisher: seo.siteName,
 
+  alternates: {
+    canonical: "/",
+  },
+
   openGraph: {
     title: seo.defaultTitle,
     description: seo.defaultDescription,
@@ -52,6 +58,7 @@ export const metadata: Metadata = {
     siteName: seo.siteName,
     locale: seo.locale,
     type: "website",
+
     images: [
       {
         url: seo.images.openGraph,
@@ -83,6 +90,14 @@ export const metadata: Metadata = {
   },
 
   category: "Studio tecnico",
+
+  referrer: "origin-when-cross-origin",
+
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
 
   other: {
     "geo.region": "IT-CT",

@@ -7,14 +7,6 @@ export const seo = {
   locale: "it_IT",
   language: "it",
 
-  /*
-   * SEO PRINCIPALE
-   * Obiettivo:
-   * - Studio tecnico Belpasso
-   * - Geometra Belpasso
-   * - Progettazione Belpasso / Catania
-   * - Pratiche edilizie e catastali
-   */
   defaultTitle:
     "Studio Tecnico a Belpasso | Studio Tecnico Mirone",
 
@@ -23,16 +15,15 @@ export const seo = {
   defaultDescription:
     "Studio Tecnico Mirone a Belpasso, Catania. Progettazione architettonica, pratiche edilizie e catastali, rilievi topografici, direzione lavori, BIM, rendering e consulenza tecnica.",
 
-  /*
-   * Le keywords non sono un fattore importante per Google,
-   * ma possiamo mantenerle come riferimento interno.
-   */
   keywords: [
     "Studio Tecnico Mirone",
     "Studio Mirone",
 
     "studio tecnico Belpasso",
     "studio tecnico Catania",
+
+    "ingegnere Belpasso",
+    "ingegnere Catania",
 
     "geometra Belpasso",
     "geometra Catania",
@@ -59,11 +50,17 @@ export const seo = {
     "catasto Catania",
 
     "SCIA Belpasso",
+    "SCIA Catania",
+
     "CILA Belpasso",
+    "CILA Catania",
 
     "sanatoria edilizia Belpasso",
+    "sanatoria edilizia Catania",
 
-    "DOCFA",
+    "DOCFA Belpasso",
+    "DOCFA Catania",
+
     "volture catastali",
     "successioni",
 
@@ -71,6 +68,7 @@ export const seo = {
     "progettazione BIM",
 
     "rendering architettonico",
+    "rendering architettonico Catania",
     "visualizzazione 3D",
 
     "efficientamento energetico",
@@ -84,6 +82,9 @@ export const seo = {
 
     "contabilità lavori",
     "sicurezza nei cantieri",
+
+    "Miriana Mirone",
+    "Ingegnere Miriana Mirone",
   ],
 
   contact: {

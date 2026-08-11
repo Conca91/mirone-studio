@@ -8,32 +8,19 @@ import {
 
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
 import type { ServiceDetailConfig } from "@/components/services/service-types";
+import { seo } from "@/data/seo";
 
-const SITE_URL = "https://mironestudio.it";
-
-const CONTACTS = {
-  businessName: "Studio Tecnico Mirone",
-  address: "Via XVI Traversa n. 53",
-  postalCode: "95032",
-  city: "Belpasso",
-  province: "CT",
-  region: "Sicilia",
-  country: "IT",
-  phone: "+39 348 293 4197",
-  email: "info@mironestudio.it",
-  emailHref: "mailto:info@mironestudio.it",
-  whatsappHref:
-    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sulle%20pratiche%20catastali.",
-};
+const PAGE_PATH = "/servizi/pratiche-catastali";
+const PAGE_URL = `${seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
   title: "Pratiche catastali a Belpasso e Catania",
 
   description:
-    "Pratiche catastali a Belpasso e Catania: DOCFA, variazioni catastali, volture, planimetrie e aggiornamenti catastali. Studio Tecnico Mirone segue verifiche, rilievi e predisposizione della documentazione tecnica.",
+    "Pratiche catastali a Belpasso e Catania: DOCFA, variazioni catastali, volture, planimetrie e aggiornamenti catastali. Studio Tecnico Mirone segue verifiche, rilievi e documentazione tecnica.",
 
   alternates: {
-    canonical: "/servizi/pratiche-catastali",
+    canonical: PAGE_PATH,
   },
 
   keywords: [
@@ -48,7 +35,17 @@ export const metadata: Metadata = {
     "planimetria catastale Belpasso",
     "planimetria catastale Catania",
     "aggiornamento catastale Belpasso",
+    "aggiornamento catastale Catania",
+    "verifica catastale Belpasso",
+    "verifica catastale Catania",
+    "catasto Belpasso",
+    "catasto Catania",
     "studio tecnico Belpasso",
+    "studio tecnico Catania",
+    "geometra Belpasso",
+    "geometra Catania",
+    "ingegnere Belpasso",
+    "ingegnere Catania",
     "Studio Tecnico Mirone",
   ],
 
@@ -59,10 +56,19 @@ export const metadata: Metadata = {
     description:
       "DOCFA, variazioni catastali, volture, planimetrie e aggiornamenti catastali a Belpasso, Catania e provincia.",
 
-    url: `${SITE_URL}/servizi/pratiche-catastali`,
-    siteName: CONTACTS.businessName,
-    locale: "it_IT",
+    url: PAGE_URL,
+    siteName: seo.siteName,
+    locale: seo.locale,
     type: "website",
+
+    images: [
+      {
+        url: seo.images.openGraph,
+        width: 1200,
+        height: 630,
+        alt: "Pratiche catastali - Studio Tecnico Mirone",
+      },
+    ],
   },
 
   twitter: {
@@ -72,12 +78,22 @@ export const metadata: Metadata = {
       "Pratiche catastali a Belpasso e Catania | Studio Tecnico Mirone",
 
     description:
-      "Pratiche catastali, DOCFA, variazioni, volture e planimetrie a Belpasso e Catania.",
+      "DOCFA, variazioni catastali, volture, planimetrie e aggiornamenti catastali a Belpasso e Catania.",
+
+    images: [seo.images.openGraph],
   },
 
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -91,17 +107,19 @@ const config: ServiceDetailConfig = {
   titleSecondLine: "catastali",
 
   heroDescription:
-    "Lo Studio Tecnico Mirone gestisce pratiche catastali a Belpasso, Catania e provincia, seguendo aggiornamenti, variazioni, DOCFA, volture e verifiche della documentazione catastale. L’attività viene coordinata con rilievi e controlli tecnici quando necessari.",
+    "Lo Studio Tecnico Mirone gestisce pratiche catastali a Belpasso, Catania e provincia, seguendo DOCFA, variazioni, volture, planimetrie e aggiornamenti catastali. Quando necessario, l’attività viene coordinata con sopralluoghi, rilievi e verifiche tecniche dell’immobile.",
 
-  whatsappHref: CONTACTS.whatsappHref,
-  emailHref: CONTACTS.emailHref,
+  whatsappHref:
+    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sulle%20pratiche%20catastali.",
+
+  emailHref: seo.contact.emailHref,
 
   heroChecklist: [
     "DOCFA",
     "Variazioni catastali",
-    "Volture",
+    "Volture catastali",
     "Planimetrie catastali",
-    "Aggiornamenti catastali",
+    "Verifiche catastali",
   ],
 
   introduction: {
@@ -111,11 +129,11 @@ const config: ServiceDetailConfig = {
       "Dalla verifica dell’immobile alla pratica catastale.",
 
     paragraphs: [
-      "Le pratiche catastali servono ad aggiornare o verificare i dati tecnici e identificativi di un immobile. Ogni intervento deve essere impostato partendo dalla documentazione disponibile e dallo stato reale dei luoghi.",
+      "Le pratiche catastali consentono di aggiornare o verificare i dati tecnici e identificativi di un immobile. Prima di predisporre un aggiornamento è importante analizzare la documentazione disponibile e, quando necessario, confrontarla con lo stato reale dei luoghi.",
 
-      "Lo Studio Tecnico Mirone segue pratiche catastali a Belpasso, Catania e provincia, supportando privati e professionisti nella predisposizione di DOCFA, variazioni, volture e altri adempimenti collegati alla rappresentazione catastale dell’immobile.",
+      "Lo Studio Tecnico Mirone segue pratiche catastali a Belpasso, Catania e provincia, supportando privati, imprese e professionisti nella predisposizione di DOCFA, variazioni catastali, volture, verifiche delle planimetrie e altri adempimenti relativi agli immobili.",
 
-      "Quando necessario, l’attività catastale viene preceduta da sopralluoghi e rilievi utili a verificare la corrispondenza tra documentazione e stato dei luoghi.",
+      "Quando il caso lo richiede, l’attività catastale viene coordinata con sopralluoghi e rilievi tecnici, così da disporre delle informazioni necessarie per predisporre correttamente la pratica.",
     ],
   },
 
@@ -126,7 +144,7 @@ const config: ServiceDetailConfig = {
       "Aggiornamenti e verifiche per immobili e unità catastali.",
 
     description:
-      "La pratica da predisporre dipende dalla situazione dell’immobile, dalla modifica intervenuta e dalla documentazione disponibile.",
+      "La procedura da predisporre dipende dalla situazione dell’immobile, dalle modifiche intervenute e dalla documentazione disponibile. Ogni incarico viene quindi valutato preliminarmente.",
 
     cards: [
       {
@@ -135,7 +153,7 @@ const config: ServiceDetailConfig = {
         title: "DOCFA",
 
         description:
-          "Predisposizione delle pratiche DOCFA per dichiarazioni di nuova costruzione, variazioni e aggiornamenti delle unità immobiliari.",
+          "Predisposizione delle pratiche DOCFA per dichiarazioni di nuova costruzione, variazioni e aggiornamenti delle unità immobiliari urbane.",
       },
 
       {
@@ -144,7 +162,7 @@ const config: ServiceDetailConfig = {
         title: "Variazioni catastali",
 
         description:
-          "Aggiornamento della rappresentazione catastale in seguito a modifiche distributive, frazionamenti, fusioni o altre variazioni dell’immobile.",
+          "Aggiornamento catastale in seguito a modifiche distributive, frazionamenti, fusioni e altre variazioni che interessano l’unità immobiliare.",
       },
 
       {
@@ -153,7 +171,7 @@ const config: ServiceDetailConfig = {
         title: "Volture catastali",
 
         description:
-          "Supporto nella gestione delle volture necessarie per aggiornare l’intestazione catastale degli immobili nei casi previsti.",
+          "Supporto nella gestione delle volture catastali necessarie ad aggiornare l’intestazione degli immobili nei casi previsti.",
       },
 
       {
@@ -162,7 +180,7 @@ const config: ServiceDetailConfig = {
         title: "Planimetrie e verifiche",
 
         description:
-          "Controllo della documentazione catastale, delle planimetrie disponibili e della corrispondenza con lo stato dei luoghi.",
+          "Verifica della documentazione catastale e delle planimetrie disponibili, con confronto tecnico con lo stato dei luoghi quando necessario.",
       },
     ],
   },
@@ -183,7 +201,7 @@ const config: ServiceDetailConfig = {
         title: "Raccolta documenti",
 
         description:
-          "Raccogliamo visure, planimetrie e documentazione disponibile relativa all’immobile e alla modifica da registrare.",
+          "Raccogliamo visure, planimetrie e la documentazione disponibile relativa all’immobile e alla variazione da registrare.",
       },
 
       {
@@ -192,7 +210,7 @@ const config: ServiceDetailConfig = {
         title: "Verifica catastale",
 
         description:
-          "Analizziamo i dati presenti negli archivi catastali e la documentazione disponibile.",
+          "Analizziamo i dati catastali disponibili, gli identificativi dell’immobile e la documentazione utile alla pratica.",
       },
 
       {
@@ -201,16 +219,16 @@ const config: ServiceDetailConfig = {
         title: "Sopralluogo e rilievo",
 
         description:
-          "Quando necessario, rileviamo lo stato dei luoghi per verificare geometrie, distribuzione interna e informazioni utili alla pratica.",
+          "Quando necessario, rileviamo lo stato dei luoghi per verificare geometrie, distribuzione interna e informazioni tecniche utili all’aggiornamento.",
       },
 
       {
         number: "04",
 
-        title: "Individuazione dell’aggiornamento",
+        title: "Individuazione della procedura",
 
         description:
-          "Definiamo la procedura catastale corretta in funzione della situazione dell’immobile e dell’intervento eseguito.",
+          "Definiamo l’aggiornamento catastale appropriato in funzione della situazione dell’immobile e delle modifiche intervenute.",
       },
 
       {
@@ -219,7 +237,7 @@ const config: ServiceDetailConfig = {
         title: "Predisposizione della pratica",
 
         description:
-          "Prepariamo elaborati, dati e documentazione tecnica necessaria alla presentazione dell’aggiornamento catastale.",
+          "Prepariamo elaborati, dati e documentazione tecnica necessari alla predisposizione e presentazione della pratica catastale.",
       },
 
       {
@@ -228,7 +246,7 @@ const config: ServiceDetailConfig = {
         title: "Presentazione e verifica finale",
 
         description:
-          "Trasmettiamo la pratica e controlliamo gli esiti e gli aggiornamenti conseguenti alla procedura.",
+          "Trasmettiamo la pratica attraverso le procedure previste e verifichiamo gli esiti e gli aggiornamenti conseguenti.",
       },
     ],
   },
@@ -240,7 +258,7 @@ const config: ServiceDetailConfig = {
       "Dati catastali coerenti con la situazione dell’immobile.",
 
     description:
-      "Una corretta verifica preliminare riduce il rischio di errori nella documentazione catastale e consente di impostare l’aggiornamento più adatto al caso specifico.",
+      "Una corretta verifica preliminare consente di comprendere la situazione catastale dell’immobile e di impostare l’eventuale aggiornamento sulla base della documentazione e dello stato dei luoghi.",
 
     items: [
       "Verifica preliminare della documentazione catastale",
@@ -248,7 +266,7 @@ const config: ServiceDetailConfig = {
       "Gestione coordinata di rilievo e pratica",
       "Predisposizione degli elaborati necessari",
       "Supporto nella gestione di DOCFA e variazioni",
-      "Chiarezza durante tutte le fasi dell’incarico",
+      "Controllo degli esiti della pratica",
     ],
   },
 
@@ -259,16 +277,16 @@ const config: ServiceDetailConfig = {
       "Cosa può comprendere l’incarico.",
 
     description:
-      "Le prestazioni vengono definite in relazione alla pratica richiesta e alle condizioni dell’immobile.",
+      "Le prestazioni vengono definite in relazione alla pratica richiesta, alla documentazione disponibile e alle condizioni dell’immobile.",
 
     items: [
-      "Verifica visure catastali",
-      "Verifica planimetrie disponibili",
+      "Verifica delle visure catastali",
+      "Verifica delle planimetrie disponibili",
       "Rilievo dello stato dei luoghi",
       "Restituzione grafica",
       "Predisposizione DOCFA",
       "Variazioni catastali",
-      "Aggiornamento planimetrie",
+      "Aggiornamento delle planimetrie",
       "Supporto per volture catastali",
       "Verifica degli identificativi catastali",
       "Controllo degli esiti della pratica",
@@ -282,7 +300,7 @@ const config: ServiceDetailConfig = {
       "Pratiche catastali a Belpasso, Catania e provincia.",
 
     description:
-      "Lo Studio Tecnico Mirone ha sede a Belpasso e segue pratiche catastali a Catania, nei comuni della provincia e nell’area etnea, valutando incarichi anche nel resto della Sicilia.",
+      "Lo Studio Tecnico Mirone ha sede a Belpasso e segue pratiche catastali a Catania, nei comuni della provincia e nell’area etnea, valutando in funzione dell’incarico anche attività nel resto della Sicilia.",
 
     items: [
       "Belpasso",
@@ -310,7 +328,7 @@ const config: ServiceDetailConfig = {
           "Quando serve una variazione catastale?",
 
         answer:
-          "Una variazione catastale può essere necessaria quando cambiano la distribuzione, la consistenza o altre caratteristiche dell’unità immobiliare che devono essere aggiornate negli archivi catastali.",
+          "Una variazione catastale può essere necessaria quando intervengono modifiche che devono essere aggiornate negli archivi catastali, ad esempio variazioni della distribuzione interna, frazionamenti, fusioni o altri cambiamenti rilevanti dell’unità immobiliare.",
       },
 
       {
@@ -318,7 +336,7 @@ const config: ServiceDetailConfig = {
           "Che cos’è il DOCFA?",
 
         answer:
-          "DOCFA è la procedura utilizzata per presentare determinate dichiarazioni e variazioni relative alle unità immobiliari urbane, secondo quanto previsto dalla normativa catastale.",
+          "DOCFA è la procedura utilizzata dai professionisti abilitati per presentare determinate dichiarazioni relative alle unità immobiliari urbane, comprese nuove dichiarazioni e variazioni catastali previste dalla disciplina applicabile.",
       },
 
       {
@@ -326,7 +344,7 @@ const config: ServiceDetailConfig = {
           "Serve un rilievo prima della pratica catastale?",
 
         answer:
-          "Dipende dal caso. Quando è necessario verificare la corrispondenza tra lo stato dei luoghi e la documentazione disponibile, il sopralluogo e il rilievo sono attività molto importanti.",
+          "Dipende dal caso. Quando è necessario verificare geometrie, distribuzione o corrispondenza tra documentazione e stato dei luoghi, il sopralluogo e il rilievo tecnico possono essere necessari prima della predisposizione della pratica.",
       },
 
       {
@@ -334,7 +352,7 @@ const config: ServiceDetailConfig = {
           "Potete verificare se la planimetria catastale è aggiornata?",
 
         answer:
-          "Sì. Lo Studio può confrontare la documentazione catastale disponibile con lo stato dei luoghi e valutare se siano necessari ulteriori approfondimenti o aggiornamenti.",
+          "Sì. Lo Studio può verificare la documentazione catastale disponibile e confrontarla con lo stato dei luoghi per valutare se siano necessari ulteriori approfondimenti o aggiornamenti.",
       },
 
       {
@@ -342,7 +360,15 @@ const config: ServiceDetailConfig = {
           "Gestite anche le volture catastali?",
 
         answer:
-          "Sì, in relazione alla tipologia del caso e alla documentazione disponibile, lo Studio può supportare il cliente nella gestione delle volture catastali.",
+          "Sì. In funzione della tipologia del caso e della documentazione disponibile, lo Studio può supportare il cliente nella predisposizione e gestione delle volture catastali.",
+      },
+
+      {
+        question:
+          "Catasto e regolarità urbanistica sono la stessa cosa?",
+
+        answer:
+          "No. La situazione catastale e quella urbanistico-edilizia riguardano verifiche differenti. La conformità della planimetria catastale non dimostra da sola la regolarità urbanistica dell’immobile. Quando necessario, lo Studio può verificare separatamente entrambi gli aspetti.",
       },
 
       {
@@ -362,7 +388,7 @@ const config: ServiceDetailConfig = {
       "Verifichiamo documenti e stato dell’immobile.",
 
     description:
-      "Contattaci indicando la situazione dell’immobile e l’aggiornamento di cui hai bisogno. Valuteremo documentazione, eventuale rilievo e pratica catastale più adatta.",
+      "Contattaci indicando la situazione dell’immobile e l’aggiornamento di cui hai bisogno. Valuteremo documentazione, eventuale rilievo e procedura catastale più adatta.",
   },
 };
 
@@ -371,52 +397,9 @@ const jsonLd = {
 
   "@graph": [
     {
-      "@type": "ProfessionalService",
-
-      "@id": `${SITE_URL}/#organization`,
-
-      name: CONTACTS.businessName,
-      url: SITE_URL,
-      telephone: CONTACTS.phone,
-      email: CONTACTS.email,
-
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: CONTACTS.address,
-        postalCode: CONTACTS.postalCode,
-        addressLocality: CONTACTS.city,
-        addressRegion: CONTACTS.region,
-        addressCountry: CONTACTS.country,
-      },
-
-      areaServed: [
-        {
-          "@type": "City",
-          name: "Belpasso",
-        },
-        {
-          "@type": "City",
-          name: "Catania",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Provincia di Catania",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Sicilia",
-        },
-        {
-          "@type": "Country",
-          name: "Italia",
-        },
-      ],
-    },
-
-    {
       "@type": "Service",
 
-      "@id": `${SITE_URL}/servizi/pratiche-catastali/#service`,
+      "@id": `${PAGE_URL}/#service`,
 
       name:
         "Pratiche catastali a Belpasso e Catania",
@@ -424,14 +407,13 @@ const jsonLd = {
       serviceType:
         "Pratiche catastali",
 
-      url:
-        `${SITE_URL}/servizi/pratiche-catastali`,
+      url: PAGE_URL,
 
       description:
         "Servizio di pratiche catastali, DOCFA, variazioni, volture, planimetrie e aggiornamenti catastali a Belpasso, Catania e provincia.",
 
       provider: {
-        "@id": `${SITE_URL}/#organization`,
+        "@id": `${seo.siteUrl}/#organization`,
       },
 
       areaServed: [
@@ -439,47 +421,109 @@ const jsonLd = {
           "@type": "City",
           name: "Belpasso",
         },
+
         {
           "@type": "City",
           name: "Catania",
         },
+
         {
           "@type": "AdministrativeArea",
           name: "Provincia di Catania",
         },
+
         {
           "@type": "AdministrativeArea",
           name: "Sicilia",
         },
       ],
+
+      category:
+        "Pratiche catastali e aggiornamenti catastali",
+
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Privati, imprese e professionisti",
+      },
+    },
+
+    {
+      "@type": "WebPage",
+
+      "@id": `${PAGE_URL}/#webpage`,
+
+      url: PAGE_URL,
+
+      name:
+        "Pratiche catastali a Belpasso e Catania",
+
+      description:
+        "DOCFA, variazioni catastali, volture, planimetrie e aggiornamenti catastali a Belpasso, Catania e provincia.",
+
+      isPartOf: {
+        "@id": `${seo.siteUrl}/#website`,
+      },
+
+      about: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      mainEntity: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      breadcrumb: {
+        "@id": `${PAGE_URL}/#breadcrumb`,
+      },
+
+      inLanguage: "it-IT",
     },
 
     {
       "@type": "BreadcrumbList",
 
-      "@id":
-        `${SITE_URL}/servizi/pratiche-catastali/#breadcrumb`,
+      "@id": `${PAGE_URL}/#breadcrumb`,
 
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: SITE_URL,
+          item: seo.siteUrl,
         },
+
         {
           "@type": "ListItem",
           position: 2,
           name: "Servizi",
-          item: `${SITE_URL}/servizi`,
+          item: `${seo.siteUrl}/servizi`,
         },
+
         {
           "@type": "ListItem",
           position: 3,
           name: "Pratiche catastali",
-          item: `${SITE_URL}/servizi/pratiche-catastali`,
+          item: PAGE_URL,
         },
       ],
+    },
+
+    {
+      "@type": "FAQPage",
+
+      "@id": `${PAGE_URL}/#faq`,
+
+      mainEntity: config.faqs.items.map((faq) => ({
+        "@type": "Question",
+
+        name: faq.question,
+
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
     },
   ],
 };

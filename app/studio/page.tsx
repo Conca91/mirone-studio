@@ -12,42 +12,38 @@ import { company } from "@/data/company";
 import { seo } from "@/data/seo";
 
 export const metadata: Metadata = {
-  title: "Ingegnere Miriana Mirone a Belpasso, Catania",
+  title: "Studio Tecnico a Belpasso e Catania",
 
   description:
-    "Ingegnere Miriana Mirone, responsabile dello Studio Tecnico Mirone a Belpasso, Catania. Progettazione architettonica, pratiche edilizie e catastali, direzione lavori, rilievi topografici, APE, BIM e consulenza tecnica.",
+    "Studio Tecnico Mirone a Belpasso, in provincia di Catania. Progettazione architettonica, pratiche edilizie e catastali, rilievi topografici, direzione lavori, APE, BIM, rendering e consulenza tecnica.",
 
   alternates: {
     canonical: "/studio",
   },
 
   keywords: [
-    "Ingegnere Miriana Mirone",
-    "Miriana Mirone",
-    "Miriana Mirone Belpasso",
-    "Miriana Mirone Catania",
-    "Ingegnere Belpasso",
-    "Ingegnere Catania",
-    "ingegnere a Belpasso",
-    "ingegnere a Catania",
     "Studio Tecnico Mirone",
     "studio tecnico Belpasso",
     "studio tecnico Catania",
+    "studio tecnico provincia di Catania",
+    "geometra Belpasso",
+    "ingegnere Belpasso",
     "progettazione Belpasso",
-    "progettazione Catania",
     "pratiche edilizie Belpasso",
     "pratiche catastali Belpasso",
-    "direzione lavori Belpasso",
     "rilievi topografici Belpasso",
+    "direzione lavori Belpasso",
     "APE Belpasso",
+    "BIM Catania",
+    "consulenza tecnica Belpasso",
   ],
 
   openGraph: {
     title:
-      "Ingegnere Miriana Mirone | Studio Tecnico a Belpasso, Catania",
+      "Studio Tecnico a Belpasso e Catania | Studio Tecnico Mirone",
 
     description:
-      "Miriana Mirone, ingegnere e responsabile dello Studio Tecnico Mirone a Belpasso, in provincia di Catania.",
+      "Studio tecnico a Belpasso per progettazione, pratiche edilizie e catastali, rilievi topografici, direzione lavori, APE e consulenza tecnica.",
 
     url: `${seo.siteUrl}/studio`,
     siteName: seo.siteName,
@@ -59,15 +55,22 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Ingegnere Miriana Mirone | Studio Tecnico Mirone",
+      "Studio Tecnico Mirone | Belpasso e Catania",
 
     description:
-      "Ingegnere Miriana Mirone a Belpasso, Catania: progettazione, pratiche tecniche, direzione lavori e consulenza.",
+      "Progettazione, pratiche edilizie e catastali, rilievi, direzione lavori e servizi tecnici a Belpasso e Catania.",
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -115,7 +118,7 @@ const jsonLd = {
       url: seo.siteUrl,
 
       description:
-        "Studio tecnico a Belpasso, in provincia di Catania, attivo nella progettazione architettonica, nelle pratiche edilizie e catastali, nei rilievi topografici, nella direzione lavori, nelle certificazioni energetiche, nel BIM e nella consulenza tecnica.",
+        "Studio tecnico con sede a Belpasso, in provincia di Catania, attivo nella progettazione architettonica, nelle pratiche edilizie e catastali, nei rilievi topografici, nella direzione lavori, nelle certificazioni energetiche, nel BIM, nel rendering e nella consulenza tecnica.",
 
       telephone: seo.contact.phone,
       email: seo.contact.email,
@@ -154,8 +157,14 @@ const jsonLd = {
       ],
 
       founder: {
-        "@id": `${seo.siteUrl}/studio/#miriana-mirone`,
+        "@id": `${seo.siteUrl}/miriana-mirone/#person`,
       },
+
+      employee: [
+        {
+          "@id": `${seo.siteUrl}/miriana-mirone/#person`,
+        },
+      ],
 
       knowsAbout: [
         "Progettazione architettonica",
@@ -171,59 +180,6 @@ const jsonLd = {
     },
 
     {
-      "@type": "Person",
-
-      "@id": `${seo.siteUrl}/studio/#miriana-mirone`,
-
-      name: "Miriana Mirone",
-
-      alternateName: [
-        "Ingegnere Miriana Mirone",
-        "Ing. Miriana Mirone",
-      ],
-
-      jobTitle: "Ingegnere",
-
-      description:
-        "Miriana Mirone è ingegnere e responsabile dello Studio Tecnico Mirone, con sede a Belpasso, in provincia di Catania. Segue attività di progettazione, pratiche tecniche, direzione lavori, rilievi e consulenza per interventi edilizi.",
-
-      worksFor: {
-        "@id": `${seo.siteUrl}/#organization`,
-      },
-
-      workLocation: {
-        "@type": "Place",
-
-        name:
-          "Studio Tecnico Mirone - Belpasso",
-
-        address: {
-          "@type": "PostalAddress",
-
-          streetAddress: seo.address.street,
-          postalCode: seo.address.postalCode,
-          addressLocality: seo.address.city,
-          addressRegion: seo.address.province,
-          addressCountry: seo.address.countryCode,
-        },
-      },
-
-      knowsAbout: [
-        "Progettazione architettonica",
-        "Pratiche edilizie",
-        "Pratiche catastali",
-        "Direzione lavori",
-        "Rilievi topografici",
-        "APE",
-        "BIM",
-        "Rendering architettonico",
-        "Consulenza tecnica",
-      ],
-
-      url: `${seo.siteUrl}/studio`,
-    },
-
-    {
       "@type": "WebPage",
 
       "@id": `${seo.siteUrl}/studio/#webpage`,
@@ -231,19 +187,18 @@ const jsonLd = {
       url: `${seo.siteUrl}/studio`,
 
       name:
-        "Ingegnere Miriana Mirone a Belpasso, Catania | Studio Tecnico Mirone",
+        "Studio Tecnico a Belpasso e Catania | Studio Tecnico Mirone",
 
       description:
-        "Pagina professionale dell’Ingegnere Miriana Mirone, responsabile dello Studio Tecnico Mirone a Belpasso, in provincia di Catania.",
+        "Presentazione dello Studio Tecnico Mirone di Belpasso, delle competenze professionali, del metodo di lavoro e dei principali servizi tecnici.",
 
-      about: [
-        {
-          "@id": `${seo.siteUrl}/#organization`,
-        },
-        {
-          "@id": `${seo.siteUrl}/studio/#miriana-mirone`,
-        },
-      ],
+      about: {
+        "@id": `${seo.siteUrl}/#organization`,
+      },
+
+      mainEntity: {
+        "@id": `${seo.siteUrl}/#organization`,
+      },
     },
 
     {
@@ -284,7 +239,7 @@ export default function StudioPage() {
       <PageHero
         eyebrow="Studio Tecnico Mirone · Belpasso · Catania"
         title="Tecnica, metodo, territorio."
-        description="Lo Studio Tecnico Mirone, guidato dall’Ingegnere Miriana Mirone, ha sede a Belpasso, in provincia di Catania, e accompagna privati, imprese e professionisti nella progettazione e nella gestione degli interventi edilizi."
+        description="Lo Studio Tecnico Mirone ha sede a Belpasso, in provincia di Catania, e accompagna privati, imprese e professionisti nella progettazione e nella gestione tecnica degli interventi edilizi."
       />
 
       {/* CHI SIAMO */}
@@ -307,24 +262,23 @@ export default function StudioPage() {
               </p>
 
               <p className="leading-8 text-[var(--color-muted)]">
-                Lo Studio Tecnico Mirone opera a Belpasso, Catania e nei comuni
-                della provincia, seguendo privati, imprese e professionisti
-                nella progettazione e nella gestione tecnica degli interventi
-                edilizi.
+                Lo Studio Tecnico Mirone opera a Belpasso, Catania e nei
+                comuni della provincia, seguendo privati, imprese e
+                professionisti nella progettazione e nella gestione tecnica
+                degli interventi edilizi.
               </p>
 
               <p className="leading-8 text-[var(--color-muted)]">
                 Il lavoro dello Studio integra progettazione architettonica,
                 pratiche edilizie e catastali, rilievi topografici, direzione
-                lavori, certificazione energetica, modellazione BIM e
-                consulenza tecnica.
+                lavori, certificazione energetica, modellazione BIM, rendering
+                e consulenza tecnica.
               </p>
 
               <p className="leading-8 text-[var(--color-muted)]">
-                L&apos;Ingegnere Miriana Mirone coordina le attività dello
-                Studio Tecnico Mirone con un approccio orientato alla
-                precisione, alla chiarezza e alla gestione coordinata delle
-                diverse fasi dell&apos;intervento.
+                Ogni incarico viene affrontato con un metodo coordinato, dalla
+                verifica preliminare alla definizione del progetto e degli
+                adempimenti necessari, fino alla fase esecutiva.
               </p>
             </div>
           </div>
@@ -371,23 +325,37 @@ export default function StudioPage() {
         </div>
       </section>
 
-      {/* MIR IANA MIRONE */}
+      {/* RESPONSABILE */}
       <section className="section bg-[var(--color-surface)]">
         <div className="site-container">
           <div className="editorial-grid">
             <p className="eyebrow">
-              Professionista
+              Responsabile dello studio
             </p>
 
             <div>
               <h2 className="display-title">
-                Ingegnere Miriana Mirone.
+                Miriana Mirone.
               </h2>
 
               <p className="body-large mt-8 max-w-2xl">
-                Responsabile dello Studio Tecnico Mirone a Belpasso, in
-                provincia di Catania.
+                Ingegnere e responsabile dello Studio Tecnico Mirone di
+                Belpasso, in provincia di Catania.
               </p>
+
+              <Link
+                href="/miriana-mirone"
+                className="group mt-8 inline-flex items-center gap-4 border-b border-[var(--color-text)] pb-3 text-[10px] uppercase tracking-[0.24em]"
+              >
+                Profilo di Miriana Mirone
+
+                <ArrowUpRight
+                  size={18}
+                  strokeWidth={1.4}
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                />
+              </Link>
             </div>
           </div>
 
@@ -399,15 +367,27 @@ export default function StudioPage() {
               >
                 <div className="lg:col-span-4">
                   <p className="eyebrow">
-                    Responsabile dello Studio Tecnico Mirone
+                    {person.role}
                   </p>
 
                   <h3 className="mt-8 font-serif text-4xl sm:text-5xl">
-                    Ingegnere {person.name}
+                    <Link
+                      href="/miriana-mirone"
+                      className="group inline-flex items-center gap-4"
+                    >
+                      {person.name}
+
+                      <ArrowUpRight
+                        size={20}
+                        strokeWidth={1.4}
+                        aria-hidden="true"
+                        className="opacity-40 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100"
+                      />
+                    </Link>
                   </h3>
 
                   <p className="mt-4 text-sm font-medium uppercase tracking-[0.18em] text-[var(--color-muted)]">
-                    Ingegnere · Belpasso · Catania
+                    {person.title}
                   </p>
                 </div>
 
@@ -417,11 +397,11 @@ export default function StudioPage() {
                   </p>
 
                   <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--color-muted)]">
-                    L&apos;Ingegnere Miriana Mirone opera presso lo Studio
-                    Tecnico Mirone di Belpasso, in provincia di Catania,
-                    seguendo attività di progettazione, pratiche tecniche,
-                    direzione lavori, rilievi e consulenza per interventi
-                    edilizi.
+                    Miriana Mirone coordina le attività dello Studio Tecnico
+                    Mirone a Belpasso, seguendo progettazione, pratiche
+                    tecniche, rilievi, direzione lavori e consulenza in
+                    collaborazione con i professionisti coinvolti nei diversi
+                    incarichi.
                   </p>
 
                   <ul className="mt-10 grid gap-x-10 gap-y-4 sm:grid-cols-2">
@@ -587,7 +567,9 @@ export default function StudioPage() {
                     key={technology}
                     className="flex items-center justify-between gap-4 border-b border-black/15 py-5 text-sm"
                   >
-                    <span>{technology}</span>
+                    <span>
+                      {technology}
+                    </span>
 
                     <span
                       aria-hidden="true"
@@ -603,15 +585,62 @@ export default function StudioPage() {
         </div>
       </section>
 
+      {/* TERRITORIO */}
+      <section className="section bg-[var(--color-surface)]">
+        <div className="site-container">
+          <div className="grid gap-10 border-t border-black/15 pt-10 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-4">
+              <p className="eyebrow">
+                Dove operiamo
+              </p>
+            </div>
+
+            <div className="lg:col-span-7 lg:col-start-6">
+              <h2 className="display-title">
+                Belpasso, Catania
+                <br />
+                e provincia.
+              </h2>
+
+              <p className="body-large mt-8 max-w-2xl">
+                La sede dello Studio Tecnico Mirone è a Belpasso. Seguiamo
+                progetti e incarichi tecnici a Catania, nei comuni
+                dell&apos;area etnea e nella provincia.
+              </p>
+
+              <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--color-muted)]">
+                In funzione della tipologia di incarico, lo Studio valuta
+                attività anche nel resto della Sicilia e sul territorio
+                nazionale.
+              </p>
+
+              <Link
+                href="/contatti"
+                className="group mt-9 inline-flex items-center gap-4 border-b border-[var(--color-text)] pb-3 text-[10px] uppercase tracking-[0.24em]"
+              >
+                Sede e contatti
+
+                <ArrowUpRight
+                  size={18}
+                  strokeWidth={1.4}
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#23211f] text-white">
         <div className="site-container grid gap-12 py-24 md:py-32 lg:grid-cols-12 lg:items-end lg:py-40">
           <div className="lg:col-span-7">
             <p className="eyebrow !text-white/45">
-              Ingegnere Miriana Mirone · Belpasso · Catania
+              Studio Tecnico Mirone · Belpasso · Catania
             </p>
 
-            <h2 className="mt-10 font-serif text-5xl leading-[0.95] tracking-[-0.04em] !text-white sm:text-6xl md:text-7xl">
+            <h2 className="mt-10 font-serif text-5xl leading-[0.98] tracking-[-0.04em] !text-white sm:text-6xl md:text-7xl">
               Iniziamo da una verifica preliminare.
             </h2>
           </div>

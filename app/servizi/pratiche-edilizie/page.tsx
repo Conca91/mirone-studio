@@ -8,23 +8,10 @@ import {
 
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
 import type { ServiceDetailConfig } from "@/components/services/service-types";
+import { seo } from "@/data/seo";
 
-const SITE_URL = "https://mironestudio.it";
-
-const CONTACTS = {
-  businessName: "Studio Tecnico Mirone",
-  address: "Via XVI Traversa n. 53",
-  postalCode: "95032",
-  city: "Belpasso",
-  province: "CT",
-  region: "Sicilia",
-  country: "IT",
-  phone: "+39 348 293 4197",
-  email: "info@mironestudio.it",
-  emailHref: "mailto:info@mironestudio.it",
-  whatsappHref:
-    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sulle%20pratiche%20edilizie.",
-};
+const PAGE_PATH = "/servizi/pratiche-edilizie";
+const PAGE_URL = `${seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
   title: "Pratiche edilizie a Belpasso e Catania",
@@ -33,7 +20,7 @@ export const metadata: Metadata = {
     "Pratiche edilizie a Belpasso e Catania: CILA, SCIA, Permesso di Costruire, sanatorie, accesso agli atti e verifiche urbanistiche. Studio Tecnico Mirone segue l’intero iter tecnico e amministrativo.",
 
   alternates: {
-    canonical: "/servizi/pratiche-edilizie",
+    canonical: PAGE_PATH,
   },
 
   keywords: [
@@ -44,11 +31,19 @@ export const metadata: Metadata = {
     "SCIA Belpasso",
     "SCIA Catania",
     "Permesso di Costruire Belpasso",
+    "Permesso di Costruire Catania",
     "sanatoria edilizia Belpasso",
     "sanatoria edilizia Catania",
     "accesso agli atti Belpasso",
+    "accesso agli atti Catania",
     "verifica urbanistica Belpasso",
+    "verifica urbanistica Catania",
+    "regolarizzazione edilizia Belpasso",
+    "regolarizzazione edilizia Catania",
     "studio tecnico Belpasso",
+    "studio tecnico Catania",
+    "ingegnere Belpasso",
+    "ingegnere Catania",
     "Studio Tecnico Mirone",
   ],
 
@@ -57,12 +52,21 @@ export const metadata: Metadata = {
       "Pratiche edilizie a Belpasso e Catania | Studio Tecnico Mirone",
 
     description:
-      "CILA, SCIA, Permesso di Costruire, sanatorie e verifiche urbanistiche a Belpasso, Catania e provincia.",
+      "CILA, SCIA, Permesso di Costruire, sanatorie, accesso agli atti e verifiche urbanistiche a Belpasso, Catania e provincia.",
 
-    url: `${SITE_URL}/servizi/pratiche-edilizie`,
-    siteName: CONTACTS.businessName,
-    locale: "it_IT",
+    url: PAGE_URL,
+    siteName: seo.siteName,
+    locale: seo.locale,
     type: "website",
+
+    images: [
+      {
+        url: seo.images.openGraph,
+        width: 1200,
+        height: 630,
+        alt: "Pratiche edilizie - Studio Tecnico Mirone",
+      },
+    ],
   },
 
   twitter: {
@@ -72,12 +76,22 @@ export const metadata: Metadata = {
       "Pratiche edilizie a Belpasso e Catania | Studio Tecnico Mirone",
 
     description:
-      "Gestione di CILA, SCIA, Permesso di Costruire, sanatorie e pratiche urbanistiche a Belpasso e Catania.",
+      "Gestione di CILA, SCIA, Permesso di Costruire, sanatorie e verifiche urbanistiche a Belpasso e Catania.",
+
+    images: [seo.images.openGraph],
   },
 
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -93,8 +107,10 @@ const config: ServiceDetailConfig = {
   heroDescription:
     "Lo Studio Tecnico Mirone gestisce pratiche edilizie a Belpasso, Catania e provincia per ristrutturazioni, manutenzioni, nuove opere e regolarizzazioni. Seguiamo il cliente dalla verifica preliminare alla predisposizione e presentazione della documentazione tecnica.",
 
-  whatsappHref: CONTACTS.whatsappHref,
-  emailHref: CONTACTS.emailHref,
+  whatsappHref:
+    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sulle%20pratiche%20edilizie.",
+
+  emailHref: seo.contact.emailHref,
 
   heroChecklist: [
     "CILA",
@@ -111,11 +127,11 @@ const config: ServiceDetailConfig = {
       "Dalla verifica iniziale alla pratica corretta.",
 
     paragraphs: [
-      "Ogni intervento edilizio richiede una valutazione preliminare della situazione urbanistica e amministrativa dell’immobile. Prima di presentare una pratica è fondamentale capire quale procedimento sia necessario e quali documenti debbano essere predisposti.",
+      "Ogni intervento edilizio richiede una valutazione preliminare della situazione urbanistica e amministrativa dell’immobile. Prima di presentare una pratica è fondamentale comprendere quale procedimento sia necessario e quali documenti debbano essere predisposti.",
 
-      "Lo Studio Tecnico Mirone segue pratiche edilizie a Belpasso, Catania e provincia, supportando privati, imprese e professionisti nella scelta del corretto titolo abilitativo e nella preparazione della documentazione richiesta.",
+      "Lo Studio Tecnico Mirone segue pratiche edilizie a Belpasso, Catania e provincia, supportando privati, imprese e professionisti nella verifica preliminare, nell’individuazione del corretto titolo abilitativo e nella preparazione della documentazione richiesta.",
 
-      "L’obiettivo è costruire un percorso chiaro fin dall’inizio, riducendo il rischio di errori, integrazioni e rallentamenti durante l’iter amministrativo.",
+      "L’obiettivo è costruire un percorso chiaro fin dall’inizio, verificando lo stato dell’immobile e riducendo il rischio di errori, integrazioni e rallentamenti durante l’iter amministrativo.",
     ],
   },
 
@@ -126,7 +142,7 @@ const config: ServiceDetailConfig = {
       "Procedure tecniche e amministrative per ogni tipo di intervento.",
 
     description:
-      "La pratica corretta dipende dalla natura dei lavori, dallo stato dell’immobile e dalla normativa applicabile. Ogni caso viene valutato prima di procedere.",
+      "La procedura corretta dipende dalla natura dei lavori, dallo stato dell’immobile e dalla normativa applicabile. Ogni caso viene analizzato prima di procedere.",
 
     cards: [
       {
@@ -135,7 +151,7 @@ const config: ServiceDetailConfig = {
         title: "CILA",
 
         description:
-          "Comunicazione di Inizio Lavori Asseverata per gli interventi per i quali la normativa prevede questo procedimento.",
+          "Predisposizione della Comunicazione di Inizio Lavori Asseverata per gli interventi per i quali la normativa prevede questo procedimento.",
       },
 
       {
@@ -144,7 +160,7 @@ const config: ServiceDetailConfig = {
         title: "SCIA",
 
         description:
-          "Segnalazione Certificata di Inizio Attività per interventi edilizi soggetti alla relativa procedura amministrativa.",
+          "Predisposizione della Segnalazione Certificata di Inizio Attività per gli interventi edilizi soggetti alla relativa procedura.",
       },
 
       {
@@ -153,7 +169,7 @@ const config: ServiceDetailConfig = {
         title: "Permesso di Costruire",
 
         description:
-          "Predisposizione della documentazione necessaria per interventi subordinati al rilascio del titolo edilizio.",
+          "Predisposizione degli elaborati e della documentazione tecnica necessaria per gli interventi subordinati al rilascio del titolo edilizio.",
       },
 
       {
@@ -162,7 +178,7 @@ const config: ServiceDetailConfig = {
         title: "Sanatorie e verifiche",
 
         description:
-          "Analisi dello stato urbanistico ed edilizio dell’immobile, accesso agli atti e valutazione delle eventuali procedure di regolarizzazione.",
+          "Analisi dello stato urbanistico ed edilizio dell’immobile, accesso agli atti e valutazione delle eventuali procedure di regolarizzazione applicabili.",
       },
     ],
   },
@@ -174,7 +190,7 @@ const config: ServiceDetailConfig = {
       "Una pratica edilizia parte sempre da una verifica.",
 
     description:
-      "Prima di scegliere il procedimento analizziamo documentazione, stato dei luoghi e caratteristiche dell’intervento.",
+      "Prima di individuare il procedimento analizziamo documentazione, stato dei luoghi e caratteristiche dell’intervento.",
 
     steps: [
       {
@@ -192,7 +208,7 @@ const config: ServiceDetailConfig = {
         title: "Accesso agli atti",
 
         description:
-          "Quando necessario, verifichiamo la documentazione presente presso gli enti competenti per ricostruire la situazione autorizzativa.",
+          "Quando necessario, verifichiamo la documentazione presente presso gli enti competenti per ricostruire la situazione autorizzativa dell’immobile.",
       },
 
       {
@@ -201,7 +217,7 @@ const config: ServiceDetailConfig = {
         title: "Verifica urbanistica",
 
         description:
-          "Confrontiamo stato autorizzato, documentazione e condizioni reali dell’immobile per individuare eventuali criticità.",
+          "Confrontiamo lo stato autorizzato, la documentazione disponibile e lo stato dei luoghi per individuare eventuali criticità.",
       },
 
       {
@@ -210,7 +226,7 @@ const config: ServiceDetailConfig = {
         title: "Individuazione della pratica",
 
         description:
-          "Definiamo il procedimento tecnico-amministrativo più adatto in funzione dell’intervento da realizzare.",
+          "Definiamo il procedimento tecnico-amministrativo appropriato in funzione dell’intervento e delle condizioni riscontrate.",
       },
 
       {
@@ -228,7 +244,7 @@ const config: ServiceDetailConfig = {
         title: "Presentazione e gestione",
 
         description:
-          "Presentiamo la pratica e seguiamo eventuali richieste di integrazione o ulteriori adempimenti previsti dal procedimento.",
+          "Presentiamo la pratica agli enti competenti e seguiamo eventuali richieste di integrazione e gli ulteriori adempimenti previsti dal procedimento.",
       },
     ],
   },
@@ -240,7 +256,7 @@ const config: ServiceDetailConfig = {
       "Meno incertezze, più controllo sull’iter.",
 
     description:
-      "Una corretta analisi preliminare permette di individuare il procedimento adeguato e di affrontare con maggiore chiarezza tutti i passaggi successivi.",
+      "Una corretta analisi preliminare permette di individuare il procedimento adeguato e di affrontare con maggiore chiarezza i passaggi successivi.",
 
     items: [
       "Verifica preliminare della situazione urbanistica",
@@ -259,10 +275,10 @@ const config: ServiceDetailConfig = {
       "Cosa può comprendere l’incarico.",
 
     description:
-      "Le attività dipendono dal tipo di intervento e dalla situazione dell’immobile. Il preventivo specifica le prestazioni comprese.",
+      "Le attività dipendono dal tipo di intervento e dalla situazione dell’immobile. Il preventivo specifica le prestazioni comprese nell’incarico.",
 
     items: [
-      "Verifica documentazione disponibile",
+      "Verifica della documentazione disponibile",
       "Accesso agli atti",
       "Rilievo dello stato dei luoghi",
       "Verifica urbanistica ed edilizia",
@@ -270,7 +286,7 @@ const config: ServiceDetailConfig = {
       "Relazione tecnica",
       "Predisposizione CILA o SCIA",
       "Pratiche per Permesso di Costruire",
-      "Supporto per sanatorie edilizie",
+      "Valutazione di eventuali procedure di sanatoria",
       "Gestione di eventuali integrazioni",
     ],
   },
@@ -282,7 +298,7 @@ const config: ServiceDetailConfig = {
       "Pratiche edilizie a Belpasso, Catania e provincia.",
 
     description:
-      "Lo Studio Tecnico Mirone ha sede a Belpasso e segue pratiche edilizie a Catania, nei comuni della provincia e nell’area etnea, valutando incarichi anche nel resto della Sicilia.",
+      "Lo Studio Tecnico Mirone ha sede a Belpasso e segue pratiche edilizie a Catania, nei comuni della provincia e nell’area etnea, valutando in funzione dell’incarico anche attività nel resto della Sicilia.",
 
     items: [
       "Belpasso",
@@ -318,7 +334,7 @@ const config: ServiceDetailConfig = {
           "Quando serve il Permesso di Costruire?",
 
         answer:
-          "Il Permesso di Costruire è richiesto per gli interventi che la normativa assoggetta a questo titolo edilizio. La necessità viene verificata in base alle caratteristiche dell’opera prevista.",
+          "Il Permesso di Costruire è richiesto per gli interventi che la normativa assoggetta a questo titolo edilizio. La necessità viene verificata in base alle caratteristiche dell’opera prevista e alla disciplina applicabile.",
       },
 
       {
@@ -326,7 +342,7 @@ const config: ServiceDetailConfig = {
           "È necessario fare un accesso agli atti?",
 
         answer:
-          "Non sempre, ma può essere molto utile quando è necessario ricostruire la storia autorizzativa dell’immobile o verificare la documentazione depositata presso gli enti competenti.",
+          "Non sempre, ma può essere necessario quando occorre ricostruire la storia autorizzativa dell’immobile o verificare la documentazione depositata presso gli enti competenti.",
       },
 
       {
@@ -334,7 +350,7 @@ const config: ServiceDetailConfig = {
           "È possibile regolarizzare una difformità edilizia?",
 
         answer:
-          "Dipende dalla natura della difformità, dalla normativa applicabile e dalle condizioni dell’immobile. È necessario eseguire una verifica tecnica prima di stabilire se e quale procedura possa essere utilizzata.",
+          "Dipende dalla natura della difformità, dalla normativa applicabile e dalle condizioni dell’immobile. È necessaria una verifica tecnica prima di stabilire se esista una procedura di regolarizzazione applicabile al caso specifico.",
       },
 
       {
@@ -362,7 +378,7 @@ const config: ServiceDetailConfig = {
       "Verifichiamo il tuo caso.",
 
     description:
-      "Raccontaci l’intervento che vuoi realizzare o la situazione dell’immobile. Valuteremo documentazione, stato dei luoghi e percorso amministrativo più adatto.",
+      "Raccontaci l’intervento che vuoi realizzare o la situazione dell’immobile. Valuteremo documentazione, stato dei luoghi e percorso tecnico-amministrativo più adatto.",
   },
 };
 
@@ -371,52 +387,9 @@ const jsonLd = {
 
   "@graph": [
     {
-      "@type": "ProfessionalService",
-
-      "@id": `${SITE_URL}/#organization`,
-
-      name: CONTACTS.businessName,
-      url: SITE_URL,
-      telephone: CONTACTS.phone,
-      email: CONTACTS.email,
-
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: CONTACTS.address,
-        postalCode: CONTACTS.postalCode,
-        addressLocality: CONTACTS.city,
-        addressRegion: CONTACTS.region,
-        addressCountry: CONTACTS.country,
-      },
-
-      areaServed: [
-        {
-          "@type": "City",
-          name: "Belpasso",
-        },
-        {
-          "@type": "City",
-          name: "Catania",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Provincia di Catania",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Sicilia",
-        },
-        {
-          "@type": "Country",
-          name: "Italia",
-        },
-      ],
-    },
-
-    {
       "@type": "Service",
 
-      "@id": `${SITE_URL}/servizi/pratiche-edilizie/#service`,
+      "@id": `${PAGE_URL}/#service`,
 
       name:
         "Pratiche edilizie a Belpasso e Catania",
@@ -424,14 +397,13 @@ const jsonLd = {
       serviceType:
         "Pratiche edilizie",
 
-      url:
-        `${SITE_URL}/servizi/pratiche-edilizie`,
+      url: PAGE_URL,
 
       description:
-        "Servizio di gestione pratiche edilizie, CILA, SCIA, Permesso di Costruire, sanatorie, accesso agli atti e verifiche urbanistiche a Belpasso, Catania e provincia.",
+        "Gestione di pratiche edilizie, CILA, SCIA, Permesso di Costruire, sanatorie, accesso agli atti e verifiche urbanistiche a Belpasso, Catania e provincia.",
 
       provider: {
-        "@id": `${SITE_URL}/#organization`,
+        "@id": `${seo.siteUrl}/#organization`,
       },
 
       areaServed: [
@@ -439,46 +411,109 @@ const jsonLd = {
           "@type": "City",
           name: "Belpasso",
         },
+
         {
           "@type": "City",
           name: "Catania",
         },
+
         {
           "@type": "AdministrativeArea",
           name: "Provincia di Catania",
         },
+
         {
           "@type": "AdministrativeArea",
           name: "Sicilia",
         },
       ],
+
+      category:
+        "Pratiche edilizie e urbanistiche",
+
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Privati, imprese e professionisti",
+      },
+    },
+
+    {
+      "@type": "WebPage",
+
+      "@id": `${PAGE_URL}/#webpage`,
+
+      url: PAGE_URL,
+
+      name:
+        "Pratiche edilizie a Belpasso e Catania",
+
+      description:
+        "CILA, SCIA, Permesso di Costruire, sanatorie, accesso agli atti e verifiche urbanistiche a Belpasso, Catania e provincia.",
+
+      isPartOf: {
+        "@id": `${seo.siteUrl}/#website`,
+      },
+
+      about: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      mainEntity: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      breadcrumb: {
+        "@id": `${PAGE_URL}/#breadcrumb`,
+      },
+
+      inLanguage: "it-IT",
     },
 
     {
       "@type": "BreadcrumbList",
 
-      "@id": `${SITE_URL}/servizi/pratiche-edilizie/#breadcrumb`,
+      "@id": `${PAGE_URL}/#breadcrumb`,
 
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: SITE_URL,
+          item: seo.siteUrl,
         },
+
         {
           "@type": "ListItem",
           position: 2,
           name: "Servizi",
-          item: `${SITE_URL}/servizi`,
+          item: `${seo.siteUrl}/servizi`,
         },
+
         {
           "@type": "ListItem",
           position: 3,
           name: "Pratiche edilizie",
-          item: `${SITE_URL}/servizi/pratiche-edilizie`,
+          item: PAGE_URL,
         },
       ],
+    },
+
+    {
+      "@type": "FAQPage",
+
+      "@id": `${PAGE_URL}/#faq`,
+
+      mainEntity: config.faqs.items.map((faq) => ({
+        "@type": "Question",
+
+        name: faq.question,
+
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
     },
   ],
 };

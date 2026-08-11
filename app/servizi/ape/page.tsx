@@ -8,32 +8,19 @@ import {
 
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
 import type { ServiceDetailConfig } from "@/components/services/service-types";
+import { seo } from "@/data/seo";
 
-const SITE_URL = "https://mironestudio.it";
-
-const CONTACTS = {
-  businessName: "Studio Tecnico Mirone",
-  address: "Via XVI Traversa n. 53",
-  postalCode: "95032",
-  city: "Belpasso",
-  province: "CT",
-  region: "Sicilia",
-  country: "IT",
-  phone: "+39 348 293 4197",
-  email: "info@mironestudio.it",
-  emailHref: "mailto:info@mironestudio.it",
-  whatsappHref:
-    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sull%27APE%20e%20sulla%20certificazione%20energetica.",
-};
+const PAGE_PATH = "/servizi/ape";
+const PAGE_URL = `${seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
   title: "APE e certificazione energetica a Belpasso e Catania",
 
   description:
-    "APE e certificazione energetica a Belpasso e Catania per vendita, locazione, nuove costruzioni e ristrutturazioni. Studio Tecnico Mirone segue sopralluogo, raccolta dati, calcolo e redazione dell’Attestato di Prestazione Energetica.",
+    "APE e certificazione energetica a Belpasso e Catania per vendita, locazione, nuove costruzioni e ristrutturazioni. Studio Tecnico Mirone segue sopralluogo, calcolo energetico e redazione dell'Attestato di Prestazione Energetica.",
 
   alternates: {
-    canonical: "/servizi/ape",
+    canonical: PAGE_PATH,
   },
 
   keywords: [
@@ -43,10 +30,20 @@ export const metadata: Metadata = {
     "certificazione energetica Catania",
     "Attestato di Prestazione Energetica Belpasso",
     "Attestato di Prestazione Energetica Catania",
+    "certificatore energetico Belpasso",
+    "certificatore energetico Catania",
     "APE vendita immobile Belpasso",
+    "APE vendita immobile Catania",
+    "APE locazione Belpasso",
     "APE locazione Catania",
     "APE ristrutturazione Belpasso",
-    "studio tecnico Belpasso",
+    "APE ristrutturazione Catania",
+    "classe energetica immobile Belpasso",
+    "classe energetica immobile Catania",
+    "ingegnere Belpasso",
+    "ingegnere Catania",
+    "Ingegnere Miriana Mirone",
+    "Miriana Mirone",
     "Studio Tecnico Mirone",
   ],
 
@@ -57,10 +54,19 @@ export const metadata: Metadata = {
     description:
       "Attestati di Prestazione Energetica per vendita, locazione, nuove costruzioni e ristrutturazioni a Belpasso, Catania e provincia.",
 
-    url: `${SITE_URL}/servizi/ape`,
-    siteName: CONTACTS.businessName,
-    locale: "it_IT",
+    url: PAGE_URL,
+    siteName: seo.siteName,
+    locale: seo.locale,
     type: "website",
+
+    images: [
+      {
+        url: seo.images.openGraph,
+        width: 1200,
+        height: 630,
+        alt: "APE e certificazione energetica - Studio Tecnico Mirone",
+      },
+    ],
   },
 
   twitter: {
@@ -71,11 +77,21 @@ export const metadata: Metadata = {
 
     description:
       "APE per compravendita, locazione, nuove costruzioni e ristrutturazioni a Belpasso e Catania.",
+
+    images: [seo.images.openGraph],
   },
 
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -91,8 +107,10 @@ const config: ServiceDetailConfig = {
   heroDescription:
     "Lo Studio Tecnico Mirone redige Attestati di Prestazione Energetica a Belpasso, Catania e provincia per compravendite, locazioni, nuove costruzioni e ristrutturazioni. Seguiamo il sopralluogo, la raccolta dei dati, il calcolo energetico e la predisposizione della documentazione necessaria.",
 
-  whatsappHref: CONTACTS.whatsappHref,
-  emailHref: CONTACTS.emailHref,
+  whatsappHref:
+    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sull%27APE%20e%20sulla%20certificazione%20energetica.",
+
+  emailHref: seo.contact.emailHref,
 
   heroChecklist: [
     "Sopralluogo",
@@ -142,7 +160,7 @@ const config: ServiceDetailConfig = {
         title: "Locazione",
 
         description:
-          "Certificazione energetica per immobili destinati alla locazione, quando prevista dalla normativa.",
+          "Certificazione energetica per immobili destinati alla locazione, quando prevista dalla normativa applicabile.",
       },
 
       {
@@ -245,6 +263,7 @@ const config: ServiceDetailConfig = {
       "Raccolta e verifica dei dati disponibili",
       "Analisi dell’involucro e degli impianti",
       "Calcolo della prestazione energetica",
+      "Individuazione della classe energetica",
       "Redazione dell’Attestato di Prestazione Energetica",
       "Supporto al cliente nella comprensione del documento",
     ],
@@ -321,10 +340,10 @@ const config: ServiceDetailConfig = {
 
       {
         question:
-          "È necessario il sopralluogo?",
+          "È necessario il sopralluogo per redigere l’APE?",
 
         answer:
-          "Il sopralluogo consente di raccogliere e verificare direttamente le informazioni necessarie sull’immobile, sulle caratteristiche costruttive e sugli impianti presenti.",
+          "Il sopralluogo permette di raccogliere e verificare direttamente le informazioni necessarie sull’immobile, sulle caratteristiche costruttive e sugli impianti presenti, così da disporre dei dati necessari alla valutazione energetica.",
       },
 
       {
@@ -341,6 +360,14 @@ const config: ServiceDetailConfig = {
 
         answer:
           "L’attestato contiene informazioni sulla prestazione energetica dell’immobile e può riportare indicazioni relative a possibili interventi di miglioramento energetico.",
+      },
+
+      {
+        question:
+          "Posso rivolgermi allo Studio Tecnico Mirone per un APE a Belpasso o Catania?",
+
+        answer:
+          "Sì. Lo Studio Tecnico Mirone ha sede a Belpasso e svolge attività di certificazione energetica a Belpasso, Catania, nei comuni della provincia e nell’area etnea.",
       },
 
       {
@@ -369,67 +396,29 @@ const jsonLd = {
 
   "@graph": [
     {
-      "@type": "ProfessionalService",
-
-      "@id": `${SITE_URL}/#organization`,
-
-      name: CONTACTS.businessName,
-      url: SITE_URL,
-      telephone: CONTACTS.phone,
-      email: CONTACTS.email,
-
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: CONTACTS.address,
-        postalCode: CONTACTS.postalCode,
-        addressLocality: CONTACTS.city,
-        addressRegion: CONTACTS.region,
-        addressCountry: CONTACTS.country,
-      },
-
-      areaServed: [
-        {
-          "@type": "City",
-          name: "Belpasso",
-        },
-        {
-          "@type": "City",
-          name: "Catania",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Provincia di Catania",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Sicilia",
-        },
-        {
-          "@type": "Country",
-          name: "Italia",
-        },
-      ],
-    },
-
-    {
       "@type": "Service",
 
-      "@id": `${SITE_URL}/servizi/ape/#service`,
+      "@id": `${PAGE_URL}/#service`,
 
       name:
         "APE e certificazione energetica a Belpasso e Catania",
 
+      alternateName: [
+        "Attestato di Prestazione Energetica",
+        "Certificazione energetica",
+        "APE",
+      ],
+
       serviceType:
         "Attestato di Prestazione Energetica",
 
-      url:
-        `${SITE_URL}/servizi/ape`,
+      url: PAGE_URL,
 
       description:
         "Servizio di redazione APE e certificazione energetica per vendita, locazione, nuove costruzioni e ristrutturazioni a Belpasso, Catania e provincia.",
 
       provider: {
-        "@id": `${SITE_URL}/#organization`,
+        "@id": `${seo.siteUrl}/#organization`,
       },
 
       areaServed: [
@@ -437,46 +426,109 @@ const jsonLd = {
           "@type": "City",
           name: "Belpasso",
         },
+
         {
           "@type": "City",
           name: "Catania",
         },
+
         {
           "@type": "AdministrativeArea",
           name: "Provincia di Catania",
         },
+
         {
           "@type": "AdministrativeArea",
           name: "Sicilia",
         },
       ],
+
+      category:
+        "Certificazione energetica e Attestato di Prestazione Energetica",
+
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Proprietari di immobili, privati, imprese e professionisti",
+      },
+    },
+
+    {
+      "@type": "WebPage",
+
+      "@id": `${PAGE_URL}/#webpage`,
+
+      url: PAGE_URL,
+
+      name:
+        "APE e certificazione energetica a Belpasso e Catania",
+
+      description:
+        "Attestati di Prestazione Energetica per vendita, locazione, nuove costruzioni e ristrutturazioni a Belpasso, Catania e provincia.",
+
+      isPartOf: {
+        "@id": `${seo.siteUrl}/#website`,
+      },
+
+      about: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      mainEntity: {
+        "@id": `${PAGE_URL}/#service`,
+      },
+
+      breadcrumb: {
+        "@id": `${PAGE_URL}/#breadcrumb`,
+      },
+
+      inLanguage: "it-IT",
     },
 
     {
       "@type": "BreadcrumbList",
 
-      "@id": `${SITE_URL}/servizi/ape/#breadcrumb`,
+      "@id": `${PAGE_URL}/#breadcrumb`,
 
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: SITE_URL,
+          item: seo.siteUrl,
         },
+
         {
           "@type": "ListItem",
           position: 2,
           name: "Servizi",
-          item: `${SITE_URL}/servizi`,
+          item: `${seo.siteUrl}/servizi`,
         },
+
         {
           "@type": "ListItem",
           position: 3,
           name: "APE e certificazioni energetiche",
-          item: `${SITE_URL}/servizi/ape`,
+          item: PAGE_URL,
         },
       ],
+    },
+
+    {
+      "@type": "FAQPage",
+
+      "@id": `${PAGE_URL}/#faq`,
+
+      mainEntity: config.faqs.items.map((faq) => ({
+        "@type": "Question",
+
+        name: faq.question,
+
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
     },
   ],
 };
