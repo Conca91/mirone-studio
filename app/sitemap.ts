@@ -17,7 +17,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${seo.siteUrl}/studio`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.9,
+      priority: 0.95,
+    },
+
+    {
+      url: `${seo.siteUrl}/miriana-mirone`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.95,
     },
 
     {
@@ -56,6 +63,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
 
     {
+      url: `${seo.siteUrl}/servizi/pratiche-catastali`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.95,
+    },
+
+    {
       url: `${seo.siteUrl}/servizi/ape`,
       lastModified: now,
       changeFrequency: "monthly",
@@ -67,13 +81,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
-    },
-
-    {
-      url: `${seo.siteUrl}/servizi/pratiche-catastali`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.95,
     },
 
     {
