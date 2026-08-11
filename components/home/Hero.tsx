@@ -12,10 +12,13 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92svh] overflow-hidden bg-[#191816] text-white">
+    <section
+      aria-labelledby="home-hero-title"
+      className="relative min-h-[92svh] overflow-hidden bg-[#191816] text-white"
+    >
       <Image
         src="/images/hero/render1.jpeg"
-        alt="Studio Tecnico Mirone a Belpasso, Catania - progettazione architettonica, pratiche edilizie, rilievi e direzione lavori"
+        alt="Studio Tecnico Mirone a Belpasso, Catania: progettazione architettonica, pratiche edilizie, rilievi topografici e direzione lavori"
         fill
         priority
         sizes="100vw"
@@ -36,15 +39,16 @@ export default function Hero() {
           </span>
 
           <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-white/55 sm:text-[11px]">
-            Progettazione · Ingegneria · Pratiche Edilizie · Direzione Lavori
+            Geometri · Progettazione · Pratiche Tecniche · Direzione Lavori
           </span>
         </motion.div>
 
         <motion.h1
+          id="home-hero-title"
           initial={{ opacity: 0, y: 34 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.1 }}
-          className="mt-6 max-w-5xl font-serif text-[clamp(3.7rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.06em] text-white"
+          className="mt-6 max-w-5xl font-serif text-[clamp(3.7rem,8vw,8rem)] font-medium leading-[0.92] tracking-[-0.055em] !text-white"
         >
           Progettazione,
           <br />
@@ -61,12 +65,18 @@ export default function Hero() {
         >
           <div>
             <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">
-              Lo Studio Tecnico Mirone opera a Belpasso, Catania e in tutta la
-              provincia, affiancando privati, aziende ed enti pubblici nella
-              progettazione architettonica, nelle pratiche edilizie e catastali,
-              nei rilievi topografici, nella direzione lavori, nella
-              modellazione BIM e nella consulenza tecnica. Seguiamo incarichi
-              anche nel resto della Sicilia e su tutto il territorio nazionale.
+              Lo Studio Tecnico Mirone è uno studio tecnico con sede a
+              Belpasso, in provincia di Catania. Affianchiamo privati, imprese
+              e professionisti nella progettazione architettonica, nelle
+              pratiche edilizie e catastali, nei rilievi topografici, nella
+              direzione lavori, nella modellazione BIM e nella consulenza
+              tecnica.
+            </p>
+
+            <p className="mt-5 max-w-3xl text-sm leading-7 text-white/70 sm:text-base">
+              Operiamo principalmente a Belpasso, Catania e nei comuni della
+              provincia, seguendo incarichi anche nel resto della Sicilia e,
+              in funzione del progetto, su tutto il territorio nazionale.
             </p>
 
             <ul
@@ -74,7 +84,10 @@ export default function Hero() {
               className="mt-7 flex flex-col gap-3 text-sm font-medium text-white/85 sm:flex-row sm:flex-wrap sm:gap-x-6"
             >
               {highlights.map((highlight) => (
-                <li key={highlight} className="flex items-center gap-2">
+                <li
+                  key={highlight}
+                  className="flex items-center gap-2"
+                >
                   <span
                     aria-hidden="true"
                     className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-white/45 text-[10px] text-white"
@@ -86,6 +99,53 @@ export default function Hero() {
                 </li>
               ))}
             </ul>
+
+            <nav
+              aria-label="Servizi principali"
+              className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-[11px] uppercase tracking-[0.18em] text-white/65"
+            >
+              <Link
+                href="/servizi/progettazione-architettonica"
+                className="border-b border-white/25 pb-1 transition-colors hover:text-white"
+              >
+                Progettazione
+              </Link>
+
+              <Link
+                href="/servizi/pratiche-edilizie"
+                className="border-b border-white/25 pb-1 transition-colors hover:text-white"
+              >
+                Pratiche edilizie
+              </Link>
+
+              <Link
+                href="/servizi/pratiche-catastali"
+                className="border-b border-white/25 pb-1 transition-colors hover:text-white"
+              >
+                Catasto
+              </Link>
+
+              <Link
+                href="/servizi/rilievi-topografici"
+                className="border-b border-white/25 pb-1 transition-colors hover:text-white"
+              >
+                Rilievi
+              </Link>
+
+              <Link
+                href="/servizi/direzione-lavori"
+                className="border-b border-white/25 pb-1 transition-colors hover:text-white"
+              >
+                Direzione lavori
+              </Link>
+
+              <Link
+                href="/servizi/ape"
+                className="border-b border-white/25 pb-1 transition-colors hover:text-white"
+              >
+                APE
+              </Link>
+            </nav>
           </div>
 
           <div className="flex flex-wrap gap-4 lg:justify-end">

@@ -12,19 +12,261 @@ import { company } from "@/data/company";
 import { seo } from "@/data/seo";
 
 export const metadata: Metadata = {
-  title: "Lo studio",
+  title: "Ingegnere Miriana Mirone a Belpasso, Catania",
+
   description:
-    "Conosci lo Studio Tecnico Mirone di Belpasso: competenze, metodo di lavoro e servizi di progettazione, pratiche edilizie, direzione lavori, BIM, APE e consulenza tecnica.",
+    "Ingegnere Miriana Mirone, responsabile dello Studio Tecnico Mirone a Belpasso, Catania. Progettazione architettonica, pratiche edilizie e catastali, direzione lavori, rilievi topografici, APE, BIM e consulenza tecnica.",
+
   alternates: {
     canonical: "/studio",
   },
+
+  keywords: [
+    "Ingegnere Miriana Mirone",
+    "Miriana Mirone",
+    "Miriana Mirone Belpasso",
+    "Miriana Mirone Catania",
+    "Ingegnere Belpasso",
+    "Ingegnere Catania",
+    "ingegnere a Belpasso",
+    "ingegnere a Catania",
+    "Studio Tecnico Mirone",
+    "studio tecnico Belpasso",
+    "studio tecnico Catania",
+    "progettazione Belpasso",
+    "progettazione Catania",
+    "pratiche edilizie Belpasso",
+    "pratiche catastali Belpasso",
+    "direzione lavori Belpasso",
+    "rilievi topografici Belpasso",
+    "APE Belpasso",
+  ],
+
   openGraph: {
-    title: "Lo studio | Studio Tecnico Mirone",
+    title:
+      "Ingegnere Miriana Mirone | Studio Tecnico a Belpasso, Catania",
+
     description:
-      "Metodo, competenze e approccio progettuale dello Studio Tecnico Mirone a Belpasso, in provincia di Catania.",
+      "Miriana Mirone, ingegnere e responsabile dello Studio Tecnico Mirone a Belpasso, in provincia di Catania.",
+
     url: `${seo.siteUrl}/studio`,
+    siteName: seo.siteName,
+    locale: seo.locale,
     type: "website",
   },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Ingegnere Miriana Mirone | Studio Tecnico Mirone",
+
+    description:
+      "Ingegnere Miriana Mirone a Belpasso, Catania: progettazione, pratiche tecniche, direzione lavori e consulenza.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const serviceLinks = [
+  {
+    title: "Progettazione architettonica",
+    href: "/servizi/progettazione-architettonica",
+  },
+  {
+    title: "Pratiche edilizie",
+    href: "/servizi/pratiche-edilizie",
+  },
+  {
+    title: "Pratiche catastali",
+    href: "/servizi/pratiche-catastali",
+  },
+  {
+    title: "Direzione lavori",
+    href: "/servizi/direzione-lavori",
+  },
+  {
+    title: "Rilievi topografici",
+    href: "/servizi/rilievi-topografici",
+  },
+  {
+    title: "APE e certificazioni",
+    href: "/servizi/ape",
+  },
+  {
+    title: "Rendering architettonici",
+    href: "/servizi/rendering-architettonici",
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+
+      "@id": `${seo.siteUrl}/#organization`,
+
+      name: seo.siteName,
+      url: seo.siteUrl,
+
+      description:
+        "Studio tecnico a Belpasso, in provincia di Catania, attivo nella progettazione architettonica, nelle pratiche edilizie e catastali, nei rilievi topografici, nella direzione lavori, nelle certificazioni energetiche, nel BIM e nella consulenza tecnica.",
+
+      telephone: seo.contact.phone,
+      email: seo.contact.email,
+
+      address: {
+        "@type": "PostalAddress",
+
+        streetAddress: seo.address.street,
+        postalCode: seo.address.postalCode,
+        addressLocality: seo.address.city,
+        addressRegion: seo.address.province,
+        addressCountry: seo.address.countryCode,
+      },
+
+      areaServed: [
+        {
+          "@type": "City",
+          name: "Belpasso",
+        },
+        {
+          "@type": "City",
+          name: "Catania",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Provincia di Catania",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Sicilia",
+        },
+        {
+          "@type": "Country",
+          name: "Italia",
+        },
+      ],
+
+      founder: {
+        "@id": `${seo.siteUrl}/studio/#miriana-mirone`,
+      },
+
+      knowsAbout: [
+        "Progettazione architettonica",
+        "Pratiche edilizie",
+        "Pratiche catastali",
+        "Direzione lavori",
+        "Rilievi topografici",
+        "Attestato di Prestazione Energetica",
+        "Building Information Modeling",
+        "Rendering architettonico",
+        "Consulenza tecnica",
+      ],
+    },
+
+    {
+      "@type": "Person",
+
+      "@id": `${seo.siteUrl}/studio/#miriana-mirone`,
+
+      name: "Miriana Mirone",
+
+      alternateName: [
+        "Ingegnere Miriana Mirone",
+        "Ing. Miriana Mirone",
+      ],
+
+      jobTitle: "Ingegnere",
+
+      description:
+        "Miriana Mirone è ingegnere e responsabile dello Studio Tecnico Mirone, con sede a Belpasso, in provincia di Catania. Segue attività di progettazione, pratiche tecniche, direzione lavori, rilievi e consulenza per interventi edilizi.",
+
+      worksFor: {
+        "@id": `${seo.siteUrl}/#organization`,
+      },
+
+      workLocation: {
+        "@type": "Place",
+
+        name:
+          "Studio Tecnico Mirone - Belpasso",
+
+        address: {
+          "@type": "PostalAddress",
+
+          streetAddress: seo.address.street,
+          postalCode: seo.address.postalCode,
+          addressLocality: seo.address.city,
+          addressRegion: seo.address.province,
+          addressCountry: seo.address.countryCode,
+        },
+      },
+
+      knowsAbout: [
+        "Progettazione architettonica",
+        "Pratiche edilizie",
+        "Pratiche catastali",
+        "Direzione lavori",
+        "Rilievi topografici",
+        "APE",
+        "BIM",
+        "Rendering architettonico",
+        "Consulenza tecnica",
+      ],
+
+      url: `${seo.siteUrl}/studio`,
+    },
+
+    {
+      "@type": "WebPage",
+
+      "@id": `${seo.siteUrl}/studio/#webpage`,
+
+      url: `${seo.siteUrl}/studio`,
+
+      name:
+        "Ingegnere Miriana Mirone a Belpasso, Catania | Studio Tecnico Mirone",
+
+      description:
+        "Pagina professionale dell’Ingegnere Miriana Mirone, responsabile dello Studio Tecnico Mirone a Belpasso, in provincia di Catania.",
+
+      about: [
+        {
+          "@id": `${seo.siteUrl}/#organization`,
+        },
+        {
+          "@id": `${seo.siteUrl}/studio/#miriana-mirone`,
+        },
+      ],
+    },
+
+    {
+      "@type": "BreadcrumbList",
+
+      "@id": `${seo.siteUrl}/studio/#breadcrumb`,
+
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: seo.siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Studio",
+          item: `${seo.siteUrl}/studio`,
+        },
+      ],
+    },
+  ],
 };
 
 export default function StudioPage() {
@@ -32,15 +274,25 @@ export default function StudioPage() {
 
   return (
     <main>
-      <PageHero
-        eyebrow="Lo studio"
-        title="Tecnica, metodo, territorio."
-        description="Lo Studio Tecnico Mirone accompagna privati, imprese e professionisti nella progettazione e nella gestione degli interventi edilizi, dalla verifica preliminare fino alla conclusione delle attività."
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
       />
 
+      <PageHero
+        eyebrow="Studio Tecnico Mirone · Belpasso · Catania"
+        title="Tecnica, metodo, territorio."
+        description="Lo Studio Tecnico Mirone, guidato dall’Ingegnere Miriana Mirone, ha sede a Belpasso, in provincia di Catania, e accompagna privati, imprese e professionisti nella progettazione e nella gestione degli interventi edilizi."
+      />
+
+      {/* CHI SIAMO */}
       <section className="section bg-[var(--color-surface)]">
         <div className="site-container editorial-grid">
-          <p className="eyebrow">Chi siamo</p>
+          <p className="eyebrow">
+            Chi siamo
+          </p>
 
           <div>
             <h2 className="display-title">
@@ -55,22 +307,38 @@ export default function StudioPage() {
               </p>
 
               <p className="leading-8 text-[var(--color-muted)]">
-                Operiamo a Belpasso, nella provincia di Catania, in Sicilia e
-                su incarichi distribuiti nel territorio nazionale. Il nostro
-                lavoro integra progettazione, rilievo, gestione documentale e
-                assistenza tecnica, con l’obiettivo di offrire al cliente un
-                percorso ordinato e concretamente realizzabile.
+                Lo Studio Tecnico Mirone opera a Belpasso, Catania e nei comuni
+                della provincia, seguendo privati, imprese e professionisti
+                nella progettazione e nella gestione tecnica degli interventi
+                edilizi.
+              </p>
+
+              <p className="leading-8 text-[var(--color-muted)]">
+                Il lavoro dello Studio integra progettazione architettonica,
+                pratiche edilizie e catastali, rilievi topografici, direzione
+                lavori, certificazione energetica, modellazione BIM e
+                consulenza tecnica.
+              </p>
+
+              <p className="leading-8 text-[var(--color-muted)]">
+                L&apos;Ingegnere Miriana Mirone coordina le attività dello
+                Studio Tecnico Mirone con un approccio orientato alla
+                precisione, alla chiarezza e alla gestione coordinata delle
+                diverse fasi dell&apos;intervento.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* VISIONE */}
       <section className="section bg-[var(--color-background)]">
         <div className="site-container">
           <div className="grid gap-10 border-t border-black/15 pt-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
-              <p className="eyebrow">La nostra visione</p>
+              <p className="eyebrow">
+                La nostra visione
+              </p>
             </div>
 
             <div className="lg:col-span-7 lg:col-start-6">
@@ -86,7 +354,9 @@ export default function StudioPage() {
                 key={value.number}
                 className="border-b border-black/15 py-9 sm:px-6 sm:first:pl-0 lg:border-r lg:last:border-r-0 lg:last:pr-0"
               >
-                <p className="eyebrow">{value.number}</p>
+                <p className="eyebrow">
+                  {value.number}
+                </p>
 
                 <h3 className="mt-12 font-serif text-3xl">
                   {value.title}
@@ -101,20 +371,22 @@ export default function StudioPage() {
         </div>
       </section>
 
+      {/* MIR IANA MIRONE */}
       <section className="section bg-[var(--color-surface)]">
         <div className="site-container">
           <div className="editorial-grid">
-            <p className="eyebrow">Professionista</p>
+            <p className="eyebrow">
+              Professionista
+            </p>
 
             <div>
               <h2 className="display-title">
-                Competenza tecnica e attenzione al progetto.
+                Ingegnere Miriana Mirone.
               </h2>
 
               <p className="body-large mt-8 max-w-2xl">
-                Ogni incarico viene seguito con un confronto diretto e
-                continuo, coordinando gli aspetti progettuali, amministrativi
-                e operativi.
+                Responsabile dello Studio Tecnico Mirone a Belpasso, in
+                provincia di Catania.
               </p>
             </div>
           </div>
@@ -126,20 +398,30 @@ export default function StudioPage() {
                 className="grid gap-10 border-b border-black/15 py-12 lg:grid-cols-12 lg:gap-16 lg:py-16"
               >
                 <div className="lg:col-span-4">
-                  <p className="eyebrow">{person.role}</p>
+                  <p className="eyebrow">
+                    Responsabile dello Studio Tecnico Mirone
+                  </p>
 
                   <h3 className="mt-8 font-serif text-4xl sm:text-5xl">
-                    {person.name}
+                    Ingegnere {person.name}
                   </h3>
 
-                  <p className="mt-4 text-sm uppercase tracking-[0.18em] text-[var(--color-muted)]">
-                    {person.title}
+                  <p className="mt-4 text-sm font-medium uppercase tracking-[0.18em] text-[var(--color-muted)]">
+                    Ingegnere · Belpasso · Catania
                   </p>
                 </div>
 
                 <div className="lg:col-span-7 lg:col-start-6">
                   <p className="max-w-2xl text-lg leading-8 text-[var(--color-muted)]">
                     {person.description}
+                  </p>
+
+                  <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--color-muted)]">
+                    L&apos;Ingegnere Miriana Mirone opera presso lo Studio
+                    Tecnico Mirone di Belpasso, in provincia di Catania,
+                    seguendo attività di progettazione, pratiche tecniche,
+                    direzione lavori, rilievi e consulenza per interventi
+                    edilizi.
                   </p>
 
                   <ul className="mt-10 grid gap-x-10 gap-y-4 sm:grid-cols-2">
@@ -166,16 +448,86 @@ export default function StudioPage() {
         </div>
       </section>
 
+      {/* SERVIZI */}
+      <section className="section bg-[var(--color-background)]">
+        <div className="site-container">
+          <div className="editorial-grid">
+            <p className="eyebrow">
+              Competenze
+            </p>
+
+            <div>
+              <h2 className="display-title">
+                Servizi tecnici per ogni fase dell&apos;intervento.
+              </h2>
+
+              <p className="body-large mt-8 max-w-2xl">
+                Dalla verifica iniziale alla progettazione, dagli adempimenti
+                amministrativi alla fase esecutiva, lo Studio coordina le
+                principali attività necessarie allo sviluppo
+                dell&apos;intervento.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-20 grid border-t border-black/15 sm:grid-cols-2 lg:grid-cols-3">
+            {serviceLinks.map((service, index) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="group flex min-h-44 flex-col justify-between border-b border-black/15 py-8 sm:px-7 sm:first:pl-0 lg:border-r lg:[&:nth-child(3n)]:border-r-0"
+              >
+                <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--color-muted)]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <div className="mt-12 flex items-end justify-between gap-5">
+                  <h3 className="font-serif text-2xl leading-tight sm:text-3xl">
+                    {service.title}
+                  </h3>
+
+                  <ArrowUpRight
+                    size={18}
+                    strokeWidth={1.4}
+                    aria-hidden="true"
+                    className="mb-1 shrink-0 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                  />
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-10">
+            <Link
+              href="/servizi"
+              className="group inline-flex items-center gap-4 border-b border-black pb-3 text-[10px] uppercase tracking-[0.24em]"
+            >
+              Tutti i servizi
+
+              <ArrowUpRight
+                size={18}
+                strokeWidth={1.4}
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* METODO */}
       <section className="section bg-[#23211f] text-white">
         <div className="site-container">
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
-              <p className="eyebrow text-white/45">Il nostro metodo</p>
+              <p className="eyebrow !text-white/45">
+                Il nostro metodo
+              </p>
             </div>
 
             <div className="lg:col-span-7 lg:col-start-6">
-              <h2 className="display-title text-white">
-                Un percorso chiaro, dall’idea alla realizzazione.
+              <h2 className="display-title !text-white">
+                Un percorso chiaro, dall&apos;idea alla realizzazione.
               </h2>
 
               <p className="mt-8 max-w-2xl text-lg leading-8 text-white/60">
@@ -191,11 +543,11 @@ export default function StudioPage() {
                 key={step.number}
                 className="grid gap-5 border-b border-white/20 py-9 sm:grid-cols-[0.2fr_0.8fr_1fr] sm:gap-8"
               >
-                <span className="eyebrow text-white/40">
+                <span className="eyebrow !text-white/40">
                   {step.number}
                 </span>
 
-                <h3 className="font-serif text-3xl">
+                <h3 className="font-serif text-3xl !text-white">
                   {step.title}
                 </h3>
 
@@ -208,11 +560,14 @@ export default function StudioPage() {
         </div>
       </section>
 
+      {/* TECNOLOGIE */}
       <section className="section bg-[var(--color-background)]">
         <div className="site-container">
           <div className="grid gap-10 border-t border-black/15 pt-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
-              <p className="eyebrow">Strumenti e competenze</p>
+              <p className="eyebrow">
+                Strumenti e competenze
+              </p>
             </div>
 
             <div className="lg:col-span-7 lg:col-start-6">
@@ -248,14 +603,15 @@ export default function StudioPage() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="bg-[#23211f] text-white">
         <div className="site-container grid gap-12 py-24 md:py-32 lg:grid-cols-12 lg:items-end lg:py-40">
           <div className="lg:col-span-7">
-            <p className="eyebrow text-white/45">
-              Parliamo del tuo progetto
+            <p className="eyebrow !text-white/45">
+              Ingegnere Miriana Mirone · Belpasso · Catania
             </p>
 
-            <h2 className="mt-10 font-serif text-5xl leading-[0.95] tracking-[-0.04em] sm:text-6xl md:text-7xl">
+            <h2 className="mt-10 font-serif text-5xl leading-[0.95] tracking-[-0.04em] !text-white sm:text-6xl md:text-7xl">
               Iniziamo da una verifica preliminare.
             </h2>
           </div>
@@ -263,8 +619,8 @@ export default function StudioPage() {
           <div className="lg:col-span-4 lg:col-start-9">
             <p className="text-base leading-8 text-white/60">
               Raccontaci le tue esigenze. Valuteremo la documentazione
-              disponibile, lo stato dell’immobile e il percorso tecnico più
-              adatto.
+              disponibile, lo stato dell&apos;immobile e il percorso tecnico
+              più adatto.
             </p>
 
             <div className="mt-10 flex flex-col items-start gap-5">

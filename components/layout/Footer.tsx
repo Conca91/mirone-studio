@@ -14,9 +14,41 @@ const navigation = [
   { label: "Contatti", href: "/contatti" },
 ];
 
+const services = [
+  {
+    label: "Progettazione architettonica",
+    href: "/servizi/progettazione-architettonica",
+  },
+  {
+    label: "Pratiche edilizie",
+    href: "/servizi/pratiche-edilizie",
+  },
+  {
+    label: "Pratiche catastali",
+    href: "/servizi/pratiche-catastali",
+  },
+  {
+    label: "Direzione lavori",
+    href: "/servizi/direzione-lavori",
+  },
+  {
+    label: "Rilievi topografici",
+    href: "/servizi/rilievi-topografici",
+  },
+  {
+    label: "APE e certificazioni",
+    href: "/servizi/ape",
+  },
+  {
+    label: "Rendering architettonici",
+    href: "/servizi/rendering-architettonici",
+  },
+];
+
 const legalLinks = [
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Cookie Policy", href: "/cookie-policy" },
+  { label: "Note legali", href: "/note-legali" },
 ];
 
 export default function Footer() {
@@ -25,10 +57,11 @@ export default function Footer() {
   return (
     <footer className="bg-[#24221f] text-[#ebe7dc]">
       <div className="mx-auto max-w-[1500px] px-6 py-20 md:px-12 md:py-24 lg:px-20 lg:py-32">
+        {/* PARTE PRINCIPALE */}
         <div className="grid gap-20 border-b border-white/15 pb-20 lg:grid-cols-12 lg:gap-12 lg:pb-28">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6">
             <p className="mb-8 text-[10px] uppercase tracking-[0.35em] text-[#b8b0a5]">
-              Studio Tecnico Mirone
+              Studio Tecnico Mirone · Belpasso · Catania
             </p>
 
             <h2 className="max-w-4xl font-serif text-5xl leading-[0.95] tracking-[-0.03em] md:text-7xl lg:text-[6.5rem]">
@@ -39,9 +72,15 @@ export default function Footer() {
               da un&apos;idea.
             </h2>
 
+            <p className="mt-9 max-w-xl text-sm leading-7 text-[#aaa297] sm:text-base">
+              Studio tecnico a Belpasso, in provincia di Catania, per
+              progettazione architettonica, pratiche edilizie e catastali,
+              rilievi topografici, direzione lavori e consulenza tecnica.
+            </p>
+
             <Link
               href="/contatti"
-              className="group mt-12 inline-flex items-center gap-4 border-b border-[#ebe7dc] pb-3 text-xs uppercase tracking-[0.24em]"
+              className="group mt-10 inline-flex items-center gap-4 border-b border-[#ebe7dc] pb-3 text-xs uppercase tracking-[0.24em]"
             >
               Richiedi una consulenza
 
@@ -54,7 +93,8 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div className="grid gap-14 sm:grid-cols-2 lg:col-span-4 lg:col-start-9">
+          <div className="grid gap-14 sm:grid-cols-2 lg:col-span-5 lg:col-start-8">
+            {/* NAVIGAZIONE */}
             <div>
               <p className="mb-7 text-[10px] uppercase tracking-[0.3em] text-[#938c82]">
                 Navigazione
@@ -76,6 +116,7 @@ export default function Footer() {
               </nav>
             </div>
 
+            {/* CONTATTI */}
             <div>
               <p className="mb-7 text-[10px] uppercase tracking-[0.3em] text-[#938c82]">
                 Contatti
@@ -122,6 +163,8 @@ export default function Footer() {
                     Via XVI Traversa n. 53
                     <br />
                     95032 Belpasso (CT)
+                    <br />
+                    Sicilia, Italia
                   </span>
                 </address>
               </div>
@@ -129,8 +172,47 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* SERVIZI */}
+        <div className="border-b border-white/15 py-12 lg:py-14">
+          <div className="grid gap-8 lg:grid-cols-12">
+            <div className="lg:col-span-3">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#938c82]">
+                Servizi tecnici
+              </p>
+            </div>
+
+            <nav
+              aria-label="Servizi dello Studio Tecnico Mirone"
+              className="lg:col-span-9"
+            >
+              <ul className="grid gap-x-10 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+                {services.map((service) => (
+                  <li key={service.href}>
+                    <Link
+                      href={service.href}
+                      className="group inline-flex items-center gap-2 text-sm leading-6 text-[#b8b0a5] transition-colors duration-300 hover:text-white"
+                    >
+                      <span>{service.label}</span>
+
+                      <ArrowUpRight
+                        size={13}
+                        strokeWidth={1.4}
+                        aria-hidden="true"
+                        className="opacity-40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
+                      />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        {/* FOOTER INFERIORE */}
         <div className="grid gap-10 pt-8 text-[10px] uppercase tracking-[0.22em] text-[#8f887e] md:grid-cols-2 md:items-center">
-          <p>© {currentYear} Studio Tecnico Mirone</p>
+          <p>
+            © {currentYear} Studio Tecnico Mirone · Belpasso (CT)
+          </p>
 
           <div className="flex flex-wrap gap-x-7 gap-y-3 md:justify-end">
             {legalLinks.map((item) => (
