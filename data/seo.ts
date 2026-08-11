@@ -1,58 +1,87 @@
 export const seo = {
   siteName: "Studio Tecnico Mirone",
-
   shortName: "Studio Mirone",
 
   siteUrl: "https://mironestudio.it",
 
   locale: "it_IT",
-
   language: "it",
 
+  /*
+   * SEO PRINCIPALE
+   * Obiettivo:
+   * - Studio tecnico Belpasso
+   * - Geometra Belpasso
+   * - Progettazione Belpasso / Catania
+   * - Pratiche edilizie e catastali
+   */
   defaultTitle:
-    "Studio Tecnico Mirone | Progettazione e Pratiche Edilizie",
+    "Studio Tecnico a Belpasso | Studio Tecnico Mirone",
 
   titleTemplate: "%s | Studio Tecnico Mirone",
 
   defaultDescription:
-    "Studio Tecnico Mirone a Belpasso, in provincia di Catania. Progettazione architettonica e strutturale, pratiche edilizie e catastali, rilievi topografici, direzione lavori, BIM, rendering e consulenza tecnica in Sicilia e in tutta Italia.",
+    "Studio Tecnico Mirone a Belpasso, Catania. Progettazione architettonica, pratiche edilizie e catastali, rilievi topografici, direzione lavori, BIM, rendering e consulenza tecnica.",
 
+  /*
+   * Le keywords non sono un fattore importante per Google,
+   * ma possiamo mantenerle come riferimento interno.
+   */
   keywords: [
     "Studio Tecnico Mirone",
     "Studio Mirone",
+
     "studio tecnico Belpasso",
     "studio tecnico Catania",
-    "studio tecnico Sicilia",
+
     "geometra Belpasso",
     "geometra Catania",
-    "ingegnere Belpasso",
-    "ingegnere Catania",
-    "progettazione architettonica",
-    "progettazione strutturale",
-    "progettazione edilizia",
-    "direzione lavori",
-    "pratiche edilizie",
-    "pratiche catastali",
-    "SCIA",
-    "CILA",
-    "Permesso di Costruire",
-    "sanatoria edilizia",
-    "rilievi topografici",
-    "rilievo GPS",
-    "rilievo con drone",
-    "topografia",
-    "catasto",
+
+    "progettazione architettonica Belpasso",
+    "progettazione architettonica Catania",
+
+    "progettazione edilizia Belpasso",
+    "progettazione edilizia Catania",
+
+    "pratiche edilizie Belpasso",
+    "pratiche edilizie Catania",
+
+    "pratiche catastali Belpasso",
+    "pratiche catastali Catania",
+
+    "direzione lavori Belpasso",
+    "direzione lavori Catania",
+
+    "rilievi topografici Belpasso",
+    "rilievi topografici Catania",
+
+    "catasto Belpasso",
+    "catasto Catania",
+
+    "SCIA Belpasso",
+    "CILA Belpasso",
+
+    "sanatoria edilizia Belpasso",
+
     "DOCFA",
     "volture catastali",
     "successioni",
+
     "modellazione BIM",
     "progettazione BIM",
+
     "rendering architettonico",
     "visualizzazione 3D",
+
     "efficientamento energetico",
+
     "Attestato di Prestazione Energetica",
-    "APE",
-    "consulenza tecnica",
+    "APE Belpasso",
+    "APE Catania",
+
+    "consulenza tecnica Belpasso",
+    "consulenza tecnica Catania",
+
     "contabilità lavori",
     "sicurezza nei cantieri",
   ],
@@ -60,6 +89,7 @@ export const seo = {
   contact: {
     phone: "+39 348 293 4197",
     phoneHref: "tel:+393482934197",
+
     email: "info@mironestudio.it",
     emailHref: "mailto:info@mironestudio.it",
   },

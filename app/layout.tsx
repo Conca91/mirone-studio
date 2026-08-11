@@ -33,8 +33,6 @@ export const metadata: Metadata = {
 
   description: seo.defaultDescription,
 
-  keywords: [...seo.keywords],
-
   applicationName: seo.siteName,
 
   authors: [
@@ -59,7 +57,7 @@ export const metadata: Metadata = {
         url: seo.images.openGraph,
         width: 1200,
         height: 630,
-        alt: `${seo.siteName} – Progettazione, pratiche edilizie e servizi tecnici`,
+        alt: `${seo.siteName} - Studio tecnico a Belpasso, Catania`,
       },
     ],
   },
@@ -74,6 +72,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -99,7 +98,7 @@ export default function RootLayout({
   return (
     <html lang={seo.language}>
       <body
-        className={`${inter.variable} ${cormorant.variable} bg-[#ebe7dc] font-sans text-[#24221f] antialiased`}
+        className={`${inter.variable} ${cormorant.variable} bg-[#ded6ca] font-sans text-[#25211e] antialiased`}
       >
         <StructuredData />
 

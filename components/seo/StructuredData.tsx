@@ -10,12 +10,13 @@ const structuredData = {
   legalName: legal.legalName,
 
   url: seo.siteUrl,
-
   description: seo.defaultDescription,
 
   telephone: legal.phone,
-
   email: legal.contactEmail,
+
+  image: `${seo.siteUrl}${seo.images.openGraph}`,
+  logo: `${seo.siteUrl}${seo.images.logo}`,
 
   address: {
     "@type": "PostalAddress",
@@ -31,21 +32,40 @@ const structuredData = {
     name: legal.ownerName,
   },
 
-  areaServed: {
-    "@type": "Country",
-    name: "Italia",
-  },
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Belpasso",
+    },
+    {
+      "@type": "City",
+      name: "Catania",
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Provincia di Catania",
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Sicilia",
+    },
+    {
+      "@type": "Country",
+      name: "Italia",
+    },
+  ],
 
   knowsAbout: [
     "Progettazione architettonica",
     "Ristrutturazione edilizia",
     "Pratiche edilizie",
     "Pratiche catastali",
-    "Rilievi tecnici",
+    "Rilievi topografici",
     "Direzione lavori",
-    "Coordinamento tecnico",
-    "Building Information Modeling",
+    "Attestati di Prestazione Energetica",
+    "Modellazione BIM",
     "Rendering architettonico",
+    "Consulenza tecnica",
   ],
 
   contactPoint: {
@@ -55,6 +75,14 @@ const structuredData = {
     contactType: "customer service",
     availableLanguage: ["Italian"],
   },
+
+  sameAs: [
+    // Aggiungeremo qui in futuro eventuali profili ufficiali:
+    // Google Business Profile
+    // Instagram
+    // Facebook
+    // LinkedIn
+  ],
 };
 
 export default function StructuredData() {

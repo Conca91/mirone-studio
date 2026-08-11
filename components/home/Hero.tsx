@@ -15,7 +15,7 @@ export default function Hero() {
     <section className="relative min-h-[92svh] overflow-hidden bg-[#191816] text-white">
       <Image
         src="/images/hero/render1.jpeg"
-        alt="Progettazione architettonica, ingegneria e consulenza tecnica dello Studio Tecnico Mirone"
+        alt="Studio Tecnico Mirone a Belpasso, Catania - progettazione architettonica, pratiche edilizie, rilievi e direzione lavori"
         fill
         priority
         sizes="100vw"
@@ -32,11 +32,11 @@ export default function Hero() {
           className="inline-flex flex-col gap-2"
         >
           <span className="text-[10px] font-semibold uppercase tracking-[0.38em] text-white/90 sm:text-[11px]">
-            Studio Tecnico Mirone
+            Studio Tecnico Mirone · Belpasso · Catania
           </span>
 
           <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-white/55 sm:text-[11px]">
-            Geometri · Ingegneri · Progettazione · Direzione Lavori
+            Progettazione · Ingegneria · Pratiche Edilizie · Direzione Lavori
           </span>
         </motion.div>
 
@@ -61,11 +61,12 @@ export default function Hero() {
         >
           <div>
             <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">
-              Lo Studio Tecnico Mirone affianca privati, aziende ed enti
-              pubblici nella progettazione architettonica, nelle pratiche
-              edilizie, nei rilievi topografici, nella direzione lavori e nella
-              consulenza tecnica. Operiamo in tutta Italia, con particolare
-              presenza in Sicilia, nella provincia di Catania.
+              Lo Studio Tecnico Mirone opera a Belpasso, Catania e in tutta la
+              provincia, affiancando privati, aziende ed enti pubblici nella
+              progettazione architettonica, nelle pratiche edilizie e catastali,
+              nei rilievi topografici, nella direzione lavori, nella
+              modellazione BIM e nella consulenza tecnica. Seguiamo incarichi
+              anche nel resto della Sicilia e su tutto il territorio nazionale.
             </p>
 
             <ul
@@ -96,10 +97,10 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/progetti"
+              href="/servizi"
               className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/70 bg-white/10 px-8 text-sm font-semibold !text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white hover:!text-[#262320]"
             >
-              I nostri progetti
+              Scopri i servizi
             </Link>
           </div>
         </motion.div>
