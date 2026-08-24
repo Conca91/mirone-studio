@@ -18,6 +18,11 @@ const structuredData = {
       name: legal.brandName,
       legalName: legal.legalName,
 
+      alternateName: [
+        "Studio Mirone",
+        "Studio Tecnico Mirone Belpasso",
+      ],
+
       url: seo.siteUrl,
 
       description: seo.defaultDescription,
@@ -43,22 +48,18 @@ const structuredData = {
           "@type": "City",
           name: "Belpasso",
         },
-
         {
           "@type": "City",
           name: "Catania",
         },
-
         {
           "@type": "AdministrativeArea",
           name: "Provincia di Catania",
         },
-
         {
           "@type": "AdministrativeArea",
           name: "Sicilia",
         },
-
         {
           "@type": "Country",
           name: "Italia",
@@ -123,7 +124,7 @@ const structuredData = {
       },
 
       description:
-        "Miriana Mirone è ingegnere e responsabile dello Studio Tecnico Mirone, con sede a Belpasso, in provincia di Catania.",
+        "Miriana Mirone è ingegnere e responsabile dello Studio Tecnico Mirone, studio tecnico con sede a Belpasso, in provincia di Catania.",
 
       worksFor: {
         "@id": organizationId,
