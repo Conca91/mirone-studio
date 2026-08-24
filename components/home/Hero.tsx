@@ -18,7 +18,7 @@ export default function Hero() {
     >
       <Image
         src="/images/hero/render1.jpeg"
-        alt="Studio Tecnico Mirone a Belpasso, Catania: progettazione architettonica, pratiche edilizie, rilievi topografici e direzione lavori"
+        alt="Studio Tecnico Mirone, ufficio tecnico a Belpasso in provincia di Catania: progettazione architettonica, pratiche edilizie, rilievi topografici e direzione lavori"
         fill
         priority
         sizes="100vw"
@@ -35,7 +35,7 @@ export default function Hero() {
           className="inline-flex flex-col gap-2"
         >
           <span className="text-[10px] font-semibold uppercase tracking-[0.38em] text-white/90 sm:text-[11px]">
-            Studio Tecnico Mirone · Belpasso · Catania
+            Studio Tecnico Mirone · Ufficio Tecnico a Belpasso · Catania
           </span>
 
           <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-white/55 sm:text-[11px]">
@@ -65,12 +65,16 @@ export default function Hero() {
         >
           <div>
             <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">
-              Lo Studio Tecnico Mirone è uno studio tecnico con sede a
-              Belpasso, in provincia di Catania. Affianchiamo privati, imprese
-              e professionisti nella progettazione architettonica, nelle
-              pratiche edilizie e catastali, nei rilievi topografici, nella
-              direzione lavori, nella modellazione BIM e nella consulenza
-              tecnica.
+              Lo Studio Tecnico Mirone è un ufficio tecnico a Belpasso, in
+              provincia di Catania, specializzato in progettazione
+              architettonica, pratiche edilizie e catastali, rilievi
+              topografici e direzione lavori.
+            </p>
+
+            <p className="mt-5 max-w-3xl text-sm leading-7 text-white/70 sm:text-base">
+              Affianchiamo privati, imprese e professionisti anche nella
+              modellazione BIM, nella consulenza tecnica e nella gestione
+              coordinata delle diverse fasi dell&apos;intervento.
             </p>
 
             <p className="mt-5 max-w-3xl text-sm leading-7 text-white/70 sm:text-base">
