@@ -17,7 +17,7 @@ const PAGE_ID = `${PERSON_URL}/#webpage`;
 const BREADCRUMB_ID = `${PERSON_URL}/#breadcrumb`;
 
 export const metadata: Metadata = {
-  title: "Miriana Mirone | Ingegnere - Studio Tecnico Mirone",
+  title: "Miriana Mirone | Ingegnere a Belpasso, Catania",
 
   description:
     "Miriana Mirone, ingegnere e responsabile dello Studio Tecnico Mirone a Belpasso, in provincia di Catania. Progettazione architettonica, pratiche edilizie e catastali, direzione lavori, rilievi topografici, APE, BIM e consulenza tecnica.",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Miriana Mirone | Ingegnere - Studio Tecnico Mirone",
+      "Miriana Mirone | Ingegnere a Belpasso, Catania",
 
     description:
       "Miriana Mirone, ingegnere e responsabile dello Studio Tecnico Mirone a Belpasso, Catania.",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Miriana Mirone | Studio Tecnico Mirone",
+      "Miriana Mirone | Ingegnere a Belpasso, Catania",
 
     description:
       "Ingegnere Miriana Mirone a Belpasso, Catania. Progettazione e servizi tecnici.",
@@ -152,7 +152,7 @@ const jsonLd = {
       url: PERSON_URL,
 
       name:
-        "Miriana Mirone | Ingegnere - Studio Tecnico Mirone",
+        "Miriana Mirone | Ingegnere a Belpasso, Catania",
 
       headline:
         "Ingegnere Miriana Mirone",
