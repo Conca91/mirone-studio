@@ -247,13 +247,13 @@ export default function Studio() {
           </div>
 
           <div>
-            <p className="max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
-              La sede dello Studio Tecnico Mirone è a Belpasso. Seguiamo
-              progetti e incarichi tecnici a Catania, nella provincia e nei
-              comuni dell&apos;area etnea, oltre a interventi nel resto della
-              Sicilia e, in funzione dell&apos;incarico, su tutto il territorio
-              nazionale.
-            </p>
+            <p className="body-large mt-8 max-w-3xl !text-white/65">
+  Lo Studio Tecnico Mirone è un ufficio tecnico con sede a Belpasso,
+  in provincia di Catania, che affianca privati, imprese ed enti nella
+  progettazione architettonica, nelle pratiche edilizie e catastali,
+  nei rilievi topografici, nella direzione lavori e nella consulenza
+  tecnica.
+</p>
 
             <Link
               href="/contatti"
