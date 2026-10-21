@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { services } from "@/data/services";
@@ -31,7 +32,11 @@ export default function Services() {
           {services.slice(0, 5).map((service) => (
             <Link
               key={service.slug}
-              href={`/servizi#${service.slug}`}
+              href={
+                service.slug === "ape"
+                  ? "/servizi/ape"
+                  : `/servizi#${service.slug}`
+              }
               className="group grid gap-5 border-b border-black/15 py-8 sm:grid-cols-[0.18fr_1fr_0.9fr_auto] sm:items-center sm:gap-8 lg:py-10"
             >
               <span className="eyebrow text-black/45">
