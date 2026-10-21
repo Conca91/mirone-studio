@@ -14,7 +14,7 @@ const PAGE_PATH = "/servizi/ape";
 const PAGE_URL = `${seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "APE Catania e provincia in 48/72 ore | Studio Tecnico Mirone",
+  title: "APE Catania e Provincia | Studio Tecnico Mirone",
 
   description:
     "APE Catania e provincia: attestato di prestazione energetica per vendita e affitto. Consegna indicativa in 48/72 ore dalla documentazione completa, previo sopralluogo. Richiedi un preventivo.",
@@ -53,10 +53,10 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "APE in 48/72 ore a Catania e provincia | Studio Tecnico Mirone",
+      "APE Catania e Provincia | Studio Tecnico Mirone",
 
     description:
-      "APE in 48/72 ore a Catania e provincia dalla ricezione della documentazione completa, con sopralluogo e adempimenti necessari. Certificazioni per vendita e locazione.",
+      "Attestato di Prestazione Energetica a Catania e provincia per vendita e locazione. Sopralluogo e redazione APE; tempi indicativi di 48/72 ore dalla documentazione completa, secondo le verifiche necessarie.",
 
     url: PAGE_URL,
     siteName: seo.siteName,
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
         url: seo.images.openGraph,
         width: 1200,
         height: 630,
-        alt: "APE in 48/72 ore - Studio Tecnico Mirone",
+        alt: "APE Catania e provincia - Studio Tecnico Mirone",
       },
     ],
   },
@@ -77,10 +77,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "APE in 48/72 ore a Catania e provincia | Studio Tecnico Mirone",
+      "APE Catania e Provincia | Studio Tecnico Mirone",
 
     description:
-      "APE in 48/72 ore a Catania e provincia, dalla documentazione completa, con sopralluogo e adempimenti necessari.",
+      "Certificazione energetica APE a Catania e provincia per vendita e locazione. Tempi indicativi di 48/72 ore dalla documentazione completa, previo sopralluogo e verifiche.",
 
     images: [seo.images.openGraph],
   },
@@ -103,10 +103,10 @@ const config: ServiceDetailConfig = {
   breadcrumbLabel: "APE e certificazioni energetiche",
 
   locationLabel:
-    "APE in 48/72 ore · Catania e provincia",
+    "Certificazione energetica · Catania e provincia",
 
   titleFirstLine: "APE a Catania e provincia",
-  titleSecondLine: "in 48/72 ore",
+  titleSecondLine: "Attestato di Prestazione Energetica",
 
   heroDescription:
     "Cerchi un APE a Catania per vendere o affittare casa? Lo Studio Tecnico Mirone redige attestati di prestazione energetica a Catania, Belpasso e provincia. Tempi indicativi di 48/72 ore dalla ricezione della documentazione completa, compatibilmente con il sopralluogo e gli adempimenti necessari. Contattaci per verificare disponibilità e preventivo.",
@@ -414,7 +414,7 @@ const jsonLd = {
       "@id": `${PAGE_URL}/#service`,
 
       name:
-        "APE in 48/72 ore a Catania e provincia",
+        "APE a Catania e provincia",
 
       alternateName: [
         "Attestato di Prestazione Energetica",
@@ -474,10 +474,10 @@ const jsonLd = {
       url: PAGE_URL,
 
       name:
-        "APE in 48/72 ore a Catania e provincia",
+        "APE a Catania e provincia",
 
       description:
-        "APE in 48/72 ore a Catania e provincia dalla ricezione della documentazione completa, con sopralluogo e adempimenti necessari. Certificazioni per vendita e locazione.",
+        "Attestato di Prestazione Energetica a Catania e provincia per vendita e locazione. Sopralluogo e redazione APE; tempi indicativi di 48/72 ore dalla documentazione completa, secondo le verifiche necessarie.",
 
       isPartOf: {
         "@id": `${seo.siteUrl}/#website`,
