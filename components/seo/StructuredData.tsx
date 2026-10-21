@@ -1,3 +1,4 @@
+
 import { legal } from "@/data/legal";
 import { seo } from "@/data/seo";
 
@@ -36,7 +37,6 @@ const structuredData = {
       address: {
         "@type": "PostalAddress",
 
-        streetAddress: legal.address.street,
         postalCode: legal.address.postalCode,
         addressLocality: legal.address.city,
         addressRegion: legal.address.province,
@@ -133,12 +133,11 @@ const structuredData = {
       workLocation: {
         "@type": "Place",
 
-        name: "Studio Tecnico Mirone",
+        name: legal.brandName,
 
         address: {
           "@type": "PostalAddress",
 
-          streetAddress: legal.address.street,
           postalCode: legal.address.postalCode,
           addressLocality: legal.address.city,
           addressRegion: legal.address.province,
@@ -184,7 +183,10 @@ export default function StructuredData() {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        __html: JSON.stringify(structuredData).replace(
+          /</g,
+          "\\u003c"
+        ),
       }}
     />
   );

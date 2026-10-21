@@ -308,7 +308,7 @@ export default function Header() {
               </p>
 
               <address className="text-sm not-italic leading-6">
-                Via XVI Traversa n. 53
+                Belpasso (CT)
                 <br />
                 95032 Belpasso (CT)
               </address>

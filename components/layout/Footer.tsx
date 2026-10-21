@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -185,13 +186,7 @@ export default function Footer() {
                     className="mt-1 shrink-0"
                   />
 
-                  <span>
-                    Via XVI Traversa n. 53
-                    <br />
-                    95032 Belpasso (CT)
-                    <br />
-                    Sicilia, Italia
-                  </span>
+                  <span>Belpasso (CT)</span>
                 </address>
               </div>
             </div>

@@ -5,7 +5,7 @@ export const company = {
 
   location: "Belpasso · Catania",
 
-  address: "Via XVI Traversa n. 53, 95032 Belpasso (CT)",
+  address: "Belpasso (CT)",
 
   phoneLabel: "348 293 4197",
 
@@ -15,7 +15,7 @@ export const company = {
     "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sui%20vostri%20servizi.",
 
   mapHref:
-    "https://www.google.com/maps/search/?api=1&query=Via%20XVI%20Traversa%2053%2C%2095032%20Belpasso%20CT",
+    "https://www.google.com/maps/search/?api=1&query=Belpasso%20CT",
 
   email: "info@mironestudio.it",
 

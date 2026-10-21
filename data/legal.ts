@@ -1,3 +1,4 @@
+
 export const legal = {
   brandName: "Studio Tecnico Mirone",
 
@@ -26,13 +27,12 @@ export const legal = {
   phoneHref: "tel:+393482934197",
 
   address: {
-    street: "Via XVI Traversa n. 53",
+    street: "",
     postalCode: "95032",
     city: "Belpasso",
     province: "CT",
     country: "Italia",
-    formatted:
-      "Via XVI Traversa n. 53, 95032 Belpasso (CT), Italia",
+    formatted: "Belpasso (CT)",
   },
 
   website: "https://mironestudio.it",

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   ArrowUpRight,
   Mail,
@@ -27,9 +26,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
-const googleMapsEmbedUrl =
-  "https://www.google.com/maps?q=Via+XVI+Traversa+n.+53,+95032+Belpasso+CT,+Italia&output=embed";
 
 export default function ContattiPage() {
   const emailHref = `mailto:${company.email}`;
@@ -77,11 +73,7 @@ export default function ContattiPage() {
                       <p className="eyebrow">Studio</p>
 
                       <address className="mt-4 text-base not-italic leading-8 text-[var(--color-muted)]">
-                        Via XVI Traversa n. 53
-                        <br />
-                        95032 Belpasso (CT)
-                        <br />
-                        Italia
+                        Belpasso (CT)
                       </address>
                     </div>
                   </div>
@@ -194,47 +186,24 @@ export default function ContattiPage() {
                   Invia un’e-mail
                 </a>
 
-                <Link
-                  href={company.mapHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="editorial-link mt-4 w-fit"
-                  aria-label={`Apri su Google Maps: ${company.address}`}
-                >
-                  Apri su Google Maps
 
-                  <ArrowUpRight
-                    size={18}
-                    strokeWidth={1.4}
-                    aria-hidden="true"
-                  />
-                </Link>
               </div>
             </div>
 
             <div className="lg:col-span-7 lg:col-start-6">
-              <div className="relative aspect-[4/5] min-h-[500px] overflow-hidden bg-black/5 md:aspect-[16/10] md:min-h-0">
-                <iframe
-                  src={googleMapsEmbedUrl}
-                  title="Posizione dello Studio Tecnico Mirone"
-                  className="absolute inset-0 h-full w-full border-0"
-                  loading="lazy"
-                  allowFullScreen
-                  referrerPolicy="strict-origin-when-cross-origin"
-                />
-              </div>
-
-              <div className="mt-6 flex flex-col gap-4 border-t border-[var(--color-border)] pt-6 text-sm leading-7 text-[var(--color-muted)] md:flex-row md:items-start md:justify-between md:gap-10">
-                <p>
-                  Via XVI Traversa n. 53
-                  <br />
-                  95032 Belpasso (CT)
-                </p>
-
-                <p className="max-w-md md:text-right">
+              <div className="flex min-h-[360px] flex-col justify-center border border-[var(--color-border)] bg-black/5 px-8 py-12 md:min-h-[440px] md:px-14">
+                <p className="eyebrow">La nostra sede</p>
+                <h3 className="mt-6 font-serif text-[clamp(2.8rem,5vw,5rem)] leading-[1.05] tracking-[-0.04em]">
+                  Belpasso (CT)
+                </h3>
+                <p className="mt-8 max-w-lg text-base leading-8 text-[var(--color-muted)]">
                   Lo Studio Tecnico Mirone opera su tutto il territorio
-                  nazionale, con particolare presenza in Sicilia, nella
-                  provincia di Catania e a Belpasso.
+                  nazionale, con particolare presenza in Sicilia e nella
+                  provincia di Catania.
+                </p>
+                <p className="mt-5 max-w-lg text-sm leading-7 text-[var(--color-muted)]">
+                  Per informazioni o per concordare un incontro, contattaci
+                  telefonicamente, via e-mail oppure su WhatsApp.
                 </p>
               </div>
             </div>

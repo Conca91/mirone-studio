@@ -96,7 +96,7 @@ export const seo = {
   },
 
   address: {
-    street: "Via XVI Traversa n. 53",
+    street: "",
     postalCode: "95032",
     city: "Belpasso",
     province: "Catania",
