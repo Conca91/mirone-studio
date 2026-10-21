@@ -7,6 +7,8 @@ import {
   ClipboardCheck,
   FileCheck2,
   FileSearch,
+  ScrollText,
+  Trees,
   Gauge,
   Layers3,
   Mail,
@@ -22,10 +24,10 @@ import PageHero from "@/components/shared/PageHero";
 import { seo } from "@/data/seo";
 
 export const metadata: Metadata = {
-  title: "Servizi Tecnici a Belpasso e Catania",
+  title: "Servizi tecnici a Catania e provincia | Studio Mirone",
 
   description:
-    "Servizi tecnici dello Studio Tecnico Mirone a Belpasso e Catania: progettazione architettonica, pratiche edilizie e catastali, direzione lavori, rilievi topografici, APE e rendering.",
+    "Servizi tecnici a Catania e provincia: APE in 48/72 ore dalla documentazione completa, successioni ereditarie, pratiche edilizie nel Parco dell’Etna, catasto, rilievi e progettazione.",
 
   alternates: {
     canonical: "/servizi",
@@ -52,6 +54,13 @@ export const metadata: Metadata = {
     "rilievi topografici Catania",
     "APE Belpasso",
     "APE Catania",
+    "APE 48 72 ore Catania",
+    "certificazione energetica Catania e provincia",
+    "successioni ereditarie Catania",
+    "dichiarazione successione Catania",
+    "volture catastali successione Catania",
+    "pratiche edilizie Parco dell’Etna",
+    "nulla osta Parco dell’Etna",
   ],
 
   openGraph: {
@@ -59,7 +68,7 @@ export const metadata: Metadata = {
       "Servizi Tecnici a Belpasso e Catania | Studio Tecnico Mirone",
 
     description:
-      "Progettazione, pratiche edilizie e catastali, direzione lavori, rilievi topografici, APE e rendering dello Studio Tecnico Mirone.",
+      "APE in 48/72 ore, successioni ereditarie, pratiche edilizie nel Parco dell’Etna, progettazione, catasto e rilievi a Catania e provincia.",
 
     url: `${seo.siteUrl}/servizi`,
     siteName: seo.siteName,
@@ -83,7 +92,7 @@ export const metadata: Metadata = {
       "Servizi Tecnici a Belpasso e Catania | Studio Tecnico Mirone",
 
     description:
-      "Progettazione, pratiche edilizie e catastali, direzione lavori, rilievi topografici, APE e rendering a Belpasso e Catania.",
+      "APE in 48/72 ore, successioni ereditarie, pratiche edilizie nel Parco dell’Etna, progettazione, catasto e rilievi a Catania e provincia.",
 
     images: [seo.images.openGraph],
   },
@@ -178,16 +187,16 @@ const services = [
   {
     number: "05",
     icon: Gauge,
-    title: "APE e certificazioni energetiche",
+    title: "APE in 48/72 ore",
 
     description:
-      "Redazione dell'Attestato di Prestazione Energetica per compravendite, locazioni, nuove costruzioni e interventi di ristrutturazione.",
+      "Attestato di Prestazione Energetica per vendita e locazione a Catania e provincia. Tempi indicativi di 48/72 ore dalla documentazione completa, previa verifica del sopralluogo e degli adempimenti necessari.",
 
     features: [
       "Sopralluogo",
       "Raccolta dei dati",
       "Calcolo energetico",
-      "Redazione dell'APE",
+      "Consegna in 48/72 ore, ove possibile",
     ],
 
     href: "/servizi/ape",
@@ -227,6 +236,36 @@ const services = [
     ],
 
     href: "/servizi/pratiche-catastali",
+  },
+
+  {
+    number: "08",
+    icon: ScrollText,
+    title: "Successioni ereditarie",
+    description:
+      "Assistenza per dichiarazioni di successione, verifiche immobiliari e volture catastali a Catania e provincia, con esame preliminare della documentazione degli eredi.",
+    features: [
+      "Dichiarazione di successione",
+      "Documentazione degli eredi",
+      "Verifiche catastali",
+      "Volture catastali",
+    ],
+    href: "/servizi/successioni-ereditarie",
+  },
+
+  {
+    number: "09",
+    icon: Trees,
+    title: "Pratiche edilizie nel Parco dell'Etna",
+    description:
+      "Assistenza tecnica per interventi edilizi nelle aree del Parco dell'Etna: verifica dei vincoli, documentazione e valutazione dei nulla osta e delle autorizzazioni eventualmente necessari.",
+    features: [
+      "Verifica dei vincoli",
+      "Nulla osta, ove previsto",
+      "Pratiche urbanistiche",
+      "Assistenza documentale",
+    ],
+    href: "/servizi/pratiche-edilizie-parco-etna",
   },
 ];
 
@@ -360,7 +399,7 @@ export default function ServiziPage() {
       <PageHero
         eyebrow="Studio Tecnico Mirone · Belpasso · Catania"
         title="Progettazione, tecnica e gestione degli interventi."
-        description="Servizi di ingegneria e progettazione per privati, imprese e professionisti a Belpasso, Catania e provincia: dalla verifica preliminare alla progettazione, dalle pratiche tecniche alla fase esecutiva."
+        description="Servizi tecnici a Catania e provincia: progettazione, APE in 48/72 ore dalla documentazione completa, successioni ereditarie, pratiche edilizie nel Parco dell'Etna, catasto e rilievi topografici."
       />
 
       {/* INTRODUZIONE */}
@@ -423,8 +462,8 @@ export default function ServiziPage() {
 
               <p className="body-large mt-8 max-w-3xl">
                 Progettazione architettonica, pratiche edilizie e catastali,
-                direzione lavori, rilievi topografici, certificazione
-                energetica e visualizzazione architettonica.
+                direzione lavori, rilievi topografici, APE in 48/72 ore,
+                successioni ereditarie, pratiche nel Parco dell'Etna e rendering.
               </p>
             </div>
           </div>
@@ -608,9 +647,8 @@ export default function ServiziPage() {
               </h2>
 
               <p className="body-large mt-8 max-w-2xl">
-                Lo Studio Tecnico Mirone ha sede in{" "}
-                {seo.address.street}, {seo.address.postalCode}{" "}
-                {seo.address.city} ({seo.address.provinceCode}).
+                Lo Studio Tecnico Mirone ha sede a Belpasso (CT) e opera
+                a Catania e nei comuni della provincia.
               </p>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--color-muted)]">

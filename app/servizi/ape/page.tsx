@@ -14,10 +14,10 @@ const PAGE_PATH = "/servizi/ape";
 const PAGE_URL = `${seo.siteUrl}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "APE e certificazione energetica a Belpasso e Catania",
+  title: "APE in 48/72 ore a Catania e provincia",
 
   description:
-    "APE e certificazione energetica a Belpasso e Catania per vendita, locazione, nuove costruzioni e ristrutturazioni. Studio Tecnico Mirone segue sopralluogo, calcolo energetico e redazione dell'Attestato di Prestazione Energetica.",
+    "APE in 48/72 ore a Catania e provincia dalla ricezione della documentazione completa. Certificazione energetica per vendita e affitto. Contatta Studio Tecnico Mirone.",
 
   alternates: {
     canonical: PAGE_PATH,
@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   keywords: [
     "APE Belpasso",
     "APE Catania",
+    "APE in 48 ore Catania",
+    "APE in 72 ore Catania",
+    "APE urgente Catania",
+    "certificazione energetica Catania e provincia",
     "certificazione energetica Belpasso",
     "certificazione energetica Catania",
     "Attestato di Prestazione Energetica Belpasso",
@@ -49,10 +53,10 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "APE e certificazione energetica a Belpasso e Catania | Studio Tecnico Mirone",
+      "APE in 48/72 ore a Catania e provincia | Studio Tecnico Mirone",
 
     description:
-      "Attestati di Prestazione Energetica per vendita, locazione, nuove costruzioni e ristrutturazioni a Belpasso, Catania e provincia.",
+      "APE in 48/72 ore a Catania e provincia dalla ricezione della documentazione completa, con sopralluogo e adempimenti necessari. Certificazioni per vendita e locazione.",
 
     url: PAGE_URL,
     siteName: seo.siteName,
@@ -64,7 +68,7 @@ export const metadata: Metadata = {
         url: seo.images.openGraph,
         width: 1200,
         height: 630,
-        alt: "APE e certificazione energetica - Studio Tecnico Mirone",
+        alt: "APE in 48/72 ore - Studio Tecnico Mirone",
       },
     ],
   },
@@ -73,10 +77,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "APE e certificazione energetica a Belpasso e Catania | Studio Tecnico Mirone",
+      "APE in 48/72 ore a Catania e provincia | Studio Tecnico Mirone",
 
     description:
-      "APE per compravendita, locazione, nuove costruzioni e ristrutturazioni a Belpasso e Catania.",
+      "APE in 48/72 ore a Catania e provincia, dalla documentazione completa, con sopralluogo e adempimenti necessari.",
 
     images: [seo.images.openGraph],
   },
@@ -99,16 +103,16 @@ const config: ServiceDetailConfig = {
   breadcrumbLabel: "APE e certificazioni energetiche",
 
   locationLabel:
-    "APE · Certificazione energetica · Belpasso · Catania",
+    "APE in 48/72 ore · Catania e provincia",
 
-  titleFirstLine: "APE e",
-  titleSecondLine: "certificazione energetica",
+  titleFirstLine: "APE in 48/72 ore",
+  titleSecondLine: "a Catania e provincia",
 
   heroDescription:
-    "Lo Studio Tecnico Mirone redige Attestati di Prestazione Energetica a Belpasso, Catania e provincia per compravendite, locazioni, nuove costruzioni e ristrutturazioni. Seguiamo il sopralluogo, la raccolta dei dati, il calcolo energetico e la predisposizione della documentazione necessaria.",
+    "Hai bisogno di un Attestato di Prestazione Energetica per vendere o affittare un immobile? Lo Studio Tecnico Mirone offre un servizio rapido di redazione APE a Catania e in tutta la provincia, con tempi indicativi di 48/72 ore dalla ricezione della documentazione completa, previo svolgimento del sopralluogo e degli adempimenti necessari.",
 
   whatsappHref:
-    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sull%27APE%20e%20sulla%20certificazione%20energetica.",
+    "https://wa.me/393482934197?text=Buongiorno%2C%20vorrei%20richiedere%20un%20APE%20in%2048%2F72%20ore%20a%20Catania%20e%20provincia.",
 
   emailHref: seo.contact.emailHref,
 
@@ -117,6 +121,7 @@ const config: ServiceDetailConfig = {
     "Raccolta dati",
     "Calcolo energetico",
     "Redazione APE",
+    "48/72 ore dalla documentazione completa",
     "Supporto documentale",
   ],
 
@@ -187,7 +192,7 @@ const config: ServiceDetailConfig = {
     eyebrow: "Il nostro metodo",
 
     title:
-      "Dal sopralluogo alla redazione dell’attestato.",
+      "Dal sopralluogo all’APE: un servizio rapido e accurato.",
 
     description:
       "La certificazione energetica richiede dati affidabili sull’immobile e una corretta elaborazione delle informazioni raccolte.",
@@ -296,10 +301,10 @@ const config: ServiceDetailConfig = {
     eyebrow: "Dove operiamo",
 
     title:
-      "APE a Belpasso, Catania e provincia.",
+      "Certificazioni energetiche a Catania e in tutta la provincia.",
 
     description:
-      "Lo Studio Tecnico Mirone ha sede a Belpasso e svolge attività di certificazione energetica a Catania, nei comuni della provincia e nell’area etnea, valutando incarichi anche nel resto della Sicilia.",
+      "Lo Studio Tecnico Mirone ha sede a Belpasso e svolge attività di certificazione energetica a Catania e in tutta la provincia, inclusi i comuni dell’area etnea. Per incarichi fuori provincia è possibile richiedere una valutazione.",
 
     items: [
       "Belpasso",
@@ -348,10 +353,18 @@ const config: ServiceDetailConfig = {
 
       {
         question:
-          "Quanto tempo serve per ottenere un APE?",
+          "Quanto tempo serve per ottenere un APE a Catania?",
 
         answer:
-          "I tempi dipendono dalla disponibilità della documentazione, dalle caratteristiche dell’immobile e dalle attività necessarie. Dopo il primo confronto lo Studio può fornire indicazioni più precise sul caso specifico.",
+          "Lo Studio Tecnico Mirone offre un servizio di redazione APE con tempi indicativi di 48/72 ore dalla ricezione della documentazione completa. I tempi vengono confermati in relazione alla disponibilità per il sopralluogo, alle caratteristiche dell’immobile e agli adempimenti necessari.",
+      },
+
+      {
+        question:
+          "Quali documenti servono per richiedere l’APE?",
+
+        answer:
+          "Per iniziare possono essere utili la visura catastale, la planimetria dell’immobile e la documentazione disponibile sugli impianti. Lo Studio verifica caso per caso i documenti necessari e concorda il sopralluogo prima di confermare i tempi di consegna.",
       },
 
       {
@@ -381,13 +394,13 @@ const config: ServiceDetailConfig = {
   },
 
   finalCta: {
-    eyebrow: "Hai bisogno di un APE?",
+    eyebrow: "Certificazione energetica rapida",
 
     title:
-      "Verifichiamo il tuo immobile.",
+      "Hai bisogno di un APE in 48/72 ore?",
 
     description:
-      "Contattaci indicando la tipologia di immobile e la finalità dell’attestato. Valuteremo documentazione disponibile, sopralluogo e attività necessarie per la certificazione energetica.",
+      "Contatta Studio Tecnico Mirone per richiedere un Attestato di Prestazione Energetica a Catania e provincia. Verificheremo i documenti necessari, la disponibilità per il sopralluogo e i tempi di consegna.",
   },
 };
 
@@ -401,7 +414,7 @@ const jsonLd = {
       "@id": `${PAGE_URL}/#service`,
 
       name:
-        "APE e certificazione energetica a Belpasso e Catania",
+        "APE in 48/72 ore a Catania e provincia",
 
       alternateName: [
         "Attestato di Prestazione Energetica",
@@ -415,7 +428,7 @@ const jsonLd = {
       url: PAGE_URL,
 
       description:
-        "Servizio di redazione APE e certificazione energetica per vendita, locazione, nuove costruzioni e ristrutturazioni a Belpasso, Catania e provincia.",
+        "Servizio di certificazione energetica a Catania e provincia con tempi indicativi di 48/72 ore dalla documentazione completa, subordinati al sopralluogo e agli adempimenti necessari.",
 
       provider: {
         "@id": `${seo.siteUrl}/#organization`,
@@ -461,10 +474,10 @@ const jsonLd = {
       url: PAGE_URL,
 
       name:
-        "APE e certificazione energetica a Belpasso e Catania",
+        "APE in 48/72 ore a Catania e provincia",
 
       description:
-        "Attestati di Prestazione Energetica per vendita, locazione, nuove costruzioni e ristrutturazioni a Belpasso, Catania e provincia.",
+        "APE in 48/72 ore a Catania e provincia dalla ricezione della documentazione completa, con sopralluogo e adempimenti necessari. Certificazioni per vendita e locazione.",
 
       isPartOf: {
         "@id": `${seo.siteUrl}/#website`,

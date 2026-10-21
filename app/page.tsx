@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 
 import Contact from "@/components/home/Contact";
@@ -10,10 +11,10 @@ import Studio from "@/components/home/Studio";
 import { seo } from "@/data/seo";
 
 export const metadata: Metadata = {
-  title: "Studio Tecnico a Belpasso | Ingegneria e Progettazione",
+  title: "Studio Tecnico Mirone Belpasso | Geometra, Ingegneria e APE",
 
   description:
-    "Studio Tecnico Mirone a Belpasso, Catania. Ingegneria, progettazione architettonica, pratiche edilizie e catastali, rilievi topografici, direzione lavori, BIM, APE e consulenza tecnica.",
+    "Studio Tecnico Mirone a Belpasso (Catania): APE in 48/72 ore dalla documentazione completa, successioni ereditarie, tabelle millesimali, pratiche edilizie nel Parco dell'Etna, progettazione, catasto e rilievi topografici.",
 
   alternates: {
     canonical: "/",
@@ -24,38 +25,70 @@ export const metadata: Metadata = {
     "Studio Mirone",
     "studio tecnico Belpasso",
     "studio tecnico Catania",
-    "ingegnere Belpasso",
-    "ingegnere Catania",
-    "ingegnere a Belpasso",
-    "ingegnere a Catania",
     "geometra Belpasso",
     "geometra Catania",
-    "geometra a Belpasso",
-    "geometra a Catania",
-    "progettazione Belpasso",
-    "progettazione Catania",
-    "progettazione architettonica Belpasso",
-    "progettazione architettonica Catania",
-    "pratiche edilizie Belpasso",
-    "pratiche edilizie Catania",
-    "pratiche catastali Belpasso",
-    "pratiche catastali Catania",
-    "direzione lavori Belpasso",
-    "direzione lavori Catania",
-    "rilievi topografici Belpasso",
-    "rilievi topografici Catania",
+    "ingegnere Belpasso",
+    "ingegnere Catania",
+
+    // Attestati di prestazione energetica
     "APE Belpasso",
     "APE Catania",
-    "consulenza tecnica Belpasso",
+    "APE in 48 ore",
+    "APE in 72 ore",
+    "certificazione energetica Catania",
+    "certificazione energetica Belpasso",
+    "attestato prestazione energetica Catania",
+    "APE urgente Catania",
+    "APE vendita immobile",
+    "APE affitto immobile",
+
+    // Successioni
+    "successioni ereditarie Catania",
+    "successioni ereditarie Belpasso",
+    "dichiarazione di successione Catania",
+    "geometra successione ereditaria",
+    "voltura catastale successione",
+
+    // Condomini
+    "tabelle millesimali Catania",
+    "tabelle millesimali Belpasso",
+    "calcolo millesimi condominiali",
+    "revisione tabelle millesimali",
+
+    // Parco dell'Etna
+    "pratiche edilizie Parco dell'Etna",
+    "autorizzazione Parco dell'Etna",
+    "nulla osta Parco dell'Etna",
+    "progettazione edilizia Parco dell'Etna",
+    "pratiche edilizie Nicolosi",
+    "pratiche edilizie Zafferana Etnea",
+
+    // Edilizia e catasto
+    "pratiche edilizie Belpasso",
+    "pratiche edilizie Catania",
+    "SCIA Catania",
+    "CILA Belpasso",
+    "sanatoria edilizia Catania",
+    "pratiche catastali Catania",
+    "DOCFA Catania",
+    "variazione catastale Catania",
+
+    // Servizi tecnici
+    "progettazione architettonica Catania",
+    "direzione lavori Catania",
+    "rilievi topografici Catania",
+    "rilievi topografici Belpasso",
+    "riconfinamenti Catania",
     "consulenza tecnica Catania",
+    "modellazione BIM",
   ],
 
   openGraph: {
     title:
-      "Studio Tecnico a Belpasso | Ingegneria e Progettazione",
+      "Studio Tecnico Mirone | Geometra, Ingegneria e Servizi Tecnici",
 
     description:
-      "Studio Tecnico Mirone a Belpasso, Catania. Progettazione, pratiche edilizie e catastali, rilievi topografici, direzione lavori e consulenza tecnica.",
+      "APE in 48/72 ore dalla documentazione completa, successioni ereditarie, tabelle millesimali, pratiche edilizie nel Parco dell'Etna, progettazione e servizi catastali a Belpasso e Catania.",
 
     url: seo.siteUrl,
     siteName: seo.siteName,
@@ -67,7 +100,7 @@ export const metadata: Metadata = {
         url: seo.images.openGraph,
         width: 1200,
         height: 630,
-        alt: "Studio Tecnico Mirone a Belpasso, Catania",
+        alt: "Studio Tecnico Mirone - Belpasso, Catania",
       },
     ],
   },
@@ -75,11 +108,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title:
-      "Studio Tecnico Mirone | Belpasso, Catania",
+    title: "Studio Tecnico Mirone | Belpasso e Catania",
 
     description:
-      "Ingegneria, progettazione, pratiche edilizie e catastali, rilievi e direzione lavori a Belpasso e Catania.",
+      "APE, successioni ereditarie, tabelle millesimali, pratiche edilizie, catasto, progettazione e rilievi topografici.",
 
     images: [seo.images.openGraph],
   },
